@@ -2,9 +2,10 @@
 
 int main(){
 
-    Vector a = {5,-2,0};
-    Vector b = {4,5,0};
-
     // vectorTest();
+    double nbr = 5.203000e+01;
+    
+    printf("ecriture scientifique: %f\n",nbr+1);
+
     return 0;
 }

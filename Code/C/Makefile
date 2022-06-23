@@ -1,7 +1,7 @@
 CC = gcc -Wall
 EXEC = trajectoireAstre
 MAIN = main.c
-SRC = vecteur.c ecriture.c 
+SRC = vecteur.c ecriture.c planet.c
 OBJ = $(SRC:.c=.o) 
 LIB = libAstre.a
 HEADER = trajectoireAstre.h
