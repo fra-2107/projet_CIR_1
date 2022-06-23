@@ -1,0 +1,33 @@
+struct vector{x,y,z}	#Pour la position, vitesse, accélération en double
+
+Fonction mathématique:	
+	*Calcul de vecteurs:
+		- addition
+		- soustraction
+		- scalaire
+		- norme
+	
+void vectorTest();	#afficher des résultats de calculs à mettre en commentaire
+
+struct point{
+	vector position;
+	vector vitesse;
+	int temps;
+}
+
+stuct trajectoire{
+	point *liste;
+}
+
+struct planete{
+	char name[10];
+	double masse;
+	trajectoire trajectoire;
+	double perihelie;	#distance max séparant l'astre du soleil
+}
+
+#initialiser la planete a la position de la perihelie
+#initialiser sa vitesse
+void initPlanet();
+
+
