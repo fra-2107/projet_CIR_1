@@ -3,9 +3,12 @@
 int main(){
 
     // vectorTest();
-    double nbr = 5.203000e+01;
+    Planet *planetList = InitPlanet("infoAstre.txt");
+    affichageInfoPlanets(planetList);    
+
+    // printf("PREMIER POINT\n");
+    // Point point1 = firstPoint(planetList[1]); 
     
-    printf("ecriture scientifique: %f\n",nbr+1);
 
     return 0;
 }

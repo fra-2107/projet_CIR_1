@@ -1,8 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
 #define NB_CHAR_MAX 10
+#define NB_ASTRE 9
+#define TAILLE_MAX 100
+#define G 6.67408e-11
+#define PAS 500
+#define MASSE_SOLEIL 1.989100e+30
 
 typedef struct Vector{
     double x;
@@ -23,9 +29,12 @@ typedef struct Trajectoire{
 typedef struct Planet{
     char name[NB_CHAR_MAX];
     double masse;
-    Trajectoire trajectoire;
+    Point trajectoire[PAS];
     double perihelie;   //distance min séparant un astre du Soleil
+    double excentricite;
+    double demi_grand_axe;
 } Planet;
+
 
 /* VECTEURS */
 void affichageVect(Vector vect);
@@ -36,3 +45,20 @@ Vector soustractionVect(Vector a, Vector b);
 Vector scalaireVect(double k, Vector vect);
 double normeVect(Vector vect);
 void vectorTest();
+
+
+/* PLANETS */
+Planet *InitPlanet(char *filename);
+Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList);
+void affichageInfoPlanets(Planet *planetList);
+
+
+/* FILES */
+FILE * readFile(char *filename);
+FILE * writeFile(char *filename);
+
+
+/* POINTS */
+Point firstPoint(Planet planet);
+double vitessePerihelie(Planet planet);
+void infoPoint(Point point);
