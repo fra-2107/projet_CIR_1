@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 23 19:33:09 2022
+# Make data base, printed on Fri Jun 24 15:37:16 2022
 
 # Variables
 
@@ -23,7 +21,7 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-bb5a3e70-12bf-4ea2-a76b-ff7d9a5e13f8.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-453859d8-7e3f-4a74-9e13-5f08afb85c22.sock
 # environment
 VSCODE_CWD = /home/kilian
 # default
@@ -93,7 +91,7 @@ ZSH = /home/kilian/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 117454
+VSCODE_PID = 234281
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -177,7 +175,7 @@ MAKE_VERSION := 4.3
 # environment
 MANAGERPID = 2223
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 117454
+GIO_LAUNCHED_DESKTOP_FILE_PID = 234281
 # environment
 PAGER = less
 # environment
@@ -277,6 +275,8 @@ GNUmakefile:
 # strcache performance: lookups = 19 / hit rate = 15%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/19=0%
-# Finished Make data base on Thu Jun 23 19:33:09 2022
+# Finished Make data base on Fri Jun 24 15:37:16 2022
 
  
+make: *** No rule to make target 'all'.  Stop.
+
