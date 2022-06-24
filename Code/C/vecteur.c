@@ -2,9 +2,9 @@
 
 void affichageVect(Vector vect){
     
-    printf("| %f |\n", vect.x);
-    printf("| %f |\n", vect.y);
-    printf("| %f |\n\n", vect.z);
+    printf("| %e |\n", vect.x);
+    printf("| %e |\n", vect.y);
+    printf("| %e |\n\n", vect.z);
 }
 
 Vector additionVect(Vector a, Vector b){
@@ -23,8 +23,7 @@ Vector scalaireVect(double k, Vector vect){
 }
 
 double normeVect(Vector vect){
-    int calcul = vect.x*vect.x + vect.y*vect.y + vect.z*vect.z;
-    return sqrt(calcul);
+    return sqrt(vect.x*vect.x + vect.y*vect.y + vect.z*vect.z);
 }
 
 void vectorTest(){
