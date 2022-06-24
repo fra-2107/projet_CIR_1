@@ -1,30 +1,29 @@
 #include "trajectoireAstre.h"
 
+
 Planet *InitPlanet(char *filename){
+
     Planet *planetList = malloc(NB_ASTRE * sizeof(Planet));
 
-    planetList = recupInfo(filename,planetList);
-    // for(int i=0; i<NB_ASTRE; i++){
-    //     planetList[i] = recupInfo(filename);
-    // }
+    FILE *fichier = readFile(filename);
+    planetList = recupInfo(fichier, filename,planetList);
+    fclose(fichier);
+
+    for(int i=0; i<NB_ASTRE; i++){
+        planetList[i].trajectoire[0] = firstPoint(planetList[i]);
+        printf("%s:\n", planetList[i].name);
+        infoPoint(planetList[i].trajectoire[0]);
+    }
 
     return planetList;  
 }
 
-Planet *recupInfo(char *filename, Planet *planetList){
 
-    FILE *fichier = NULL;
-    
-    fichier = fopen(filename,"r"); 
-
-    if(fichier == NULL){
-        printf("Le fichier %s ne s'est pas ouvert\n",filename);
-        exit(-1);
-    }
+Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
 
     //Pour gérer différents champs dans le fichier on utilise un caractère pour les séparer
     char *separateur = ":";
-    
+
     char ligne[TAILLE_MAX] = "";
     int planetID = 0;
 
@@ -50,10 +49,16 @@ Planet *recupInfo(char *filename, Planet *planetList){
                     case 3:
                         planet.perihelie = atof(champ);
                         break;
+                    case 4:
+                        planet.demi_grand_axe = atof(champ);
+                        break;
+                    case 5:
+                        planet.excentricite = atof(champ);
+                        break;
                     default:
                         break;
             }
-            printf("champ: %s\n",champ);
+            // printf("champ: %s\n",champ);
 
             //Permet de passer au champ suivant
             champ = strtok(NULL, separateur);
@@ -61,15 +66,15 @@ Planet *recupInfo(char *filename, Planet *planetList){
         }
         planetList[planetID] = planet;
         planetID++;
-
     }
     return planetList;
 }
 
+
 void affichageInfoPlanets(Planet *planetList){
-    printf("Information sur les astres\n\n");
-    printf("NAME\t\t     MASSE\t\t   PERIHELIE\n");
+    printf("\n\t\t\t\tInformation sur les astres\n\n");
+    printf("NAME\t\t     MASSE\t\t   PERIHELIE\t\t1/2 GRAND AXE\t\tEXCENTRICITE\n");
     for(int i=0; i<NB_ASTRE; i++){
-        printf("%s\t\t%e kg\t\t%e km\n",planetList[i].name, planetList[i].masse, planetList[i].perihelie);
+        printf("%s\t\t%e kg\t\t%e m\t\t%e m\t\t%e\n",planetList[i].name, planetList[i].masse, planetList[i].perihelie, planetList[i].demi_grand_axe, planetList[i].excentricite);
     }
 }
