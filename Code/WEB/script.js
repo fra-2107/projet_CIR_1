@@ -1,19 +1,27 @@
-let mercury;
-let start;
-let earth;
-let sun;
-let p1;
-let i = 0;
+//déclarations des variables globales (utilisables dans plusieurs fonctions)
+let mercury, mercuryRK, start, earth, sun, p1, p2, i = 0;
 
+
+//fonction de récuperation du fichir JSON
 async function demande(){
+    //ouverture du JSON
     const reponse = await fetch('/mercury.json');
     const fichier = await reponse.json();
-    mercury = fichier['mercury-RK'];
+
+    //récupération de la liste voulue
+    mercury = fichier['mercury-euler'];
+    mercuryRK = fichier['mercury-RK'];
+
+    //mise a l'échelle des coordonnées
     p1=echelle(mercury)
+    p2=echelle(mercuryRK)
 }
 
+
+//fontion de mise a l'échelle qui retourne les coordonnées dans une variable globale pour etre utilisée dans d'autres focntions
 function echelle(planete){
     let result=[];
+    //la boucle rempli un nouveau tableau(result) avec les coordonnée mreduite a l'echelle de l'écran(par une regle de 3)
     for(element in planete){
         result[element] = [];
         result[element][0] = ((planete[element][0][0] * 800) / 8e+11) + (windowWidth/2)-15;
@@ -23,12 +31,14 @@ function echelle(planete){
     return result
 }
 
+
+//fonction qui initialise l'espace de travail dans la fenetre
 async function setup(){
     createCanvas(windowWidth, windowHeight);
     start = false;
     await demande();
     start = true;
-    
+
     // affichage du soleil
     sun = createImg(
         '/assets/soleil.png',
@@ -38,51 +48,47 @@ async function setup(){
     sun.size(25,25);
 }   
 
-function planete(data, i){
-    stroke('#0000FF');
+
+//fonction qui affiche la trajectoire de la planète ainsi que la planète en orbite autour du soleil
+function planete(data, i, couleur){
+    
+    //affichage de la trace
+    stroke(couleur);
     noFill();
     beginShape();
-    for(let k=0; k<data.length-1; k+=20)
+    for(let k=0; k<data.length-1; k+=50)
     {
         curveVertex(data[k][0], data[k][1]);
-        // console.log(k)
     }
     endShape();
 
-    stroke('white')
+    //affichage de la planète en orbite
+    stroke(couleur)
     strokeWeight(10)
     point(data[i][0], data[i][1])
     strokeWeight(1);
 }
 
+
+//fonction de la librairie P5.js qui boucle a l'infini et qui gère l'affichage des planetes en orbite 
 function draw(){
+    
+    //condition pour eviter que la boucle ne commence avant que le fichier JSON soit ouvert correctement
     if(start)
     {
+        //initialisation du fond 
         background(0);
-        planete(p1, i);
 
-        i++;
+        //affichage des planètes 
+        planete(p1, i, '#0000FF');
+        planete(p2, i, '#00FF00');
+
+        //incrementation du i (pour l'affichage des palnetes en fonction du temps)
+        i+=20;
         if(i>=36500)
         {
             i=0
         }
-        // for(element in p1){
-        //     earth = createImg(
-        //         '/assets/earth.png',
-        //         'terre'
-        //     );
-        //     earth.position(p1[element][0][0], p1[element][0][1]);
-        //     earth.size(50, 50);  
-        //     // earth.remove();
-        // };
-        //affichage de la terre
-        // earth = createImg(
-        //     '/assets/earth.png',
-        //     'terre'
-        // );
-        // earth.position(p1, 10);
-        // earth.size(50, 50);  
-        // // earth.remove();
     }
 }
 
