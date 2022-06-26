@@ -3,7 +3,8 @@
 int main(){
 
     // vectorTest();
-    Planet *planetList = InitPlanet("infoAstre.txt");
+    Planet *planetList = InitPlanet("Data/infoAstre.json");
+    printf("Planete initialisé dans 'Data/'\n");
     // affichageInfoPlanets(planetList);    
 
     // Planet Mercure = planetList[1];
@@ -13,8 +14,10 @@ int main(){
     //     infoPoint(Mercure.trajectoire[i]);
     // }
 
-    FILE *fichier = writeFile("mercury-euler.json");
-    SaveData(planetList[1], "euler", fichier);
+    // FILE *fichier = writeFile("mercury-euler.json");
+    // SaveData(planetList[1], "euler", fichier);
+
+    
 
     return 0;
 }

@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/kilian/Documents/GitHub/PROJET/Code/C'
+gcc -Wall -c vecteur.c file.c planet.c point.c 
+gcc -Wall -c vecteur.c file.c planet.c point.c 
+gcc -Wall -c vecteur.c file.c planet.c point.c 
+gcc -Wall -c vecteur.c file.c planet.c point.c 
+ar rv libAstre.a vecteur.o file.o planet.o point.o 
+gcc -Wall -c main.c 
+gcc -Wall -o trajectoireAstre main.o libAstre.a -lm
+make: Leaving directory '/home/kilian/Documents/GitHub/PROJET/Code/C'
+ 
