@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Montserrat:wght@200&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    overflow: hidden;
+	display: flex;
+	background-image: url(/assets/univers.png);
+	background-repeat: no-repeat;
+	color: white;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.titre{
+	width: 400px;
+	padding: 50px;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 10vh;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+h3{
+	padding-bottom: 10px;
+	padding-left: 20px;
+	font-family: 'Fira Sans', sans-serif;
+	transform: rotate(-45deg);
+}
+.planet{
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+}
+
+.system{
+	position: absolute;
+	bottom: 20px;
+	left: 250px;
+	max-height: 125px;
+	overflow: auto;
+	padding-top:30px;
+}
+
+#b1 {
+	background-color: #ff7b00; 
+	border: solid;
+	border-color: #ff7b00;
+	border-radius: 10px;
+	color: white;
+	padding: 15px 24px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	box-shadow: 0 9px  #999;
+	transition-duration: 0.4s;
+	position: absolute;
+	top: 50%;
+	left:3%;
+}
+
+#b1:hover {
+	background-color: #b65a05; 
+	color: black;
+	border: solid;
+	border-color: #b65a05;
+}
+
+#b1:active {
+	transition: 0.1s;
+	background-color: #b65a05;
+	color: black;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+#b2 {
+	background-color: #ff7b00; 
+	border: solid;
+	border-color: #ff7b00;
+	border-radius: 10px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	box-shadow: 0 9px  #999;
+	transition-duration: 0.4s;
+	position: absolute;
+	top: 50%;
+	left:3%;
+}
+
+#b2:hover {
+	background-color: #b65a05; 
+	color: black;
+	border: solid;
+	border-color: #b65a05;
+}
+
+#b2:active {
+	transition: 0.1s;
+	background-color: #b65a05;
+	color: black;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.projet{
+	font-family: 'Fira Sans', sans-serif;
+	font-size: larger;
+	line-height: 200%;
+	width: 900px;
+	max-height: 315px;
+	padding: 5vh;
+	padding-top: 20vh;
+	overflow: auto;
+	padding-bottom: 10px;
+}
+
+.copyright{
+	font-family: 'Fira Sans', sans-serif;
+	font-size: small;
+	padding: 10px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.off{
+	display: none;
+}
+
+
+.vitesse{
+	font-family: 'Fira Sans', sans-serif;
+	position: absolute;
+	top: 50%;
+	right: 3%;
+	display: flex;
+
+}

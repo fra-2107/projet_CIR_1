@@ -4,13 +4,77 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Projet info Cir1 Timite/Kilian</title>
+        <title>Projet info Cir1 Timote/Kilian</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="/assets/styles.css">
     </head>
     <body>
+
+        <div class="titre" id="titre"><h1>Projet Kepler</h1></div>
+
+        <div class="system" id="system">
+            <div class="planet" id="sun">
+                <h3>Soleil</h3>
+                <a href="https://fr.wikipedia.org/wiki/Soleil" target="_blank"><img src="/assets/soleil.png" alt="soleil" height="75px"></a>
+            </div>
+
+            <div class="planet" id="mercury">
+                <h3>Mercure</h3>
+                <a href="https://fr.wikipedia.org/wiki/Mercure_(plan%C3%A8te)" target="_blank"><img src="/assets/mercure.png" alt="mercure" height="75px"></a>
+            </div>
+
+            <div class="planet" id="venus">
+                <h3>Venus</h3> 
+                <a href="https://fr.wikipedia.org/wiki/V%C3%A9nus_(plan%C3%A8te)" target="_blank"><img src="/assets/venus.png" alt="venus" height="75px"></a>
+            </div>
+
+            <div class="planet" id="earth">
+                <h3>Terre</h3>
+                <a href="https://fr.wikipedia.org/wiki/Terre" target="_blank"><img src="/assets/earth.png" alt="Terre" height="75px"></a>
+            </div>
+
+            <div class="planet" id="mars">
+                <h3>Mars</h3>
+                <a href="https://fr.wikipedia.org/wiki/Mars_(plan%C3%A8te)" target="_blank"><img src="/assets/mars.png" alt="mars" height="75px"></a>
+            </div>
+
+            <div class="planet" id="jupyter">
+               <h3>Jupiter</h3> 
+               <a href="https://fr.wikipedia.org/wiki/Jupiter_(plan%C3%A8te)" target="_blank"><img src="/assets/jupiter.png" alt="jupiter" height="75px"></a>
+            </div>
+
+            <div class="planet" id="satrun">
+                <h3>Saturne</h3>
+                <a href="https://fr.wikipedia.org/wiki/Saturne_(plan%C3%A8te)" target="_blank"><img src="/assets/satun.png" alt="satrun" height="75px"></a>
+            </div>
+
+            <div class="planet" id="uranus">
+                <h3>Uranus</h3>
+                <a href="https://fr.wikipedia.org/wiki/Uranus_(plan%C3%A8te)" target="_blank"><img src="/assets/uranus.png" alt="uranus" height="75px"></a>
+            </div>
+
+            <div class="planet" id="neptune">
+               <h3>Neptune</h3> 
+               <a href="https://fr.wikipedia.org/wiki/Neptune_(plan%C3%A8te)" target="_blank"><img src="/assets/neptune.png" alt="neptune" height="75px"></a>
+            </div>
+        </div>
+
+        <div class="bouton" id="btn1"><button id="b1" onclick="initialisation()">launch</button></div>
+        <div class="bouton" id="btn2"><button id="b2" onclick="arret()">stop</button></div>
+
+        <div class="projet" id="projet">
+            <p>Ce projet a pour objectif de recréer informatiquement le système solaire. <br>Les calculs de positions et de vitesse des planètes sont calculé via un programme écrit en C, qui va par la suite exporter toutes ces données dans un fichier au format JSON qui est un format lisible et traitable par le Javascript. Ensuite le but est de récupérer ces données via un script Javascript puis les traiter afin d'afficher les trajectoires ainsi que les planètes se déplaçant en orbite autour du soleil sur une page web qui sera dressée par du HTML/CSS.</p>
+        </div>
+
+        <!-- <div class="vitesse" id="vitesse">
+            <label for="vol">Vitesse:</label>
+            <input type="range" id="vit" name="vitesse" min="0" max="50">
+        </div> -->
+
+        <div class="copyright">© Kilian/Timoté - 2022</div>
         <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-        <script src="script.js"></script>
+        <!-- <script src="script.js"></script> -->
+        <script src="test.js"></script>
     </body>
 </html>
