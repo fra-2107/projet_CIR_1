@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 26 13:20:44 2022
+# Make data base, printed on Sun Jun 26 15:26:47 2022
 
 # Variables
 
@@ -16,20 +16,22 @@ OBJ = $(SRC:.c=.o)
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
-# environment
-NO_AT_BRIDGE = 1
-# environment
-GNOME_SHELL_SESSION_MODE = ubuntu
 # makefile (from 'Makefile', line 4)
 SRC = vecteur.c file.c planet.c point.c
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-a17d3809-526e-48c8-a76d-bea884040bef.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-df178d4a-9de5-42a5-9a47-82d1f76694ba.sock
+# environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 VSCODE_CWD = /home/kilian
+# environment
+WINDOWPATH = 2
 # default
 MAKE_COMMAND := make
 # environment
@@ -47,7 +49,7 @@ PWD = /home/kilian/Documents/GitHub/PROJET/Code/C
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-XDG_DATA_DIRS = /home/kilian/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/home/kilian/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
 OLDPWD = /home/kilian
 # automatic
@@ -61,7 +63,7 @@ VSCODE_CODE_CACHE_PATH = /home/kilian/.config/Code/CachedData/30d9c6cd9483b2cc58
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.MZMHO1
+XAUTHORITY = /run/user/1000/gdm/Xauthority
 # default
 .LOADED := 
 # default
@@ -83,7 +85,7 @@ SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # default
 .SHELLFLAGS := -c
 # environment
-WAYLAND_DISPLAY = wayland-0
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -93,17 +95,19 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
+PT8HOME = /opt/pt
+# environment
 ZSH = /home/kilian/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 5102
+VSCODE_PID = 4448
 # environment
-XDG_SESSION_TYPE = wayland
+XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/pavillon:@/tmp/.ICE-unix/2466,unix/pavillon:/tmp/.ICE-unix/2466
+SESSION_MANAGER = local/pavillon:@/tmp/.ICE-unix/2753,unix/pavillon:/tmp/.ICE-unix/2753
 # automatic
 *F = $(notdir $*)
 # environment
@@ -137,7 +141,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+PATH = /home/kilian/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
 # default
 MAKEFILES := 
 # automatic
@@ -147,13 +151,11 @@ HEADER = trajectoireAstre.h
 # makefile (from 'Makefile', line 3)
 MAIN = main.c
 # environment
-INVOCATION_ID = cbe062a0d11d4897bbe93afd221c0463
+INVOCATION_ID = bf63e040e865418ebea93e397695b657
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
 USERNAME = kilian
-# environment
-GNOME_SETUP_DISPLAY = :1
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -177,19 +179,21 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 2506
+SYSTEMD_EXEC_PID = 2776
 # environment
-DISPLAY = :0
+DISPLAY = :1
 # environment
 USER = kilian
 # environment
 GTK_MODULES = gail:atk-bridge
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2366
+MANAGERPID = 2442
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 5102
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4448
 # environment
 PAGER = less
 # environment
@@ -197,7 +201,9 @@ _ = /usr/share/code/code
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:34722
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+JOURNAL_STREAM = 8:38407
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -210,6 +216,8 @@ QT_IM_MODULE = ibus
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-c48c5404-1.68.1-main.sock
+# environment
+IM_CONFIG_PHASE = 1
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -225,7 +233,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = ubuntu
 # variable set hash-table stats:
-# Load=107/1024=10%, Rehash=0, Collisions=19/149=13%
+# Load=111/1024=11%, Rehash=0, Collisions=13/153=8%
 
 # Pattern-specific Variable Values
 
@@ -246,20 +254,20 @@ GDMSESSION = ubuntu
 # Not a target:
 planet.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-26 13:14:18.641737494
+#  Last modified 2022-06-26 14:16:10.282714789
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 trajectoireAstre.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-26 13:05:34.771174135
+#  Last modified 2022-06-26 14:16:10.282714789
 #  File has been updated.
 #  Successfully updated.
 
 vecteur.o: vecteur.c file.c planet.c point.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-26 13:14:19.493792685
+#  Last modified 2022-06-26 14:21:05.048990988
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 18):
@@ -270,20 +278,20 @@ cleanAll:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 27):
+ 
 	rm $(OBJ) main.o $(EXEC) $(LIB)
 
 # Not a target:
 point.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-26 13:05:34.771174135
+#  Last modified 2022-06-26 14:16:10.282714789
 #  File has been updated.
 #  Successfully updated.
 
- 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-24 13:06:23.137366379
+#  Last modified 2022-06-26 14:15:34.505468586
 #  File has been updated.
 #  Successfully updated.
 
@@ -297,13 +305,13 @@ clean:
 # Not a target:
 file.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-26 13:05:34.771174135
+#  Last modified 2022-06-26 14:16:10.282714789
 #  File has been updated.
 #  Successfully updated.
 
 file.o: vecteur.c file.c planet.c point.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-26 13:14:19.517794248
+#  Last modified 2022-06-26 14:21:05.072991825
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 18):
@@ -311,7 +319,7 @@ file.o: vecteur.c file.c planet.c point.c
 
 libAstre.a: vecteur.o file.o planet.o point.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-26 13:14:19.573797893
+#  Last modified 2022-06-26 14:21:05.140994197
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 21):
@@ -333,13 +341,13 @@ all: trajectoireAstre
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-26 13:08:59.137292762
+#  Last modified 2022-06-26 14:16:10.282714789
 #  File has been updated.
 #  Successfully updated.
 
 main.o: main.c trajectoireAstre.h
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-26 13:12:40.697695558
+#  Last modified 2022-06-26 14:21:05.168995174
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 15):
@@ -347,7 +355,7 @@ main.o: main.c trajectoireAstre.h
 
 trajectoireAstre: libAstre.a main.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-26 13:14:19.593799195
+#  Last modified 2022-06-26 14:21:05.19699615
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 12):
@@ -355,7 +363,7 @@ trajectoireAstre: libAstre.a main.o
 
 planet.o: vecteur.c file.c planet.c point.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-26 13:14:19.541795809
+#  Last modified 2022-06-26 14:21:05.104992941
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 18):
@@ -363,7 +371,7 @@ planet.o: vecteur.c file.c planet.c point.c
 
 point.o: vecteur.c file.c planet.c point.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-26 13:14:19.569797632
+#  Last modified 2022-06-26 14:21:05.136994057
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 18):
@@ -372,7 +380,7 @@ point.o: vecteur.c file.c planet.c point.c
 # Not a target:
 vecteur.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-26 13:05:34.771174135
+#  Last modified 2022-06-26 14:16:10.282714789
 #  File has been updated.
 #  Successfully updated.
 
@@ -384,12 +392,12 @@ vecteur.c:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 259 B / avg = 9 B
-# current buf: size = 8162 B / used = 259 B / count = 27 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 241 B / avg = 8 B
+# current buf: size = 8162 B / used = 241 B / count = 27 / avg = 8 B
 
 # strcache performance: lookups = 62 / hit rate = 56%
 # hash-table stats:
 # Load=27/8192=0%, Rehash=0, Collisions=0/62=0%
-# Finished Make data base on Sun Jun 26 13:20:44 2022
+# Finished Make data base on Sun Jun 26 15:26:47 2022
 
  

@@ -10,20 +10,25 @@ Planet *InitPlanet(char *filename){
     fclose(fichier);
 
     for(int i=0; i<NB_ASTRE; i++){
+        printf("test%d\n",i);
         planetList[i].trajectoire[0] = firstPoint(planetList[i]);
+        
         // printf("%s:\n", planetList[i].name);
         // infoPoint(planetList[i].trajectoire[0]);
 
         planetList[i] = MethodEuler(planetList[i]);
-
+        printf("2\n");
         char title[40];
         sprintf(title, "Data/%s-euler.json", planetList[i].name);
         // puts(title);
-
+        printf("3\n");
         // printf("titre: %s\n", title);
 
         FILE *fichier = writeFile(title);
-        SaveData(planetList[1], "euler", fichier);
+        printf("4\n");
+        SaveData(planetList[i], "euler", fichier);
+        
+        printf("%s initialisé\n", planetList[i].name);
     }
 
     return planetList;  

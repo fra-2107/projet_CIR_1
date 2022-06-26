@@ -2,15 +2,20 @@
 
 Point firstPoint(Planet planet){
 
+    printf("first 1\n");
     planet.trajectoire[0].temps = 0;
 
     planet.trajectoire[0].position.x = planet.perihelie;
     planet.trajectoire[0].position.y = 0;
     planet.trajectoire[0].position.z = 0;
+    printf("first 2\n");
 
     planet.trajectoire[0].vitesse.x = 0;
+    printf("first 2.2\n");
     planet.trajectoire[0].vitesse.y = vitessePerihelie(planet);
+    printf("first 2.3\n");
     planet.trajectoire[0].vitesse.z = 0;
+    printf("first finis\n");
 
     // Vector acceleration = calculAcceleration(planet, 0);
 
@@ -26,8 +31,9 @@ Point firstPoint(Planet planet){
 }
 
 double vitessePerihelie(Planet planet){
+    printf("debut calcul vitesse\n");
     double Vperihelie = sqrt((G*MASSE_SOLEIL*(1+planet.excentricite))/(planet.demi_grand_axe*(1-planet.excentricite)));
-
+    printf("vitesse calculé\n");
     return Vperihelie;
 }
 
