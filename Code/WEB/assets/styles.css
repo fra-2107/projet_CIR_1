@@ -32,10 +32,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    /* overflow: hidden; */
+    overflow: hidden;
 	display: flex;
 	background-image: url(/assets/univers.png);
-	background-size: cover;
 	background-repeat: no-repeat;
 	color: white;
 }
@@ -56,11 +55,11 @@ table {
 }
 
 
-header{
+.titre{
 	width: 400px;
 	padding: 50px;
 	font-family: 'Fira Sans', sans-serif;
-	font-size: 100px;
+	font-size: 10vh;
 	font-weight: bold;
 	letter-spacing: 1px;
 }
@@ -81,6 +80,9 @@ h3{
 	position: absolute;
 	bottom: 20px;
 	left: 250px;
+	max-height: 125px;
+	overflow: auto;
+	padding-top:30px;
 }
 
 #b1 {
@@ -89,7 +91,7 @@ h3{
 	border-color: #ff7b00;
 	border-radius: 10px;
 	color: white;
-	padding: 15px 32px;
+	padding: 15px 24px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -97,7 +99,7 @@ h3{
 	box-shadow: 0 9px  #999;
 	transition-duration: 0.4s;
 	position: absolute;
-	top: 60%;
+	top: 50%;
 	left:3%;
 }
 
@@ -116,15 +118,49 @@ h3{
 	transform: translateY(4px);
 }
 
+#b2 {
+	background-color: #ff7b00; 
+	border: solid;
+	border-color: #ff7b00;
+	border-radius: 10px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	box-shadow: 0 9px  #999;
+	transition-duration: 0.4s;
+	position: absolute;
+	top: 50%;
+	left:3%;
+}
+
+#b2:hover {
+	background-color: #b65a05; 
+	color: black;
+	border: solid;
+	border-color: #b65a05;
+}
+
+#b2:active {
+	transition: 0.1s;
+	background-color: #b65a05;
+	color: black;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
 .projet{
 	font-family: 'Fira Sans', sans-serif;
 	font-size: larger;
-	line-height: 45px;
+	line-height: 200%;
 	width: 900px;
-	padding: 50px;
-	position: absolute;
-	right: 150px;
-	top: 150px;
+	max-height: 315px;
+	padding: 5vh;
+	padding-top: 20vh;
+	overflow: auto;
+	padding-bottom: 10px;
 }
 
 .copyright{
@@ -134,4 +170,18 @@ h3{
 	position: absolute;
 	right: 0;
 	bottom: 0;
+}
+
+.off{
+	display: none;
+}
+
+
+.vitesse{
+	font-family: 'Fira Sans', sans-serif;
+	position: absolute;
+	top: 50%;
+	right: 3%;
+	display: flex;
+
 }

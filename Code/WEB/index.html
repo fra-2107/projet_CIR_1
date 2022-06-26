@@ -10,11 +10,10 @@
         <link rel="stylesheet" href="/assets/styles.css">
     </head>
     <body>
-        <header>
-            <div class="titre"><h1>Projet Kepler</h1></div>
-        </header>
 
-        <div class="system">
+        <div class="titre" id="titre"><h1>Projet Kepler</h1></div>
+
+        <div class="system" id="system">
             <div class="planet" id="sun">
                 <h3>Soleil</h3>
                 <a href="https://fr.wikipedia.org/wiki/Soleil" target="_blank"><img src="/assets/soleil.png" alt="soleil" height="75px"></a>
@@ -61,14 +60,21 @@
             </div>
         </div>
 
-        <div class="bouton"><button id="b1">launch</button></div>
+        <div class="bouton" id="btn1"><button id="b1" onclick="initialisation()">launch</button></div>
+        <div class="bouton" id="btn2"><button id="b2" onclick="arret()">stop</button></div>
 
-        <div class="projet">
+        <div class="projet" id="projet">
             <p>Ce projet a pour objectif de recréer informatiquement le système solaire. <br>Les calculs de positions et de vitesse des planètes sont calculé via un programme écrit en C, qui va par la suite exporter toutes ces données dans un fichier au format JSON qui est un format lisible et traitable par le Javascript. Ensuite le but est de récupérer ces données via un script Javascript puis les traiter afin d'afficher les trajectoires ainsi que les planètes se déplaçant en orbite autour du soleil sur une page web qui sera dressée par du HTML/CSS.</p>
         </div>
+
+        <!-- <div class="vitesse" id="vitesse">
+            <label for="vol">Vitesse:</label>
+            <input type="range" id="vit" name="vitesse" min="0" max="50">
+        </div> -->
 
         <div class="copyright">© Kilian/Timoté - 2022</div>
         <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
         <!-- <script src="script.js"></script> -->
+        <script src="test.js"></script>
     </body>
 </html>
