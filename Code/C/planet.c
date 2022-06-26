@@ -20,7 +20,7 @@ Planet *InitPlanet(char *filename){
 
         // planetList[i] = resetZ(planetList[i]);
 
-        planetList[i] = MethodEuler(planetList[i], 10, PAS);
+        planetList[i] = MethodEuler(planetList[i], NB_REPERE , PAS_MERCURE);
 
         char title[40]; 
         sprintf(title, "Data/%s-euler.json", planetList[i].name);
@@ -77,7 +77,7 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
             }
             // printf("champ: %s\n",champ);
 
-            //Permet de passer au champ suivant
+            //Permet de PAS_MERCUREser au champ suivant
             champ = strtok(NULL, separateur);
             num_champ++;
         }

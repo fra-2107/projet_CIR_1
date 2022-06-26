@@ -40,7 +40,7 @@ Planet *recupInfo(char *filename, Planet *planetList){
     fichier = fopen(filename,"r"); 
 
     if(fichier == NULL){
-        printf("Le fichier %s ne s'est pas ouvert\n",filename);
+        printf("Le fichier %s ne s'est PAS_MERCURE ouvert\n",filename);
         exit(-1);
     }
 
@@ -77,7 +77,7 @@ Planet *recupInfo(char *filename, Planet *planetList){
             }
             printf("champ: %s\n",champ);
 
-            //Permet de passer au champ suivant
+            //Permet de PAS_MERCUREser au champ suivant
             champ = strtok(NULL, separateur);
             num_champ++;
         }

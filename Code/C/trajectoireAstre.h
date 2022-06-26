@@ -7,8 +7,8 @@
 #define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define NB_REPERE 10
-#define PAS 8640
+#define NB_REPERE 1000
+#define PAS_MERCURE 8640
 #define MASSE_SOLEIL 1.989100e+30
 
 typedef struct Vector{

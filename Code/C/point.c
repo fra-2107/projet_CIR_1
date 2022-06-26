@@ -51,8 +51,6 @@ Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps){
     for (int i = 1; i < nbPoint; i++){
         // printf("indice: %d\n",i);   
 
-        Point point = planet.trajectoire[i];
-
         // point.acceleration = calculAcceleration(planet, i-1);
         planet.trajectoire[i].acceleration = scalaireVect(- (G * MASSE_SOLEIL) / pow(normeVect(planet.trajectoire[i-1].position),3), planet.trajectoire[i-1].position);
 
