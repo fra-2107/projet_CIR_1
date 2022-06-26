@@ -7,15 +7,16 @@ int main(){
     // affichageInfoPlanets(planetList);    
     printf("planetes initialisée\n");
 
-    // Planet Mercure = planetList[1];
+    // affichageTrajectoirePlanet(planetList[0]);
 
-    // for(int i=0; i<NB_REPERE; i++){
-    //     printf("\n\t\t%s point[%d]:\n",Mercure.name, i);
-    //     infoPoint(Mercure.trajectoire[i]);
-    // }    
+    // planetList[0] = resetZ(planetList[0]);
 
-    // FILE *fichier = writeFile("Data/mercury-euler.json");
-    // SaveData(planetList[1], "euler", fichier);
+    // printf("coord acc en z de mercure:\n");
+    // affichageInfoPoint(planetList[0].trajectoire[0]);
+
+    // affichageVect(planetList[0].trajectoire[0].acceleration);
+
+    // affichageInfoPoint(planetList[0].trajectoire[1]);
 
     return 0;
 }

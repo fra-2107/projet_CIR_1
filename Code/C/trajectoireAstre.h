@@ -55,12 +55,15 @@ Planet *InitPlanet(char *filename);
 Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList);
 void affichageInfoPlanets(Planet *planetList);
 void InfoPlanet(Planet planet);
+void affichageTrajectoirePlanet(Planet planet);
+Planet resetZ(Planet planet);
 
 
 /* FILES */
 FILE *readFile(char *filename);
 FILE *writeFile(char *filename);
 void SaveData(Planet planet, char *methode, FILE* fichier);
+
 
 /* POINTS */
 Point firstPoint(Planet planet);

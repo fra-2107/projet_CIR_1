@@ -10,9 +10,17 @@ Planet *InitPlanet(char *filename){
     fclose(fichier);
 
     for(int i=0; i<NB_ASTRE; i++){
+
+        // planetList[i] = resetZ(planetList[i]);
+
         planetList[i].trajectoire[0] = firstPoint(planetList[i]);
 
-        planetList[i] = MethodEuler(planetList[i], 10, 8640);
+        // affichageVect(planetList[0].trajectoire[0].vitesse);
+
+
+        // planetList[i] = resetZ(planetList[i]);
+
+        planetList[i] = MethodEuler(planetList[i], 10, PAS);
 
         char title[40]; 
         sprintf(title, "Data/%s-euler.json", planetList[i].name);
@@ -78,6 +86,16 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
     }
     return planetList;
 }
+
+
+void affichageTrajectoirePlanet(Planet planet){
+
+    printf("%s\n", planet.name);
+    for(int i=0; i<NB_REPERE; i++){
+        printf("[%d]:\nposition: [%e, %e, %e]\nvitesse: [%e, %e, %e]\n\n", i, planet.trajectoire[i].position.x, planet.trajectoire[i].position.y, planet.trajectoire[i].position.z, planet.trajectoire[i].vitesse.x, planet.trajectoire[i].vitesse.y, planet.trajectoire[i].vitesse.z);
+    }
+}
+
 
 void InfoPlanet(Planet planet){
     printf("NAME\t\t     MASSE\t\t   PERIHELIE\t\t1/2 GRAND AXE\t\tEXCENTRICITE\n");
