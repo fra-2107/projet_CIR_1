@@ -11,10 +11,14 @@ Planet *InitPlanet(char *filename){
 
     for(int i=0; i<NB_ASTRE; i++){
         planetList[i].trajectoire[0] = firstPoint(planetList[i]);
-        // printf("%s:\n", planetList[i].name);
-        // infoPoint(planetList[i].trajectoire[0]);
 
-        planetList[i] = MethodEuler(planetList[i]);
+        planetList[i] = MethodEuler(planetList[i], 10, 8640);
+
+        char title[40]; 
+        sprintf(title, "Data/%s-euler.json", planetList[i].name);
+
+        FILE *fichier = writeFile(title);
+        SaveData(planetList[i], "euler", fichier);
     }
 
     return planetList;  
@@ -57,6 +61,9 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
                     case 5:
                         planet.excentricite = atof(champ);
                         break;
+                    case 6:
+                        planet.periodicite = atof(champ);
+                        break;
                     default:
                         break;
             }
@@ -80,8 +87,8 @@ void InfoPlanet(Planet planet){
 
 void affichageInfoPlanets(Planet *planetList){
     printf("\n\t\t\t\tInformation sur les astres\n\n");
-    printf("NAME\t\t     MASSE\t\t   PERIHELIE\t\t1/2 GRAND AXE\t\tEXCENTRICITE\n");
+    printf("NAME\t\t     MASSE\t\t   PERIHELIE\t\t1/2 GRAND AXE\t\tEXCENTRICITE\t       PERIODICITE\n");
     for(int i=0; i<NB_ASTRE; i++){
-        printf("%s\t\t%e kg\t\t%e m\t\t%e m\t\t%e\n",planetList[i].name, planetList[i].masse, planetList[i].perihelie, planetList[i].demi_grand_axe, planetList[i].excentricite);
+        printf("%s\t\t%e kg\t\t%e m\t\t%e m\t\t%e\t\t%.2f j\n",planetList[i].name, planetList[i].masse, planetList[i].perihelie, planetList[i].demi_grand_axe, planetList[i].excentricite, planetList[i].periodicite);
     }
 }

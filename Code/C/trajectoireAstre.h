@@ -4,11 +4,11 @@
 #include <string.h>
 
 #define NB_CHAR_MAX 10
-#define NB_ASTRE 9
+#define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define NB_REPERE 100
-#define PAS 1
+#define NB_REPERE 10
+#define PAS 8640
 #define MASSE_SOLEIL 1.989100e+30
 
 typedef struct Vector{
@@ -35,6 +35,7 @@ typedef struct Planet{
     double perihelie;   //distance min séparant un astre du Soleil
     double excentricite;
     double demi_grand_axe;
+    double periodicite;
 } Planet;
 
 
@@ -68,4 +69,4 @@ void affichageInfoPoint(Point point);
 void infoPoint(Point point, FILE *fichier);
 Planet Euler(Planet planet);
 Vector calculAcceleration(Planet planet, int indice);
-Planet MethodEuler(Planet planet);
+Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps);
