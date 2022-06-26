@@ -8,7 +8,7 @@ FILE *readFile(char *filename){
     fichier = fopen(filename,"r"); 
 
     if(fichier == NULL){
-        printf("Le fichier %s ne s'est pas ouvert\n",filename);
+        printf("Le fichier %s ne s'est PAS_MERCURE ouvert\n",filename);
         exit(-1);
     }
 
@@ -22,7 +22,7 @@ FILE *writeFile(char *filename){
     fichier = fopen(filename,"w+");
 
      if(fichier == NULL){
-        printf("Le fichier %s ne s'est pas ouvert\n",filename);
+        printf("Le fichier %s ne s'est PAS_MERCURE ouvert\n",filename);
         exit(-1);
     }
 
