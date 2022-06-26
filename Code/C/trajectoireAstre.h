@@ -7,7 +7,7 @@
 #define NB_ASTRE 9
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define NB_REPERE 500
+#define NB_REPERE 100
 #define PAS 1
 #define MASSE_SOLEIL 1.989100e+30
 
@@ -57,14 +57,15 @@ void InfoPlanet(Planet planet);
 
 
 /* FILES */
-FILE * readFile(char *filename);
-FILE * writeFile(char *filename);
-
+FILE *readFile(char *filename);
+FILE *writeFile(char *filename);
+void SaveData(Planet planet, char *methode, FILE* fichier);
 
 /* POINTS */
 Point firstPoint(Planet planet);
 double vitessePerihelie(Planet planet);
-void infoPoint(Point point);
+void affichageInfoPoint(Point point);
+void infoPoint(Point point, FILE *fichier);
 Planet Euler(Planet planet);
 Vector calculAcceleration(Planet planet, int indice);
 Planet MethodEuler(Planet planet);

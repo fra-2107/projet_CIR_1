@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jun 24 15:37:16 2022
+# Make data base, printed on Sun Jun 26 13:03:12 2022
 
 # Variables
 
@@ -21,7 +23,7 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-453859d8-7e3f-4a74-9e13-5f08afb85c22.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-4495abd0-2b6e-4a7e-957b-bb5c90b07843.sock
 # environment
 VSCODE_CWD = /home/kilian
 # default
@@ -55,7 +57,7 @@ VSCODE_CODE_CACHE_PATH = /home/kilian/.config/Code/CachedData/30d9c6cd9483b2cc58
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.M6ELO1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.MZMHO1
 # default
 .LOADED := 
 # default
@@ -91,13 +93,13 @@ ZSH = /home/kilian/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 234281
+VSCODE_PID = 5102
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/pavillon:@/tmp/.ICE-unix/2346,unix/pavillon:/tmp/.ICE-unix/2346
+SESSION_MANAGER = local/pavillon:@/tmp/.ICE-unix/2466,unix/pavillon:/tmp/.ICE-unix/2466
 # automatic
 *F = $(notdir $*)
 # environment
@@ -133,7 +135,7 @@ MAKEFILES :=
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = 2014ea7c4dc84e11babea345211f1e71
+INVOCATION_ID = cbe062a0d11d4897bbe93afd221c0463
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -163,7 +165,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 2363
+SYSTEMD_EXEC_PID = 2506
 # environment
 DISPLAY = :0
 # environment
@@ -173,9 +175,9 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2223
+MANAGERPID = 2366
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 234281
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5102
 # environment
 PAGER = less
 # environment
@@ -183,7 +185,7 @@ _ = /usr/share/code/code
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:39248
+JOURNAL_STREAM = 8:34722
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -275,8 +277,6 @@ GNUmakefile:
 # strcache performance: lookups = 19 / hit rate = 15%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/19=0%
-# Finished Make data base on Fri Jun 24 15:37:16 2022
+# Finished Make data base on Sun Jun 26 13:03:12 2022
 
  
-make: *** No rule to make target 'all'.  Stop.
-

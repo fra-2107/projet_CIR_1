@@ -87,3 +87,7 @@ Planet *recupInfo(char *filename, Planet *planetList){
     }
     return planetList;
 }
+
+
+
+Penser à mettre les période propre a chaque planete
