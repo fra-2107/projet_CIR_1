@@ -5,8 +5,8 @@ let system = document.getElementById('system');
 let projet = document.getElementById('projet');
 let btn1 = document.getElementById('btn1');
 let btn2 = document.getElementById('btn2');
-// let v = document.getElementById("vitesse");
-// var vit = document.getElementById("vit").value;
+let v = document.getElementById("vitesse");
+var vit = document.getElementById("vit").value;
 
 
 //fonction de récuperation du fichir JSON
@@ -40,13 +40,14 @@ function echelle(planete){
 
 function setup(){
     btn2.className='off';
-    // v.className='off';
+    v.className='off';
+    vit="1";
 }
 
 //fonction qui initialise l'espace de travail dans la fenetre
 async function initialisation(){
     btn2.className='bouton';
-    // v.className='vitesse';
+    v.className='vitesse';
     header.className='off';
     system.className='off';
     projet.className='off';
@@ -98,7 +99,7 @@ function draw(){
         //initialisation du fond 
         background(0);
 
-        // console.log(vit)
+        console.log(vit)
  
         //affichage des planètes 
         planete(p1, i, '#0000FF');
@@ -115,6 +116,8 @@ function draw(){
 
 
 function arret(){
+    i=0;
+    start=0;
     noCanvas();
     sun.remove();
     header.className='titre';
@@ -122,5 +125,5 @@ function arret(){
     projet.className='projet';
     btn1.className="bouton";
     btn2.className='off';    
-    // v.className='off';
+    v.className='off';
 }
