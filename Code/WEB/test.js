@@ -59,10 +59,6 @@ async function initialisation(){
     start = true;
 
     // affichage du soleil
-    // stroke(255, 204, 0)
-    // strokeWeight(10)
-    // point(windowWidth/2-25, windowHeight/2-25)
-    // strokeWeight(1);
     sun = createImg(
         '/assets/soleil.png',
         'soleil'
@@ -101,7 +97,9 @@ function draw(){
     {
         //initialisation du fond 
         background(0);
+
         // console.log(vit)
+ 
         //affichage des planètes 
         planete(p1, i, '#0000FF');
         planete(p2, i, '#00FF00');
