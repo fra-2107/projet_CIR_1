@@ -1,0 +1,395 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sun Jun 26 13:20:44 2022
+
+# Variables
+
+# makefile (from 'Makefile', line 5)
+OBJ = $(SRC:.c=.o) 
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# makefile (from 'Makefile', line 4)
+SRC = vecteur.c file.c planet.c point.c
+# environment
+SSH_AGENT_LAUNCHER = gnome-keyring
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-a17d3809-526e-48c8-a76d-bea884040bef.sock
+# environment
+VSCODE_CWD = /home/kilian
+# default
+MAKE_COMMAND := make
+# environment
+QT_ACCESSIBILITY = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/kilian/Documents/GitHub/PROJET/Code/C
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+XDG_DATA_DIRS = /home/kilian/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+OLDPWD = /home/kilian
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/kilian/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.MZMHO1
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/kilian/Documents/GitHub/PROJET/Code/C
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# default
+.SHELLFLAGS := -c
+# environment
+WAYLAND_DISPLAY = wayland-0
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+ZSH = /home/kilian/.oh-my-zsh
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 5102
+# environment
+XDG_SESSION_TYPE = wayland
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+SESSION_MANAGER = local/pavillon:@/tmp/.ICE-unix/2466,unix/pavillon:/tmp/.ICE-unix/2466
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# makefile (from 'Makefile', line 6)
+LIB = libAstre.a
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# makefile (from 'Makefile', line 2)
+EXEC = trajectoireAstre
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"575d78304484aa5fa0cbb32d34fd883d.fr","_translationsConfigFile":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/tcf.json","_cacheRoot":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr","_resolvedLanguagePackCoreLocation":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/corrupted.info","_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=ibus
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+SHLVL = 0
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# makefile (from 'Makefile', line 7)
+HEADER = trajectoireAstre.h
+# makefile (from 'Makefile', line 3)
+MAIN = main.c
+# environment
+INVOCATION_ID = cbe062a0d11d4897bbe93afd221c0463
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+USERNAME = kilian
+# environment
+GNOME_SETUP_DISPLAY = :1
+# automatic
+?F = $(notdir $?)
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+LS_COLORS = 
+# automatic
++F = $(notdir $+)
+# environment
+LESS = -R
+# environment
+DESKTOP_SESSION = ubuntu
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = kilian
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# makefile
+.DEFAULT_GOAL := all
+# environment
+SYSTEMD_EXEC_PID = 2506
+# environment
+DISPLAY = :0
+# environment
+USER = kilian
+# environment
+GTK_MODULES = gail:atk-bridge
+# default
+MAKE_VERSION := 4.3
+# environment
+MANAGERPID = 2366
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5102
+# environment
+PAGER = less
+# environment
+_ = /usr/share/code/code
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+JOURNAL_STREAM = 8:34722
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/kilian
+# environment
+QT_IM_MODULE = ibus
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c48c5404-1.68.1-main.sock
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 1)
+CC = gcc -Wall
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+GDMSESSION = ubuntu
+# variable set hash-table stats:
+# Load=107/1024=10%, Rehash=0, Collisions=19/149=13%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 66309, inode 529132): 20 files, no impossibilities.
+
+# 20 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+planet.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-26 13:14:18.641737494
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+trajectoireAstre.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-26 13:05:34.771174135
+#  File has been updated.
+#  Successfully updated.
+
+vecteur.o: vecteur.c file.c planet.c point.c
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-26 13:14:19.493792685
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 18):
+	$(CC) -c $(SRC) 
+
+cleanAll:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 27):
+	rm $(OBJ) main.o $(EXEC) $(LIB)
+
+# Not a target:
+point.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-26 13:05:34.771174135
+#  File has been updated.
+#  Successfully updated.
+
+ 
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-24 13:06:23.137366379
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
+	rm $(OBJ)
+
+# Not a target:
+file.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-26 13:05:34.771174135
+#  File has been updated.
+#  Successfully updated.
+
+file.o: vecteur.c file.c planet.c point.c
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-26 13:14:19.517794248
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 18):
+	$(CC) -c $(SRC) 
+
+libAstre.a: vecteur.o file.o planet.o point.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-26 13:14:19.573797893
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 21):
+	ar rv $(LIB) $(OBJ)
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: trajectoireAstre
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-26 13:08:59.137292762
+#  File has been updated.
+#  Successfully updated.
+
+main.o: main.c trajectoireAstre.h
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-26 13:12:40.697695558
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 15):
+	$(CC) -c $(MAIN) 
+
+trajectoireAstre: libAstre.a main.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-26 13:14:19.593799195
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 12):
+	$(CC) -o $@ $(MAIN:.c=.o) $(LIB) -lm
+
+planet.o: vecteur.c file.c planet.c point.c
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-26 13:14:19.541795809
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 18):
+	$(CC) -c $(SRC) 
+
+point.o: vecteur.c file.c planet.c point.c
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-26 13:14:19.569797632
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 18):
+	$(CC) -c $(SRC) 
+
+# Not a target:
+vecteur.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-26 13:05:34.771174135
+#  File has been updated.
+#  Successfully updated.
+
+# files hash-table stats:
+# Load=19/1024=2%, Rehash=0, Collisions=0/46=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 27 / storage = 259 B / avg = 9 B
+# current buf: size = 8162 B / used = 259 B / count = 27 / avg = 9 B
+
+# strcache performance: lookups = 62 / hit rate = 56%
+# hash-table stats:
+# Load=27/8192=0%, Rehash=0, Collisions=0/62=0%
+# Finished Make data base on Sun Jun 26 13:20:44 2022
+
+ 

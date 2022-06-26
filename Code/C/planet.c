@@ -15,6 +15,15 @@ Planet *InitPlanet(char *filename){
         // infoPoint(planetList[i].trajectoire[0]);
 
         planetList[i] = MethodEuler(planetList[i]);
+
+        char title[40];
+        sprintf(title, "Data/%s-euler.json", planetList[i].name);
+        // puts(title);
+
+        // printf("titre: %s\n", title);
+
+        FILE *fichier = writeFile(title);
+        SaveData(planetList[1], "euler", fichier);
     }
 
     return planetList;  
