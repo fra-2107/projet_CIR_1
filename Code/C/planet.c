@@ -11,8 +11,10 @@ Planet *InitPlanet(char *filename){
 
     for(int i=0; i<NB_ASTRE; i++){
         planetList[i].trajectoire[0] = firstPoint(planetList[i]);
-        printf("%s:\n", planetList[i].name);
-        infoPoint(planetList[i].trajectoire[0]);
+        // printf("%s:\n", planetList[i].name);
+        // infoPoint(planetList[i].trajectoire[0]);
+
+        planetList[i] = MethodEuler(planetList[i]);
     }
 
     return planetList;  
@@ -68,6 +70,11 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
         planetID++;
     }
     return planetList;
+}
+
+void InfoPlanet(Planet planet){
+    printf("NAME\t\t     MASSE\t\t   PERIHELIE\t\t1/2 GRAND AXE\t\tEXCENTRICITE\n");
+    printf("%s\t\t%e kg\t\t%e m\t\t%e m\t\t%e\n",planet.name, planet.masse, planet.perihelie, planet.demi_grand_axe, planet.excentricite);
 }
 
 

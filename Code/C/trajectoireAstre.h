@@ -7,7 +7,8 @@
 #define NB_ASTRE 9
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define PAS 500
+#define NB_REPERE 100
+#define PAS 1
 #define MASSE_SOLEIL 1.989100e+30
 
 typedef struct Vector{
@@ -19,6 +20,7 @@ typedef struct Vector{
 typedef struct Point{
     Vector position;
     Vector vitesse;
+    Vector acceleration;
     int temps;
 } Point;
 
@@ -29,7 +31,7 @@ typedef struct Trajectoire{
 typedef struct Planet{
     char name[NB_CHAR_MAX];
     double masse;
-    Point trajectoire[PAS];
+    Point trajectoire[NB_REPERE];
     double perihelie;   //distance min séparant un astre du Soleil
     double excentricite;
     double demi_grand_axe;
@@ -51,14 +53,19 @@ void vectorTest();
 Planet *InitPlanet(char *filename);
 Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList);
 void affichageInfoPlanets(Planet *planetList);
+void InfoPlanet(Planet planet);
 
 
 /* FILES */
-FILE * readFile(char *filename);
-FILE * writeFile(char *filename);
-
+FILE *readFile(char *filename);
+FILE *writeFile(char *filename);
+void SaveData(Planet planet, char *methode, FILE* fichier);
 
 /* POINTS */
 Point firstPoint(Planet planet);
 double vitessePerihelie(Planet planet);
-void infoPoint(Point point);
+void affichageInfoPoint(Point point);
+void infoPoint(Point point, FILE *fichier);
+Planet Euler(Planet planet);
+Vector calculAcceleration(Planet planet, int indice);
+Planet MethodEuler(Planet planet);
