@@ -26,3 +26,18 @@ open json ? :
             "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
         }
     }
+
+
+async function demande(planete, methode, adresse){
+
+    adresse=String(adresse)
+    console.log(typeof(adresse))
+    //ouverture du JSON
+    const reponse= await fetch(adresse);
+    const fichier= await reponse.json();
+
+    planete = fichier[methode];
+
+    p=echelle(planete)
+    
+    return p

@@ -1,5 +1,5 @@
 //déclarations des variables globales (utilisables dans plusieurs fonctions)
-let mercury, mercure, start, earth, sun, p1, p2, i;
+let mercury, mercure, start, p1, p2, p3, p4, p5, p6, p7, p8, i;
 let header = document.getElementById('titre');
 let system = document.getElementById('system');
 let projet = document.getElementById('projet');
@@ -11,10 +11,8 @@ let x ;
 
 //fonction de récuperation du fichir JSON
 async function demande(){
-    //ouverture du JSON
-    // const reponse = await fetch('../WEB/mercury.json');
-    // const fichier = await reponse.json();
 
+    //ouverture du JSON
     const reponsemercure = await fetch('../Data/Mercure-euler.json');
     const fichiermercure = await reponsemercure.json();
 
@@ -40,7 +38,6 @@ async function demande(){
     const fichierneptune = await reponseneptune.json();
 
     //récupération de la liste voulue
-    // mercury = fichier['mercury-euler'];
     mercure = fichiermercure['Mercure-euler'];
     venus = fichiervenus['Venus-euler'];
     terre = fichierterre['Terre-euler'];
@@ -51,7 +48,6 @@ async function demande(){
     neptune = fichierneptune['Neptune-euler'];
 
     //mise a l'échelle des coordonnées
-    // p1=echelle(mercury)
     p2=echelle(mercure)
     p3=echelle(venus)
     p4=echelle(terre)
@@ -99,22 +95,8 @@ async function initialisation(){
     await demande();
     start = true;
 
-    // affichage du soleil
-    // sun = createImg(
-    //     '../WEB/assets/soleil.png',
-    //     'soleil'
-    // );
-    // sun.position(windowWidth/2-25, windowHeight/2-25);
-    // sun.size(25,25);
-
-    // stroke('#E63D13');
-    // strokeWeight(10);
-    // point(0,0,0);
-    // strokeWeight(1);
-
-    document.getElementById("vit").value=1;
+    document.getElementById("vit").value=0;
 }   
-
 
 //fonction qui affiche la trajectoire de la planète ainsi que la planète en orbite autour du soleil
 function planete(data, i, couleur){
@@ -123,9 +105,9 @@ function planete(data, i, couleur){
     stroke(couleur);
     noFill();
     beginShape();
-    for(let k=0; k<data.length-1; k+=250)
+    for(let k=0; k<data.length-1; k+=50000)
     {
-        curveVertex(data[k][0], data[k][1]);
+        curveVertex(data[k][0], data[k][1], data[k][2]);
     }
     endShape();
 
@@ -136,31 +118,25 @@ function planete(data, i, couleur){
     strokeWeight(1);
 }
 
-
-
 //fonction de la librairie P5.js qui boucle a l'infini et qui gère l'affichage des planetes en orbite 
 function draw(){
     
     //condition pour eviter que la boucle ne commence avant que le fichier JSON soit ouvert correctement
     if(start)
     {
-
-        
-        
         orbitControl();
         x = document.getElementById("vit").value;
         x=parseInt(x, 10);
 
         //initialisation du fond 
+        ambientLight(255);
         background(0);
         stroke('red');
         strokeWeight(20);
         point(0,0,0);
         strokeWeight(1);
 
- 
         //affichage des planètes 
-        // planete(p1, i, '#0000FF');
         planete(p2, i, '#00FF00');
         planete(p3, i, '#B2A6A4');
         planete(p4, i, '#0000FF');
@@ -172,7 +148,7 @@ function draw(){
 
         //incrementation du i (pour l'affichage des palnetes en fonction du temps)
         i+=x;
-        if(i>=36500)
+        if(i>=1000000)
         {
             console.log("i="+i)
             console.log(typeof(i))
@@ -181,12 +157,10 @@ function draw(){
     }
 }
 
-
 function arret(){
     i=0;
     start=0;
     noCanvas();
-    // sun.remove();
     header.className='titre';
     system.className='system';
     projet.className='projet';
@@ -198,4 +172,11 @@ function arret(){
 function arret_orbite(){
     x=0;
     document.getElementById("vit").value = "0";
+    vit.className='off'
+}
+
+function play_orbite(){
+    x=1;
+    document.getElementById("vit").value = "1";
+    vit.className='vit'
 }

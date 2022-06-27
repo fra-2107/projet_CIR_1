@@ -7,7 +7,7 @@
 #define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define NB_REPERE 100000
+#define NB_REPERE 1000000
 #define PAS_MERCURE 8640
 #define MASSE_SOLEIL 1.989100e+30
 
