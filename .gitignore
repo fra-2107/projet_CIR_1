@@ -1,5 +1,4 @@
 *.o
 *.a
 trajectoireAstre
-Jupiter-euler.json  Mars-euler.json  Mercure-euler.json  Neptune-euler.json  Saturne-euler.json  Terre-euler.json  Uranus-euler.json  Venus-euler.json
-
+Code/Data/*.json
