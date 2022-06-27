@@ -82,7 +82,7 @@ h3{
 	bottom: 20px;
 	left: 250px;
 	max-height: 125px;
-	overflow: auto;
+	overflow-x: auto;
 	padding-top:30px;
 }
 
@@ -152,6 +152,39 @@ h3{
 	transform: translateY(4px);
 }
 
+#b3 {
+	background-color: #ff7b00; 
+	border: solid;
+	border-color: #ff7b00;
+	border-radius: 10px;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	box-shadow: 0 9px  #999;
+	transition-duration: 0.4s;
+	position: absolute;
+	top: 60%;
+	right:3%;
+}
+
+#b3:hover {
+	background-color: #b65a05; 
+	color: black;
+	border: solid;
+	border-color: #b65a05;
+}
+
+#b3:active {
+	transition: 0.1s;
+	background-color: #b65a05;
+	color: black;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
 .projet{
 	font-family: 'Fira Sans', sans-serif;
 	font-size: larger;
@@ -181,8 +214,9 @@ h3{
 .vitesse{
 	font-family: 'Fira Sans', sans-serif;
 	position: absolute;
-	top: 50%;
+	display: flex;
+	top: 45%;
 	right: 3%;
 	display: flex;
-
+	padding-bottom: 50px;
 }

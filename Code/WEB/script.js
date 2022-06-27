@@ -1,10 +1,13 @@
 //déclarations des variables globales (utilisables dans plusieurs fonctions)
-let mercury, mercuryRK, start, earth, sun, p1, p2, i = 0;
+let mercury, mercuryRK, start, earth, sun, p1, p2, i;
 let header = document.getElementById('titre');
 let system = document.getElementById('system');
 let projet = document.getElementById('projet');
 let btn1 = document.getElementById('btn1');
 let btn2 = document.getElementById('btn2');
+let v = document.getElementById("vitesse");
+let x ;
+
 
 //fonction de récuperation du fichir JSON
 async function demande(){
@@ -37,11 +40,15 @@ function echelle(planete){
 
 function setup(){
     btn2.className='off';
+    v.className='off';
+    document.getElementById("vit").value = 20;
+    i=0;
 }
 
 //fonction qui initialise l'espace de travail dans la fenetre
-async function init(){
+async function initialisation(){
     btn2.className='bouton';
+    v.className='vitesse';
     header.className='off';
     system.className='off';
     projet.className='off';
@@ -54,16 +61,14 @@ async function init(){
     start = true;
 
     // affichage du soleil
-    // stroke(255, 204, 0)
-    // strokeWeight(10)
-    // point(windowWidth/2-25, windowHeight/2-25)
-    // strokeWeight(1);
     sun = createImg(
         '/assets/soleil.png',
         'soleil'
     );
     sun.position(windowWidth/2-25, windowHeight/2-25);
     sun.size(25,25);
+
+    document.getElementById("vit").value=1;
 }   
 
 
@@ -88,21 +93,26 @@ function planete(data, i, couleur){
 }
 
 
+
 //fonction de la librairie P5.js qui boucle a l'infini et qui gère l'affichage des planetes en orbite 
 function draw(){
     
     //condition pour eviter que la boucle ne commence avant que le fichier JSON soit ouvert correctement
     if(start)
     {
+        x = document.getElementById("vit").value;
+        x=parseInt(x, 10);
+
         //initialisation du fond 
         background(0);
 
+ 
         //affichage des planètes 
         planete(p1, i, '#0000FF');
         planete(p2, i, '#00FF00');
 
         //incrementation du i (pour l'affichage des palnetes en fonction du temps)
-        i+=50;
+        i+=x;
         if(i>=36500)
         {
             i=0
@@ -112,11 +122,19 @@ function draw(){
 
 
 function arret(){
+    i=0;
+    start=0;
     noCanvas();
     sun.remove();
     header.className='titre';
     system.className='system';
     projet.className='projet';
     btn1.className="bouton";
-    btn2.className='off';
+    btn2.className='off';    
+    v.className='off';
+}
+
+function arret_orbite(){
+    x=0;
+    document.getElementById("vit").value = "0";
 }
