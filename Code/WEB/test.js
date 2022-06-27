@@ -1,5 +1,5 @@
 //déclarations des variables globales (utilisables dans plusieurs fonctions)
-let mercury, mercuryRK, start, earth, sun, p1, p2, i;
+let mercury, mercurekik, start, earth, sun, p1, p2, i;
 let header = document.getElementById('titre');
 let system = document.getElementById('system');
 let projet = document.getElementById('projet');
@@ -15,13 +15,16 @@ async function demande(){
     const reponse = await fetch('/mercury.json');
     const fichier = await reponse.json();
 
+    const reponse1 = await fetch('/Mercure-euler.json');
+    const fichier1 = await reponse1.json();
+
     //récupération de la liste voulue
     mercury = fichier['mercury-euler'];
-    mercuryRK = fichier['mercury-RK'];
+    mercurekik = fichier1['Mercure-euler'];
 
     //mise a l'échelle des coordonnées
     p1=echelle(mercury)
-    p2=echelle(mercuryRK)
+    p2=echelle(mercurekik)
 }
 
 
@@ -31,8 +34,8 @@ function echelle(planete){
     //la boucle rempli un nouveau tableau(result) avec les coordonnée mreduite a l'echelle de l'écran(par une regle de 3)
     for(element in planete){
         result[element] = [];
-        result[element][0] = ((planete[element][0][0] * 800) / 8e+11) + (windowWidth/2)-15;
-        result[element][1] = -((planete[element][0][1] * 800) / 8e+11) + (windowHeight/2)-15;
+        result[element][0] = ((planete[element][0][0] * 800) / 8e+11) ;
+        result[element][1] = -((planete[element][0][1] * 800) / 8e+11) ;
     };
 
     return result
@@ -55,7 +58,8 @@ async function initialisation(){
     btn1.className='off';
 
     //creation du canvas
-    createCanvas(windowWidth, windowHeight);
+    // createCanvas(windowWidth, windowHeight, WEBGL); //3D
+    createCanvas(windowWidth, windowHeight); //2D
     start = false;
     await demande();
     start = true;
@@ -65,7 +69,7 @@ async function initialisation(){
         '/assets/soleil.png',
         'soleil'
     );
-    sun.position(windowWidth/2-25, windowHeight/2-25);
+    sun.position(windowWidth/2, windowHeight/2);
     sun.size(25,25);
 
     document.getElementById("vit").value=1;
@@ -100,6 +104,7 @@ function draw(){
     //condition pour eviter que la boucle ne commence avant que le fichier JSON soit ouvert correctement
     if(start)
     {
+        // orbitControl();
         x = document.getElementById("vit").value;
         x=parseInt(x, 10);
 
@@ -113,7 +118,7 @@ function draw(){
 
         //incrementation du i (pour l'affichage des palnetes en fonction du temps)
         i+=x;
-        if(i>=36500)
+        if(i>=1000)
         {
             i=0
         }
