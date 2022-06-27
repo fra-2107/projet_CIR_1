@@ -1,5 +1,5 @@
 //déclarations des variables globales (utilisables dans plusieurs fonctions)
-let mercury, mercuryRK, start, earth, sun, p1, p2, i;
+let mercury, mercurekik, start, earth, sun, p1, p2, i;
 let header = document.getElementById('titre');
 let system = document.getElementById('system');
 let projet = document.getElementById('projet');
@@ -15,13 +15,16 @@ async function demande(){
     const reponse = await fetch('/mercury.json');
     const fichier = await reponse.json();
 
+    const reponse1 = await fetch('/Mercure-euler.json');
+    const fichier1 = await reponse1.json();
+
     //récupération de la liste voulue
     mercury = fichier['mercury-euler'];
-    mercuryRK = fichier['mercury-RK'];
+    mercurekik = fichier1['Mercure-euler'];
 
     //mise a l'échelle des coordonnées
     p1=echelle(mercury)
-    p2=echelle(mercuryRK)
+    p2=echelle(mercurekik)
 }
 
 
@@ -113,7 +116,7 @@ function draw(){
 
         //incrementation du i (pour l'affichage des palnetes en fonction du temps)
         i+=x;
-        if(i>=36500)
+        if(i>=1000)
         {
             i=0
         }
