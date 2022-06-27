@@ -7,11 +7,7 @@
 #define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-<<<<<<< HEAD
-#define NB_REPERE 1000000
-=======
 #define NB_REPERE 36500
->>>>>>> TEST
 #define PAS_MERCURE 8640
 #define MASSE_SOLEIL 1.989100e+30
 

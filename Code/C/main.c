@@ -3,7 +3,7 @@
 int main(){
 
     // vectorTest();
-    Planet *planetList = InitPlanet("lib/infoAstre.json");
+    Planet *planetList = InitPlanet("Data/infoAstre.json");
     printf("planetes initialisée\n");
     // affichageInfoPlanets(planetList);  
 
