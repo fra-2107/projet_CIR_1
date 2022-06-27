@@ -19,7 +19,7 @@ Planet *InitPlanet(char *filename){
         planetList[i] = MethodEuler(planetList[i], NB_REPERE , PAS_MERCURE);
 
         char title[40]; 
-        sprintf(title, "../Data/%s-euler.json", planetList[i].name);
+        sprintf(title, "../Data/%s.json", planetList[i].name);
 
         FILE *fichier = writeFile(title);
         fprintf(fichier, "{");
