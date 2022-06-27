@@ -3,43 +3,34 @@
 
 Planet *InitPlanet(char *filename){
 
+    printf("Début initilisation\n");
+
     Planet *planetList = malloc(NB_ASTRE * sizeof(Planet));
+    printf("1\n");
 
     FILE *fichier = readFile(filename);
-    planetList = recupInfo(fichier, filename,planetList);
+    printf("2\n");
+    planetList = recupInfo(fichier, filename, planetList);
+    printf("Donnée global récupérés\n");
     fclose(fichier);
 
     for(int i=0; i<NB_ASTRE; i++){
 
-<<<<<<< HEAD
-        planetList[i] = MethodEuler(planetList[i]);
-
-        char title[40];
-        sprintf(title, "Data/%s-euler.json", planetList[i].name);
-        // puts(title);
-
-        // printf("titre: %s\n", title);
-
-        FILE *fichier = writeFile(title);
-        SaveData(planetList[1], "euler", fichier);
-=======
-        // planetList[i] = resetZ(planetList[i]);
+        printf("%s:\n", planetList[i].name);
 
         planetList[i].trajectoire[0] = firstPoint(planetList[i]);
-
+        printf("first point initialise\n");
         // affichageVect(planetList[0].trajectoire[0].vitesse);
-
-
         // planetList[i] = resetZ(planetList[i]);
 
         planetList[i] = MethodEuler(planetList[i], NB_REPERE , PAS_MERCURE);
-
+        printf("Euler terminé\n");
         char title[40]; 
         sprintf(title, "Data/%s-euler.json", planetList[i].name);
 
         FILE *fichier = writeFile(title);
         SaveData(planetList[i], "euler", fichier);
->>>>>>> TEST
+        printf("%s sauvegardé dans %s\n", planetList[i].name, title);
     }
 
     return planetList;  
@@ -48,6 +39,7 @@ Planet *InitPlanet(char *filename){
 
 Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
 
+    printf("Début recup\n");
     //Pour gérer différents champs dans le fichier on utilise un caractère pour les séparer
     char *separateur = ":";
 
@@ -61,7 +53,7 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
         char *champ = strtok(ligne, separateur);
 
         int num_champ = 1;
-
+        printf("tour %d\n", planetID);
         //On parcours les champs un à un
         while (champ != NULL){
         
@@ -88,7 +80,7 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
                     default:
                         break;
             }
-            // printf("champ: %s\n",champ);
+            printf("champ: %s\n",champ);
 
             //Permet de PAS_MERCUREser au champ suivant
             champ = strtok(NULL, separateur);
@@ -97,6 +89,7 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
         planetList[planetID] = planet;
         planetID++;
     }
+    printf("fin recup\n");
     return planetList;
 }
 
