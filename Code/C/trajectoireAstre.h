@@ -7,7 +7,7 @@
 #define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define NB_REPERE 35600
+#define NB_REPERE 100000
 #define PAS_MERCURE 8640
 #define MASSE_SOLEIL 1.989100e+30
 
@@ -24,18 +24,15 @@ typedef struct Point{
     int temps;
 } Point;
 
-typedef struct Trajectoire{
-    Point *liste;
-} Trajectoire;
-
 typedef struct Planet{
     char name[NB_CHAR_MAX];
     double masse;
-    Point trajectoire[NB_REPERE];
+    Point *trajectoire;
     double perihelie;   //distance min séparant un astre du Soleil
     double excentricite;
     double demi_grand_axe;
     double periodicite;
+    int nb_point;
     int deltaT;
 } Planet;
 
