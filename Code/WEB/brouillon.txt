@@ -15,3 +15,14 @@ function setup(){
     earth.position(1000, 10);
     earth.size(270, 250);
 }
+
+
+open json ? :
+,{
+        method: "PUT",
+        headers : {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST, PUT, GET, OPTIONS",
+            "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+        }
+    }

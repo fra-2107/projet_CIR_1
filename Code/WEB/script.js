@@ -12,10 +12,10 @@ let x ;
 //fonction de récuperation du fichir JSON
 async function demande(){
     //ouverture du JSON
-    const reponse = await fetch('/mercury.json');
+    const reponse = await fetch('../WEB/mercury.json');
     const fichier = await reponse.json();
 
-    const reponse1 = await fetch('/Mercure-euler.json');
+    const reponse1 = await fetch('../C/Data/Mercure-euler.json');
     const fichier1 = await reponse1.json();
 
     //récupération de la liste voulue
@@ -65,7 +65,7 @@ async function initialisation(){
 
     // affichage du soleil
     sun = createImg(
-        '/assets/soleil.png',
+        '../WEB/assets/soleil.png',
         'soleil'
     );
     sun.position(windowWidth/2-25, windowHeight/2-25);
@@ -91,7 +91,7 @@ function planete(data, i, couleur){
     //affichage de la planète en orbite
     stroke(couleur)
     strokeWeight(10)
-    point(data[i][0], data[i][1])
+    point(data[i][0], data[i][1], data[i][2])
     strokeWeight(1);
 }
 
@@ -118,6 +118,8 @@ function draw(){
         i+=x;
         if(i>=1000)
         {
+            console.log("i="+i)
+            console.log(typeof(i))
             i=0
         }
     }

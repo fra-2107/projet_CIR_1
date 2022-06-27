@@ -12,10 +12,10 @@ let x ;
 //fonction de récuperation du fichir JSON
 async function demande(){
     //ouverture du JSON
-    const reponse = await fetch('/mercury.json');
+    const reponse = await fetch('../WEB/mercury.json');
     const fichier = await reponse.json();
 
-    const reponse1 = await fetch('/Mercure-euler.json');
+    const reponse1 = await fetch('../C/Data/Mercure-euler.json');
     const fichier1 = await reponse1.json();
 
     //récupération de la liste voulue
@@ -34,8 +34,8 @@ function echelle(planete){
     //la boucle rempli un nouveau tableau(result) avec les coordonnée mreduite a l'echelle de l'écran(par une regle de 3)
     for(element in planete){
         result[element] = [];
-        result[element][0] = ((planete[element][0][0] * 800) / 8e+11) ;
-        result[element][1] = -((planete[element][0][1] * 800) / 8e+11) ;
+        result[element][0] = ((planete[element][0][0] * 800) / 8e+11) + (windowWidth/2)-15;
+        result[element][1] = -((planete[element][0][1] * 800) / 8e+11) + (windowHeight/2)-15;
     };
 
     return result
@@ -58,18 +58,17 @@ async function initialisation(){
     btn1.className='off';
 
     //creation du canvas
-    // createCanvas(windowWidth, windowHeight, WEBGL); //3D
-    createCanvas(windowWidth, windowHeight); //2D
+    createCanvas(windowWidth, windowHeight);
     start = false;
     await demande();
     start = true;
 
     // affichage du soleil
     sun = createImg(
-        '/assets/soleil.png',
+        '../WEB/assets/soleil.png',
         'soleil'
     );
-    sun.position(windowWidth/2, windowHeight/2);
+    sun.position(windowWidth/2-25, windowHeight/2-25);
     sun.size(25,25);
 
     document.getElementById("vit").value=1;
@@ -104,7 +103,6 @@ function draw(){
     //condition pour eviter que la boucle ne commence avant que le fichier JSON soit ouvert correctement
     if(start)
     {
-        // orbitControl();
         x = document.getElementById("vit").value;
         x=parseInt(x, 10);
 
@@ -118,7 +116,7 @@ function draw(){
 
         //incrementation du i (pour l'affichage des palnetes en fonction du temps)
         i+=x;
-        if(i>=1000)
+        if(i>=36500)
         {
             i=0
         }

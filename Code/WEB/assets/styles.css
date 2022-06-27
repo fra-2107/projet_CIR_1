@@ -34,7 +34,7 @@ body {
 	line-height: 1;
     overflow: hidden;
 	display: flex;
-	background-image: url(/assets/univers.png);
+	background-image: url(../assets/univers.png);
 	background-repeat: no-repeat;
 	color: white;
 }
