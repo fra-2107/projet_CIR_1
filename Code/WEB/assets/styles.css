@@ -75,6 +75,7 @@ h3{
 	display: inline-block;
 	padding: 10px;
 	text-align: center;
+	text-shadow: 5px 5px 10px #ff7b00;
 }
 
 .system{
@@ -195,6 +196,7 @@ h3{
 	padding-top: 20vh;
 	overflow: auto;
 	padding-bottom: 10px;
+	text-shadow: 5px 5px 10px #ff7b00;
 }
 
 .copyright{
