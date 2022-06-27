@@ -17,25 +17,34 @@ Planet *InitPlanet(char *filename){
 
     for(int i=0; i<NB_ASTRE; i++){
 
-        // printf("%s:\n", planetList[i].name);
-        // printf("1\n");
+        char title[40]; 
+        sprintf(title, "../Data/%s.json", planetList[i].name);
+;
         planetList[i].trajectoire[0] = firstPoint(planetList[i]);
-        // printf("first point initialise\n");
-        // affichageVect(planetList[0].trajectoire[0].vitesse);
-        // planetList[i] = resetZ(planetList[i]);
 
         planetList[i] = MethodEuler(planetList[i], NB_REPERE , PAS_MERCURE);
-        // printf("Euler terminé\n");
-        char title[40]; 
-        sprintf(title, "../Data/%s-euler.json", planetList[i].name);
+        planetList[i] = resetZ(planetList[i]);        
 
         FILE *fichier = writeFile(title);
+        fprintf(fichier, "{");
         SaveData(planetList[i], "euler", fichier);
-        // printf("%s sauvegardé dans %s\n", planetList[i].name, title);
+        fprintf(fichier, ",\n");
+        fclose(fichier);
+
+        planetList[i] = MethodeEulerAsymetrique(planetList[i], NB_REPERE , PAS_MERCURE);
+        planetList[i] = resetZ(planetList[i]);   
+        
+        fichier = addToFile(title);
+        SaveData(planetList[i], "eulerAsy", fichier);
+        fprintf(fichier, "}\n");
+        fclose(fichier);
     }
 
     return planetList;  
 }
+
+
+
 
 
 Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){

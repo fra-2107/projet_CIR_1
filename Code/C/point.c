@@ -52,7 +52,7 @@ Vector calculAcceleration(Planet planet, int indice){
 
 
 Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps){
-    int tmp = 1;
+    // int tmp = 1;
 
     // printf("%s nb points: %d\n",planet.name, nbPoint);
     for (int i = 1; i < nbPoint; i++){
@@ -68,15 +68,36 @@ Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps){
         planet.trajectoire[i].vitesse.y = planet.trajectoire[i-1].vitesse.y + planet.trajectoire[i].acceleration.y * deltaTemps;
         // point.vitesse.z = 0;
 
-        planet.trajectoire[i].temps = tmp;
+        planet.trajectoire[i].temps = i;
 
         // planet.trajectoire[i] = point;
         // affichageInfoPoint(planet.trajectoire[i]);
-        tmp++;
+        // tmp++;
     }
     // printf("Trajectoire établit\n\n");
     return planet;
 }
+
+Planet MethodeEulerAsymetrique(Planet planet, int nbPoint, int deltaTemps){
+    int tmp = 1;
+
+    for (int i = 1; i < nbPoint; i++){
+
+        planet.trajectoire[i].position.x = planet.trajectoire[i-1].position.x + planet.trajectoire[i-1].vitesse.x * deltaTemps;
+        planet.trajectoire[i].position.y = planet.trajectoire[i-1].position.y + planet.trajectoire[i-1].vitesse.y * deltaTemps;
+
+        planet.trajectoire[i].acceleration = scalaireVect(- (G * MASSE_SOLEIL) / pow(normeVect(planet.trajectoire[i].position),3), planet.trajectoire[i].position);
+
+        planet.trajectoire[i].vitesse.x = planet.trajectoire[i-1].vitesse.x + planet.trajectoire[i].acceleration.x * deltaTemps;
+        planet.trajectoire[i].vitesse.y = planet.trajectoire[i-1].vitesse.y + planet.trajectoire[i].acceleration.y * deltaTemps;
+
+        planet.trajectoire[i].temps = tmp;
+
+        tmp++;
+    }
+    return planet;
+}
+
 
 Planet resetZ(Planet planet){
 
