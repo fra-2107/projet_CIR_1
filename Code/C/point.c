@@ -1,28 +1,32 @@
 #include "trajectoireAstre.h"
 
 Point firstPoint(Planet planet){
-    printf("Debut first point\n");
+    // printf("Debut first point\n");
     planet.trajectoire[0].temps = 0;
-    printf("1\n");
+    // printf("1\n");
     planet.trajectoire[0].position.x = planet.perihelie;
     planet.trajectoire[0].position.y = 0;
     // planet.trajectoire[0].position.z = 0;
-    printf("2\n");
+    // printf("2\n");
     planet.trajectoire[0].vitesse.x = 0;
-    printf("2.2\n");
-    
-    planet.trajectoire[0].vitesse.y = vitessePerihelie(planet);
+    // printf("2.2\n");
+    // printf("test: %f\n",planet.trajectoire[0].vitesse.y);
+    //planet.trajectoire[0].vitesse.y = vitessePerihelie(planet);
+
+
+    planet.trajectoire[0].vitesse.y = sqrt((G*MASSE_SOLEIL*(1+planet.excentricite))/(planet.demi_grand_axe*(1-planet.excentricite)));
     // planet.trajectoire[0].vitesse.z = 0;
-    printf("3\n");
+    // printf("3\n");
     return planet.trajectoire[0];
 }
 
-double vitessePerihelie(Planet planet){
-    printf("Début calcul vitesse\n");
-    double Vperihelie = sqrt((G*MASSE_SOLEIL*(1+planet.excentricite))/(planet.demi_grand_axe*(1-planet.excentricite)));
-    printf("vitesse perihelie calculé\n");
-    return Vperihelie;
-}
+// double vitessePerihelie(Planet planet){
+//     printf("Début calcul vitesse\n");
+//     //double Vperihelie = sqrt((G*MASSE_SOLEIL*(1+planet.excentricite))/(planet.demi_grand_axe*(1-planet.excentricite)));
+//     printf("vitesse perihelie calculé\n");
+//     //return Vperihelie;
+//     return 1.0;
+// }
 
 
 void affichageInfoPoint(Point point){

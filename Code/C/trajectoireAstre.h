@@ -7,7 +7,7 @@
 #define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define NB_REPERE 20000
+#define NB_REPERE 35600
 #define PAS_MERCURE 8640
 #define MASSE_SOLEIL 1.989100e+30
 
@@ -36,6 +36,7 @@ typedef struct Planet{
     double excentricite;
     double demi_grand_axe;
     double periodicite;
+    int deltaT;
 } Planet;
 
 
@@ -62,6 +63,7 @@ Planet resetZ(Planet planet);
 /* FILES */
 FILE *readFile(char *filename);
 FILE *writeFile(char *filename);
+// void SaveData(Planet planet, char *methode, FILE* fichier);
 void SaveData(Planet planet, char *methode, FILE* fichier);
 
 
