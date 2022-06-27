@@ -6,21 +6,11 @@ Point firstPoint(Planet planet){
 
     planet.trajectoire[0].position.x = planet.perihelie;
     planet.trajectoire[0].position.y = 0;
-    planet.trajectoire[0].position.z = 0;
+    // planet.trajectoire[0].position.z = 0;
 
     planet.trajectoire[0].vitesse.x = 0;
     planet.trajectoire[0].vitesse.y = vitessePerihelie(planet);
-    planet.trajectoire[0].vitesse.z = 0;
-
-    // Vector acceleration = calculAcceleration(planet, 0);
-
-    // planet.trajectoire[0].acceleration.x = acceleration.x;
-    // planet.trajectoire[0].acceleration.y = acceleration.y;
-    // planet.trajectoire[0].acceleration.z = acceleration.z;
-
-    // printf("norme vecteur accélération: %e m/s\n",normeVect(acceleration));
-
-    // infoPoint(planet.trajectoire[0]);
+    // planet.trajectoire[0].vitesse.z = 0;
 
     return planet.trajectoire[0];
 }
@@ -46,66 +36,53 @@ void infoPoint(Point point, FILE *fichier){
 }
 
 
-Planet Euler(Planet planet){
-    int t = PAS;
-
-    for(int i=1; i<NB_REPERE; i++){
-        planet.trajectoire[i].position.x = planet.trajectoire[i-1].position.x + planet.trajectoire[i].vitesse.x * t;
-        planet.trajectoire[i].vitesse.x = planet.trajectoire[i-1].position.x + planet.trajectoire[i].acceleration.x * t; 
-
-        t += PAS;
-    }
-    return planet;
-}
-
 Vector calculAcceleration(Planet planet, int indice){
-    // double acceleration = - (G * MASSE_SOLEIL) / pow(normeVect(planet.trajectoire[indice].position),3);
     
     Vector acceleration = scalaireVect(- (G * MASSE_SOLEIL) / pow(normeVect(planet.trajectoire[indice].position),3), planet.trajectoire[indice].position);
-
-    // printf("Vect acceleration [%d]:\n",indice);
-    // affichageVect(acceleration);
-
-    Point point = planet.trajectoire[indice];
-
-    acceleration.x = (point.position.x / normeVect(point.position)) * normeVect(acceleration);
-    acceleration.y = (point.position.y / normeVect(point.position)) * normeVect(acceleration);    
-    acceleration.z = (point.position.z / normeVect(point.position)) * normeVect(acceleration);
-
-    // printf("Ax: %e\n",acceleration.x);
-    // printf("Ay: %e\n",acceleration.y);
-    // printf("Az: %e\n",acceleration.z);
 
     return acceleration;
 }
 
 
-Planet MethodEuler(Planet planet){
+Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps){
+    int tmp = 1;
 
-    // printf("%s:\n",planet.name);
-    // printf("Point 0: \nPos x: %e, y: %e, z: %e\nVitesse x: %e, y: %e, z: %e\n", planet.trajectoire[0].position.x, planet.trajectoire[0].position.y, planet.trajectoire[0].position.z, planet.trajectoire[0].vitesse.x, planet.trajectoire[0].vitesse.y, planet.trajectoire[0].vitesse.z);
-    //On effectue une boucle pour chaque points de la planète
+    // printf("%s nb points: %d\n",planet.name, nbPoint);
+    for (int i = 1; i < nbPoint; i++){
+        // printf("indice: %d\n",i);   
 
-    // printf("%s:\t", planet.name);
+        // point.acceleration = calculAcceleration(planet, i-1);
+        planet.trajectoire[i].acceleration = scalaireVect(- (G * MASSE_SOLEIL) / pow(normeVect(planet.trajectoire[i-1].position),3), planet.trajectoire[i-1].position);
 
-    for (int i = 1; i < NB_REPERE; i+= PAS){
-        // printf("%d\n",i);   
+        planet.trajectoire[i].position.x = planet.trajectoire[i-1].position.x + planet.trajectoire[i-1].vitesse.x * deltaTemps;
+        planet.trajectoire[i].position.y = planet.trajectoire[i-1].position.y + planet.trajectoire[i-1].vitesse.y * deltaTemps;
+        // point.position.z = 0;
+        planet.trajectoire[i].vitesse.x = planet.trajectoire[i-1].vitesse.x + planet.trajectoire[i].acceleration.x * deltaTemps;
+        planet.trajectoire[i].vitesse.y = planet.trajectoire[i-1].vitesse.y + planet.trajectoire[i].acceleration.y * deltaTemps;
+        // point.vitesse.z = 0;
 
-        Point point = planet.trajectoire[i];
+        planet.trajectoire[i].temps = tmp;
 
-        point.acceleration = calculAcceleration(planet, i-1);
-
-        point.position.x = planet.trajectoire[i-1].position.x + planet.trajectoire[i-1].vitesse.x * PAS;
-        point.position.y = planet.trajectoire[i-1].position.y + planet.trajectoire[i-1].vitesse.y * PAS;
-        point.position.z = planet.trajectoire[i-1].position.z + planet.trajectoire[i-1].vitesse.z * PAS;
-
-        point.vitesse.x = planet.trajectoire[i-1].vitesse.x + point.acceleration.x * PAS;
-        point.vitesse.y = planet.trajectoire[i-1].vitesse.y + point.acceleration.y * PAS;
-        point.vitesse.z = planet.trajectoire[i-1].vitesse.z + point.acceleration.z * PAS;
-
-        point.temps = i;
-        planet.trajectoire[i] = point;
+        // planet.trajectoire[i] = point;
+        // affichageInfoPoint(planet.trajectoire[i]);
+        tmp++;
     }
     // printf("Trajectoire établit\n\n");
+    return planet;
+}
+
+Planet resetZ(Planet planet){
+
+    for(int i=0; i<NB_REPERE; i++){
+        planet.trajectoire[i].temps = i;
+        planet.trajectoire[i].position.z = 0;
+        planet.trajectoire[i].vitesse.z = 0;
+        planet.trajectoire[i].acceleration.x = 0;
+        planet.trajectoire[i].acceleration.y = 0;
+        planet.trajectoire[i].acceleration.z = 0;
+
+        // affichageInfoPoint(planet.trajectoire[i]);
+    }
+
     return planet;
 }
