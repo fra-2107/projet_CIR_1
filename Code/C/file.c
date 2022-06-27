@@ -36,7 +36,11 @@ void SaveData(Planet planet, char *methode, FILE* fichier){
 
     fprintf(fichier, "{%c%s-%s%c : [", guillemet, planet.name, methode, guillemet);
 
-    for(int i=0; i<NB_REPERE; i++) infoPoint(planet.trajectoire[i], fichier);
+    for(int i=0; i<NB_REPERE; i++){
+        infoPoint(planet.trajectoire[i], fichier);
+        // printf("%d\n", i );
+    }
+
     fprintf(fichier, "}\n");
 
     fclose(fichier);
