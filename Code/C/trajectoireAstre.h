@@ -7,7 +7,11 @@
 #define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
+<<<<<<< HEAD
 #define NB_REPERE 1000000
+=======
+#define NB_REPERE 36500
+>>>>>>> TEST
 #define PAS_MERCURE 8640
 #define MASSE_SOLEIL 1.989100e+30
 
@@ -62,6 +66,7 @@ FILE *readFile(char *filename);
 FILE *writeFile(char *filename);
 // void SaveData(Planet planet, char *methode, FILE* fichier);
 void SaveData(Planet planet, char *methode, FILE* fichier);
+FILE *addToFile(char *filename);
 
 
 /* POINTS */
@@ -72,3 +77,4 @@ void infoPoint(Point point, FILE *fichier);
 Planet Euler(Planet planet);
 Vector calculAcceleration(Planet planet, int indice);
 Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps);
+Planet MethodeEulerAsymetrique(Planet planet, int nbPoint, int deltaTemps);
