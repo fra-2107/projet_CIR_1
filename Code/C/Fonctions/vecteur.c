@@ -22,6 +22,11 @@ Vector scalaireVect(double k, Vector vect){
     return newVect;
 }
 
+Vector divisionVect(double k, Vector vect){
+    Vector newVect = {vect.x/k, vect.y/k, vect.z/k};
+    return newVect;
+}
+
 double normeVect(Vector vect){
     return sqrt(vect.x*vect.x + vect.y*vect.y + vect.z*vect.z);
 }

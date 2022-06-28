@@ -7,7 +7,7 @@
 #define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define NB_REPERE 36500
+#define NB_REPERE 100000
 #define PAS_MERCURE 8640
 #define MASSE_SOLEIL 1.989100e+30
 
@@ -44,6 +44,7 @@ void affichageVect(Vector vect);
 Vector additionVect(Vector a, Vector b);
 Vector soustractionVect(Vector a, Vector b);
 Vector scalaireVect(double k, Vector vect);
+Vector divisionVect(double k, Vector vect);
 double normeVect(Vector vect);
 void vectorTest();
 
@@ -55,6 +56,7 @@ void affichageInfoPlanets(Planet *planetList);
 void InfoPlanet(Planet planet);
 void affichageTrajectoirePlanet(Planet planet);
 Planet resetZ(Planet planet);
+void verifConservationEnergie(Planet planet);
 
 
 /* FILES */
@@ -74,3 +76,4 @@ Planet Euler(Planet planet);
 Vector calculAcceleration(Planet planet, int indice);
 Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps);
 Planet MethodeEulerAsymetrique(Planet planet, int nbPoint, int deltaTemps);
+Planet MethodeRungeKutta(Planet planet, int nbPoint, int deltaTemps);

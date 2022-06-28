@@ -7,40 +7,45 @@ Planet *InitPlanet(char *filename){
 
     FILE *fichier = readFile(filename);
     planetList = recupInfo(fichier, filename, planetList);
-    // affichageInfoPlanets(planetList);
     fclose(fichier);
 
     for(int i=0; i<NB_ASTRE; i++){
 
-        // printf("%s:\n", planetList[i].name);
-        planetList[i].trajectoire = malloc(NB_REPERE * sizeof(Point));
-        planetList[i].trajectoire[0] = firstPoint(planetList[i]);
-
-        planetList[i] = MethodEuler(planetList[i], NB_REPERE , PAS_MERCURE);
-
         char title[40]; 
         sprintf(title, "../Data/%s.json", planetList[i].name);
 
+        planetList[i].trajectoire = malloc(NB_REPERE * sizeof(Point));
+        planetList[i].trajectoire[0] = firstPoint(planetList[i]);
+
+        
+
         FILE *fichier = writeFile(title);
         fprintf(fichier, "{");
+
+        planetList[i] = MethodEuler(planetList[i], NB_REPERE , PAS_MERCURE);
+        planetList[i] = resetZ(planetList[i]); 
         SaveData(planetList[i], "euler", fichier);
         fprintf(fichier, ",\n");
         fclose(fichier);
 
         planetList[i] = MethodeEulerAsymetrique(planetList[i], NB_REPERE , PAS_MERCURE);
-        planetList[i] = resetZ(planetList[i]);   
-        
+        planetList[i] = resetZ(planetList[i]);    
         fichier = addToFile(title);
         SaveData(planetList[i], "eulerAsy", fichier);
+        fprintf(fichier, ",\n");
+        fclose(fichier);
+
+        planetList[i] = MethodeRungeKutta(planetList[i], NB_REPERE, PAS_MERCURE);
+        planetList[i] = resetZ(planetList[i]);
+        fichier = addToFile(title);
+        SaveData(planetList[i], "RK2", fichier);
+
         fprintf(fichier, "}\n");
         fclose(fichier);
     }
 
     return planetList;  
 }
-
-
-
 
 
 Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
@@ -86,14 +91,14 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
                         break;
             }
 
-            //Permet de PAS_MERCUREser au champ suivant
+            //Permet de passer au champ suivant
             champ = strtok(NULL, separateur);
             num_champ++;
         }
         planetList[planetID] = planet;
         planetID++;
     }
-    // printf("fin recup\n");
+
     return planetList;
 }
 
@@ -119,4 +124,9 @@ void affichageInfoPlanets(Planet *planetList){
     for(int i=0; i<NB_ASTRE; i++){
         printf("%s\t\t%e kg\t\t%e m\t\t%e m\t\t%e\t\t%.2f j\n",planetList[i].name, planetList[i].masse, planetList[i].perihelie, planetList[i].demi_grand_axe, planetList[i].excentricite, planetList[i].periodicite);
     }
+}
+
+
+void verifConservationEnergie(Planet planet){
+    printf("%s verifiée\n", planet.name);
 }

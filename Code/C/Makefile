@@ -27,3 +27,6 @@ clean:
 
 cleanAll:
 	rm $(OBJ) $(REP)main.o $(EXEC) $(LIB)
+
+cleanData:
+	rm ../Data/*.json
