@@ -123,9 +123,9 @@ void DeltaConservationEnergie(Planet *planetList, int tmp1, int tmp2, char *meth
     //On met à jour la trajectoire de chaque planète en fonction de la méthode choisie
     for(int i=1; i<NB_ASTRE; i++){
 
-        if(!strcmp(methode,"Euler")) planetList[i] = MethodEuler(planetList[i], NB_REPERE, PAS_MERCURE);
-        else if(!strcmp(methode,"EulerAsy")) planetList[i] = MethodeEulerAsymetrique(planetList[i], NB_REPERE, PAS_MERCURE);
-        else if(!strcmp(methode,"RK2")) planetList[i] = MethodeRungeKutta(planetList[i], NB_REPERE, PAS_MERCURE);
+        if(!strcmp(methode,"Euler")) planetList[i] = MethodEuler(planetList[i], NB_REPERE, DELTA_T);
+        else if(!strcmp(methode,"EulerAsy")) planetList[i] = MethodeEulerAsymetrique(planetList[i], NB_REPERE, DELTA_T);
+        else if(!strcmp(methode,"RK2")) planetList[i] = MethodeRungeKutta(planetList[i], NB_REPERE, DELTA_T);
         else{
             printf("Nom de méthode incorrect !\nVeuillez renseigner l'une des méthodes suivantes:\n\t1- Euler\n\t2- EulerAsy\n\t3- RK2\n\n");
             exit(EXIT_FAILURE);
@@ -180,6 +180,6 @@ double EnergieCinetiqueTotale(Planet *planetList, int temps){
         Ec += planetList[i].masse  * (pow(normeVect(planetList[i].trajectoire[temps].vitesse), 2));
     }
     Ec *= 0.5;
-    
+
     return Ec;
 }

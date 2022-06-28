@@ -5,24 +5,25 @@ int main(){
     // vectorTest();
     Planet *planetList = InitPlanet("Data/infoAstre.json");
 
-    char methodeList[3][10] = {"Euler", "EulerAsy", "RK2"};
+    char methodeList[NB_METHODE][NB_CHAR_MAX] = {"Euler", "EulerAsy", "RK2"};
+    int nb_point_trajectoire = NB_REPERE;
 
-    for(int k=0; k<3; k++){
+    for(int k=0; k<NB_METHODE; k++){
 
-        char path[30];
+        char path[TAILLE_MAX];
         sprintf(path, "../Data/%s.json", methodeList[k]);
 
         for(int i=0; i<NB_ASTRE; i++){
 
-            planetList[i].trajectoire = malloc(NB_REPERE * sizeof(Point));
+            planetList[i].trajectoire = malloc(nb_point_trajectoire * sizeof(Point));
             planetList[i].trajectoire[0] = firstPoint(planetList[i]);
 
-            planetList[i] = ChooseMethode(methodeList[k], planetList[i], NB_REPERE, PAS_MERCURE);   
+            planetList[i] = CalculTrajectoire(methodeList[k], planetList[i], nb_point_trajectoire, DELTA_T);   
         }
 
         writeForMethode(planetList, methodeList[k], path);
 
-        DeltaConservationEnergie(planetList, 0, NB_REPERE-1, methodeList[k]);
+        DeltaConservationEnergie(planetList, 0, nb_point_trajectoire-1, methodeList[k]);
     }    
 
     return 0;

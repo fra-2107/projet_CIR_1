@@ -29,6 +29,21 @@ double vitessePerihelie(Planet planet){
 }
 
 
+Planet resetZ(Planet planet){
+    /*
+        Permet de corriger certains bugs en assignant la valeur 0 à la coordonnée en Z
+    */
+
+    for(int i=0; i<NB_REPERE; i++){
+        planet.trajectoire[i].temps = i;
+        planet.trajectoire[i].position.z = 0;
+        planet.trajectoire[i].vitesse.z = 0;
+    }
+
+    return planet;
+}
+
+
 void affichageInfoPoint(Point point){
     /*
         Affiche les informations d'un point:
@@ -41,16 +56,6 @@ void affichageInfoPoint(Point point){
     printf("position:\t[%e\t%e\t%e]\n",point.position.x, point.position.y, point.position.z);
     printf("vitesse:\t[%e\t%e\t%e]\n",point.vitesse.x, point.vitesse.y, point.vitesse.z);
     printf("accélération:\t[%e\t%e\t%e]\n\n",point.acceleration.x, point.acceleration.y, point.acceleration.z);
-}
-
-
-void infoPoint(Point point, FILE *fichier){
-    /*
-        Ecrit les informations d'un point dans le fichier
-    */
-
-    if(point.temps == NB_REPERE-1) fprintf(fichier, "[[%e, %e, %e],[%e, %e, %e], %d]]\n", point.position.x, point.position.y, point.position.z, point.vitesse.x, point.vitesse.y, point.vitesse.z, point.temps);
-    else fprintf(fichier, "[[%e, %e, %e],[%e, %e, %e], %d],\n", point.position.x, point.position.y, point.position.z, point.vitesse.x, point.vitesse.y, point.vitesse.z, point.temps);
 }
 
 
@@ -124,35 +129,20 @@ Planet MethodeRungeKutta(Planet planet, int nbPoint, int deltaTemps){
 }
 
 
-Planet ChooseMethode( char *choice, Planet planet, int nbPoint, int deltaTemps){
+Planet CalculTrajectoire( char *choice, Planet planet, int nbPoint, int deltaTemps){
     /*
         Calcul la trajectoire d'une planète en fonction de la méthode choisie
     */
 
-    if(!strcmp(choice,"Euler")) planet = MethodEuler(planet, NB_REPERE, PAS_MERCURE);
-    else if(!strcmp(choice,"EulerAsy")) planet = MethodeEulerAsymetrique(planet, NB_REPERE, PAS_MERCURE);
-    else if(!strcmp(choice,"RK2")) planet = MethodeRungeKutta(planet, NB_REPERE, PAS_MERCURE);
+    if(!strcmp(choice,"Euler")) planet = MethodEuler(planet, NB_REPERE, DELTA_T);
+    else if(!strcmp(choice,"EulerAsy")) planet = MethodeEulerAsymetrique(planet, NB_REPERE, DELTA_T);
+    else if(!strcmp(choice,"RK2")) planet = MethodeRungeKutta(planet, NB_REPERE, DELTA_T);
     else{
         printf("Nom de méthode incorrect !\nVeuillez renseigner l'une des méthodes suivantes:\n\t1- Euler\n\t2- EulerAsy\n\t3- RK2\n\n");
         exit(EXIT_FAILURE);
     }
 
     planet = resetZ(planet);
-
-    return planet;
-}
-
-
-Planet resetZ(Planet planet){
-    /*
-        Permet de corriger certains bugs en assignant la valeur 0 à la coordonnée en Z
-    */
-
-    for(int i=0; i<NB_REPERE; i++){
-        planet.trajectoire[i].temps = i;
-        planet.trajectoire[i].position.z = 0;
-        planet.trajectoire[i].vitesse.z = 0;
-    }
 
     return planet;
 }
