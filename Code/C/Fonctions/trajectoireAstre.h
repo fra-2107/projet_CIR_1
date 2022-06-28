@@ -7,7 +7,7 @@
 #define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define NB_REPERE 1000000 //3653
+#define NB_REPERE 100 //3653
 #define PAS_MERCURE 8640
 #define MASSE_SOLEIL 1.989100e+30
 
@@ -31,9 +31,9 @@ typedef struct Planet{
     double perihelie;   //distance min séparant un astre du Soleil
     double excentricite;
     double demi_grand_axe;
-    double periodicite;
-    int nb_point;
-    int deltaT;
+    // double periodicite;
+    // int nb_point;
+    // int deltaT;
 } Planet;
 
 

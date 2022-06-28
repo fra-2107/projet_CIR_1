@@ -74,9 +74,6 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
                     case 5:
                         planet.excentricite = atof(champ);
                         break;
-                    case 6:
-                        planet.periodicite = atof(champ);
-                        break;
                     default:
                         break;
             }
@@ -112,7 +109,7 @@ void affichageInfoPlanets(Planet *planetList){
     printf("\n\t\t\t\tInformation sur les astres\n\n");
     printf("NAME\t\t     MASSE\t\t   PERIHELIE\t\t1/2 GRAND AXE\t\tEXCENTRICITE\t       PERIODICITE\n");
     for(int i=0; i<NB_ASTRE; i++){
-        printf("%s\t\t%e kg\t\t%e m\t\t%e m\t\t%e\t\t%.2f j\n",planetList[i].name, planetList[i].masse, planetList[i].perihelie, planetList[i].demi_grand_axe, planetList[i].excentricite, planetList[i].periodicite);
+        printf("%s\t\t%e kg\t\t%e m\t\t%e m\t\t%e\n",planetList[i].name, planetList[i].masse, planetList[i].perihelie, planetList[i].demi_grand_axe, planetList[i].excentricite);
     }
 }
 
