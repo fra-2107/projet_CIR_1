@@ -9,6 +9,7 @@ let btndemo = document.getElementById('btn5');
 let v = document.getElementById("vitesse");
 let x ;
 var file
+let fichier = 0
 
 let fichiermercure, fichiervenus, fichierterre, fichiermars, fichierjupiter, fichiersaturne, fichieruranus, fichierneptune
 let mercure, venus, terre, terreas, terrerk, mars, jupiter, saturne, uranus, neptune
@@ -20,7 +21,7 @@ let stringData=''
 function changeHandler(evt) {
     evt.stopPropagation();
     evt.preventDefault();
-
+    fichier=1
     // FileList object.
     var files = evt.target.files;
 
@@ -122,20 +123,28 @@ async function initialisation(){
     //creation du canvas
     createCanvas(windowWidth, windowHeight, WEBGL);
     start = false;
-    console.log(file.name)
+    // console.log(file.name)
     await demande();
-    if (file.name=="Euler.json")
+    if (fichier==1)
     {
-        euler();
+        if (file.name=="Euler.json")
+        {
+            euler();
+        }
+        if(file.name=="EulerAsy.json")
+        {
+            eulerAsy();
+        }
+        if(file.name=="RK2.json")
+        {
+            RK2();
+        }
     }
-    if(file.name=="EulerAsy.json")
+    else 
     {
-        eulerAsy();
+        alert('veuillez entrer un fichier')
     }
-    if(file.name=="RK2.json")
-    {
-        RK2();
-    }
+
     p1=echelle(mercure)
     p2=echelle(venus)
     p3=echelle(terre)

@@ -283,3 +283,7 @@ a{
 	bottom: 2%;
 	left: 2%;
 }
+
+#file{
+	position:absolute;
+}

@@ -9,6 +9,7 @@ let btndemo = document.getElementById('btn5');
 let v = document.getElementById("vitesse");
 let x ;
 var file
+let fichier = 0
 
 let fichiermercure, fichiervenus, fichierterre, fichiermars, fichierjupiter, fichiersaturne, fichieruranus, fichierneptune
 let mercure, venus, terre, terreas, terrerk, mars, jupiter, saturne, uranus, neptune
@@ -20,7 +21,7 @@ let stringData=''
 function changeHandler(evt) {
     evt.stopPropagation();
     evt.preventDefault();
-
+    fichier=1
     // FileList object.
     var files = evt.target.files;
 
@@ -108,6 +109,18 @@ function setup(){
     i=0;
 }
 
+function arret(){
+    i=0;
+    start=0;
+    noCanvas();
+    header.className='titre';
+    system.className='system';
+    projet.className='projet';
+    btnstart.className="bouton";
+    btndemo.className="bouton";
+    btnstop.className='off';    
+    v.className='off';
+}
 //fonction qui initialise l'espace de travail dans la fenetre
 async function initialisation(){
     btnstop.className='bouton';
@@ -122,41 +135,52 @@ async function initialisation(){
     //creation du canvas
     createCanvas(windowWidth, windowHeight, WEBGL);
     start = false;
-    console.log(file.name)
+    // console.log(file.name)
     await demande();
-    if (file.name=="Euler.json")
+    if (fichier==1)
     {
-        euler();
-    }
-    if(file.name=="EulerAsy.json")
-    {
-        eulerAsy();
-    }
-    if(file.name=="RK2.json")
-    {
-        RK2();
-    }
-    p1=echelle(mercure)
-    p2=echelle(venus)
-    p3=echelle(terre)
-    p4=echelle(mars)
-    p5=echelle(jupiter)
-    p6=echelle(saturne)
-    p7=echelle(uranus)
-    p8=echelle(neptune)
-    start = true;
+        if (file.name=="Euler.json")
+        {
+            euler();
+        }
+        if(file.name=="EulerAsy.json")
+        {
+            eulerAsy();
+        }
+        if(file.name=="RK2.json")
+        {
+            RK2();
+        }
+        p1=echelle(mercure)
+        p2=echelle(venus)
+        p3=echelle(terre)
+        p4=echelle(mars)
+        p5=echelle(jupiter)
+        p6=echelle(saturne)
+        p7=echelle(uranus)
+        p8=echelle(neptune)
+        start = true;
 
-    document.getElementById("vit").value=0;
+        document.getElementById("vit").value=0;
+    }
+    else 
+    {
+        alert('veuillez entrer un fichier')
+        arret();
+        
+    }
+
+    
 }   
 
 //fonction qui affiche la trajectoire de la planète ainsi que la planète en orbite autour du soleil
-function planete(data, i, couleur){
+function planete(data, i, couleur, resolution){
     
     //affichage de la trace
     stroke(couleur);
     noFill();
     beginShape();
-    for(let k=0; k<data.length-1; k+=500)
+    for(let k=0; k<data.length-1; k+=50000)
     {
         curveVertex(data[k][0], data[k][1], data[k][2]);
     }
@@ -230,18 +254,7 @@ function draw(){
     }
 }
 
-function arret(){
-    i=0;
-    start=0;
-    noCanvas();
-    header.className='titre';
-    system.className='system';
-    projet.className='projet';
-    btnstart.className="bouton";
-    btndemo.className="bouton";
-    btnstop.className='off';    
-    v.className='off';
-}
+
 
 function arret_orbite(){
     x=0;
