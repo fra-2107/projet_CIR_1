@@ -17,32 +17,32 @@ let mercure, venus, terre, terreas, terrerk, mars, jupiter, saturne, uranus, nep
 async function demande(){
 
     //ouverture du JSON
-    const reponsemercure = await fetch('../Data/Mercure-euler.json');
+    const reponsemercure = await fetch('../Data/Mercure.json');
     fichiermercure = await reponsemercure.json();
 
-    const reponsevenus = await fetch('../Data/Venus-euler.json');
+    const reponsevenus = await fetch('../Data/Venus.json');
     fichiervenus = await reponsevenus.json();
 
-    const reponseterre = await fetch('../Data/Terre-euler.json');
+    const reponseterre = await fetch('../Data/Terre.json');
     fichierterre = await reponseterre.json();
 
-    const reponsemars = await fetch('../Data/Mars-euler.json');
+    const reponsemars = await fetch('../Data/Mars.json');
     fichiermars = await reponsemars.json();
 
-    const reponsejupiter = await fetch('../Data/Jupiter-euler.json');
+    const reponsejupiter = await fetch('../Data/Jupiter.json');
     fichierjupiter = await reponsejupiter.json();
 
-    const reponsesaturne = await fetch('../Data/Saturne-euler.json');
+    const reponsesaturne = await fetch('../Data/Saturne.json');
     fichiersaturne = await reponsesaturne.json();
 
-    const reponseuranus = await fetch('../Data/Uranus-euler.json');
+    const reponseuranus = await fetch('../Data/Uranus.json');
     fichieruranus = await reponseuranus.json();
 
-    const reponseneptune = await fetch('../Data/Neptune-euler.json');
+    const reponseneptune = await fetch('../Data/Neptune.json');
     fichierneptune = await reponseneptune.json();
 
     //récupération de la liste voulue
-    euler();
+    RK2();
 
     //mise a l'échelle des coordonnées
     p1=echelle(mercure)
@@ -80,6 +80,27 @@ function euler(){
     uranus = fichieruranus['Uranus-euler'];
     neptune = fichierneptune['Neptune-euler'];
 }
+function eulerAsy(){
+    mercure = fichiermercure['Mercure-eulerAsy'];
+    venus = fichiervenus['Venus-eulerAsy'];
+    terre = fichierterre['Terre-eulerAsy'];
+    mars = fichiermars['Mars-eulerAsy'];
+    jupiter = fichierjupiter['Jupiter-eulerAsy'];
+    saturne = fichiersaturne['Saturne-eulerAsy'];
+    uranus = fichieruranus['Uranus-eulerAsy'];
+    neptune = fichierneptune['Neptune-eulerAsy'];
+}
+
+function RK2(){
+    mercure = fichiermercure['Mercure-RK2'];
+    venus = fichiervenus['Venus-RK2'];
+    terre = fichierterre['Terre-RK2'];
+    mars = fichiermars['Mars-RK2'];
+    jupiter = fichierjupiter['Jupiter-RK2'];
+    saturne = fichiersaturne['Saturne-RK2'];
+    uranus = fichieruranus['Uranus-RK2'];
+    neptune = fichierneptune['Neptune-RK2'];
+}
 
 function setup(){
     btnstop.className='off';
@@ -115,7 +136,7 @@ function planete(data, i, couleur){
     stroke(couleur);
     noFill();
     beginShape();
-    for(let k=0; k<data.length-1; k+=50000)
+    for(let k=0; k<10000; k+=100)
     {
         curveVertex(data[k][0], data[k][1], data[k][2]);
     }
@@ -123,7 +144,7 @@ function planete(data, i, couleur){
 
     //affichage de la planète en orbite
     stroke(couleur)
-    strokeWeight(10)
+    strokeWeight(7)
     point(data[i][0], data[i][1], data[i][2])
     strokeWeight(1);
 }
@@ -141,7 +162,7 @@ function draw(){
         //initialisation du fond 
         background(0);
         stroke('red');
-        strokeWeight(20);
+        strokeWeight(15);
         point(0,0,0);
         strokeWeight(1);
 
@@ -157,11 +178,9 @@ function draw(){
 
         //incrementation du i (pour l'affichage des palnetes en fonction du temps)
         i+=x;
-        if(i>=1000000)
+        if(i>=p1.length)
         {
-            console.log("i="+i)
-            console.log(typeof(i))
-            i=0
+            i=0;
         }
     }
     else if(commencer)
@@ -179,12 +198,14 @@ function draw(){
 
         //affichage des planètes 
         planete(p1, i, '#00FF00');
+        planete(p2, i, '#0000FF');
+        planete(p3, i, '#FF00FF');
 
         //incrementation du i (pour l'affichage des palnetes en fonction du temps)
         i+=x;
-        if(i>=1000000)
+        if(i>=p1.length)
         {
-            i=0
+            i=0;
         }
     }
 }
@@ -217,12 +238,16 @@ function play_orbite(){
 
 
 async function demo(){
-    const reponseterre = await fetch('../Data/Terre-euler.json');
+    const reponseterre = await fetch('../Data/Terre.json');
     fichierterre = await reponseterre.json();
 
     terre = fichierterre['Terre-euler'];
+    terreas = fichierterre['Terre-eulerAsy'];
+    terrerk = fichierterre['Terre-RK2'];
 
     p1=echelle(terre);
+    p2=echelle(terreas);
+    p3=echelle(terrerk);
 
 }
 
