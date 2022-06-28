@@ -1,15 +1,16 @@
 //déclarations des variables globales (utilisables dans plusieurs fonctions)
-let start, p1, p2, p3, p4, p5, p6, p7, p8, i;
+let start, commencer, p1, p2, p3, p4, p5, p6, p7, p8, i;
 let header = document.getElementById('titre');
 let system = document.getElementById('system');
 let projet = document.getElementById('projet');
-let btn1 = document.getElementById('btn1');
-let btn2 = document.getElementById('btn2');
+let btnstart = document.getElementById('btn1');
+let btnstop = document.getElementById('btn2');
+let btndemo = document.getElementById('btn5');
 let v = document.getElementById("vitesse");
 let x ;
 
 let fichiermercure, fichiervenus, fichierterre, fichiermars, fichierjupiter, fichiersaturne, fichieruranus, fichierneptune
-let mercure, venus, terre, mars, jupiter, saturne, uranus, neptune
+let mercure, venus, terre, terreas, terrerk, mars, jupiter, saturne, uranus, neptune
 
 
 //fonction de récuperation du fichir JSON
@@ -44,14 +45,14 @@ async function demande(){
     euler();
 
     //mise a l'échelle des coordonnées
-    p2=echelle(mercure)
-    p3=echelle(venus)
-    p4=echelle(terre)
-    p5=echelle(mars)
-    p6=echelle(jupiter)
-    p7=echelle(saturne)
-    p8=echelle(uranus)
-    p9=echelle(neptune)
+    p1=echelle(mercure)
+    p2=echelle(venus)
+    p3=echelle(terre)
+    p4=echelle(mars)
+    p5=echelle(jupiter)
+    p6=echelle(saturne)
+    p7=echelle(uranus)
+    p8=echelle(neptune)
     
 }
 
@@ -81,7 +82,7 @@ function euler(){
 }
 
 function setup(){
-    btn2.className='off';
+    btnstop.className='off';
     v.className='off';
     document.getElementById("vit").value = 20;
     i=0;
@@ -89,12 +90,14 @@ function setup(){
 
 //fonction qui initialise l'espace de travail dans la fenetre
 async function initialisation(){
-    btn2.className='bouton';
+    btnstop.className='bouton';
     v.className='vitesse';
     header.className='off';
     system.className='off';
     projet.className='off';
-    btn1.className='off';
+    btnstart.className='off';
+    btndemo.className='off';
+
 
     //creation du canvas
     createCanvas(windowWidth, windowHeight, WEBGL);
@@ -143,14 +146,14 @@ function draw(){
         strokeWeight(1);
 
         //affichage des planètes 
-        planete(p2, i, '#00FF00');
-        planete(p3, i, '#B2A6A4');
-        planete(p4, i, '#0000FF');
-        planete(p5, i, '#E84F1A');
-        planete(p6, i, '#EEAE5D');
-        planete(p7, i, '#E5C193');
-        planete(p8, i, '#B8C6EB');
-        planete(p9, i, '#567EEE');
+        planete(p1, i, '#00FF00');
+        planete(p2, i, '#B2A6A4');
+        planete(p3, i, '#0000FF');
+        planete(p4, i, '#E84F1A');
+        planete(p5, i, '#EEAE5D');
+        planete(p6, i, '#E5C193');
+        planete(p7, i, '#B8C6EB');
+        planete(p8, i, '#567EEE');
 
         //incrementation du i (pour l'affichage des palnetes en fonction du temps)
         i+=x;
@@ -158,6 +161,29 @@ function draw(){
         {
             console.log("i="+i)
             console.log(typeof(i))
+            i=0
+        }
+    }
+    else if(commencer)
+    {
+        orbitControl();
+        x = document.getElementById("vit").value;
+        x=parseInt(x, 10);
+
+        //initialisation du fond 
+        background(0);
+        stroke('red');
+        strokeWeight(20);
+        point(0,0,0);
+        strokeWeight(1);
+
+        //affichage des planètes 
+        planete(p1, i, '#00FF00');
+
+        //incrementation du i (pour l'affichage des palnetes en fonction du temps)
+        i+=x;
+        if(i>=1000000)
+        {
             i=0
         }
     }
@@ -170,8 +196,9 @@ function arret(){
     header.className='titre';
     system.className='system';
     projet.className='projet';
-    btn1.className="bouton";
-    btn2.className='off';    
+    btnstart.className="bouton";
+    btndemo.className="bouton";
+    btnstop.className='off';    
     v.className='off';
 }
 
@@ -186,3 +213,33 @@ function play_orbite(){
     document.getElementById("vit").value = "1";
     vit.className='vit'
 }
+
+
+
+async function demo(){
+    const reponseterre = await fetch('../Data/Terre-euler.json');
+    fichierterre = await reponseterre.json();
+
+    terre = fichierterre['Terre-euler'];
+
+    p1=echelle(terre);
+
+}
+
+async function init_demo(){
+    btnstop.className='bouton';
+    v.className='vitesse';
+    header.className='off';
+    system.className='off';
+    projet.className='off';
+    btnstart.className='off';
+    btndemo.className='off';
+
+    //creation du canvas
+    createCanvas(windowWidth, windowHeight, WEBGL);
+    commencer = false;
+    await demo();
+    commencer = true;
+
+    document.getElementById("vit").value=0;
+} 

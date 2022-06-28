@@ -147,7 +147,7 @@ function draw(){
 
         //incrementation du i (pour l'affichage des palnetes en fonction du temps)
         i+=x;
-        if(i>=1000000)
+        if(i>=p2.length)
         {
             console.log("i="+i)
             console.log(typeof(i))
