@@ -11,38 +11,95 @@ let x ;
 
 let fichiermercure, fichiervenus, fichierterre, fichiermars, fichierjupiter, fichiersaturne, fichieruranus, fichierneptune
 let mercure, venus, terre, terreas, terrerk, mars, jupiter, saturne, uranus, neptune
+var fichierSelectionne
 
+let fichiereuler, fichiereulerasy, fichierrk
+
+function changeHandler(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+
+    // FileList object.
+    var files = evt.target.files;
+
+    var file = files[0];
+
+    var fileReader = new FileReader();
+
+    fileReader.onloadstart = function(progressEvent) {
+        
+        appendLog("onloadstart!");
+        var msg = "File Name: " + file.name + "<br>" +
+            "File Size: " + file.size + "<br>" +
+            "File Type: " + file.type;
+
+        appendLog(msg);
+    }
+
+    fileReader.onload = function(progressEvent) {
+        appendLog("onload!");
+        var stringData = fileReader.result;
+        appendLog(" ---------------- File Content ----------------: ");
+        appendLog(stringData);
+    }
+
+    fileReader.onloadend = function(progressEvent) {
+        appendLog("onloadend!");
+        // FileReader.EMPTY, FileReader.LOADING, FileReader.DONE
+        appendLog("readyState = " + fileReader.readyState);
+    }
+
+    fileReader.onerror = function(progressEvent) {
+        appendLog("onerror!");
+        appendLog("Has Error!");
+    }
+
+    // Read file asynchronously.
+    fileReader.readAsText(file, "UTF-8"); // fileReader.result -> String.
+    fichierSelectionne = JSON.parse(fileReader)
+    console.log(fichierSelectionne)
+}
+
+
+function appendLog(msg) {
+    console.log(msg);
+}
 
 //fonction de récuperation du fichir JSON
 async function demande(){
 
+    // const reponseeuler = await fetch('../Data/RK2.json')
+    // fichierrk=await reponseeuler.json();
+
+    // RK2();
+
     //ouverture du JSON
-    const reponsemercure = await fetch('../Data/Mercure.json');
-    fichiermercure = await reponsemercure.json();
+    // const reponsemercure = await fetch('../Data/Mercure.json');
+    // fichiermercure = await reponsemercure.json();
 
-    const reponsevenus = await fetch('../Data/Venus.json');
-    fichiervenus = await reponsevenus.json();
+    // const reponsevenus = await fetch('../Data/Venus.json');
+    // fichiervenus = await reponsevenus.json();
 
-    const reponseterre = await fetch('../Data/Terre.json');
-    fichierterre = await reponseterre.json();
+    // const reponseterre = await fetch('../Data/Terre.json');
+    // fichierterre = await reponseterre.json();
 
-    const reponsemars = await fetch('../Data/Mars.json');
-    fichiermars = await reponsemars.json();
+    // const reponsemars = await fetch('../Data/Mars.json');
+    // fichiermars = await reponsemars.json();
 
-    const reponsejupiter = await fetch('../Data/Jupiter.json');
-    fichierjupiter = await reponsejupiter.json();
+    // const reponsejupiter = await fetch('../Data/Jupiter.json');
+    // fichierjupiter = await reponsejupiter.json();
 
-    const reponsesaturne = await fetch('../Data/Saturne.json');
-    fichiersaturne = await reponsesaturne.json();
+    // const reponsesaturne = await fetch('../Data/Saturne.json');
+    // fichiersaturne = await reponsesaturne.json();
 
-    const reponseuranus = await fetch('../Data/Uranus.json');
-    fichieruranus = await reponseuranus.json();
+    // const reponseuranus = await fetch('../Data/Uranus.json');
+    // fichieruranus = await reponseuranus.json();
 
-    const reponseneptune = await fetch('../Data/Neptune.json');
-    fichierneptune = await reponseneptune.json();
+    // const reponseneptune = await fetch('../Data/Neptune.json');
+    // fichierneptune = await reponseneptune.json();
 
-    //récupération de la liste voulue
-    eulerAsy();
+    // //récupération de la liste voulue
+    // eulerAsy();
 
     //mise a l'échelle des coordonnées
     p1=echelle(mercure)
@@ -71,36 +128,36 @@ function echelle(planete){
 }
 
 function euler(){
-    mercure = fichiermercure['Mercure-euler'];
-    venus = fichiervenus['Venus-euler'];
-    terre = fichierterre['Terre-euler'];
-    mars = fichiermars['Mars-euler'];
-    jupiter = fichierjupiter['Jupiter-euler'];
-    saturne = fichiersaturne['Saturne-euler'];
-    uranus = fichieruranus['Uranus-euler'];
-    neptune = fichierneptune['Neptune-euler'];
+    mercure = fichiereuler['Mercure-Euler'];
+    venus = fichiereuler['Venus-Euler'];
+    terre = fichiereuler['Terre-Euler'];
+    mars = fichiereuler['Mars-Euler'];
+    jupiter = fichiereuler['Jupiter-Euler'];
+    saturne = fichiereuler['Saturne-Euler'];
+    uranus = fichiereuler['Uranus-Euler'];
+    neptune = fichiereuler['Neptune-Euler'];
 }
 
 function eulerAsy(){
-    mercure = fichiermercure['Mercure-eulerAsy'];
-    venus = fichiervenus['Venus-eulerAsy'];
-    terre = fichierterre['Terre-eulerAsy'];
-    mars = fichiermars['Mars-eulerAsy'];
-    jupiter = fichierjupiter['Jupiter-eulerAsy'];
-    saturne = fichiersaturne['Saturne-eulerAsy'];
-    uranus = fichieruranus['Uranus-eulerAsy'];
-    neptune = fichierneptune['Neptune-eulerAsy'];
+    mercure = fichiereulerasy['Mercure-eulerAsy'];
+    venus = fichiereulerasy['Venus-eulerAsy'];
+    terre = fichiereulerasy['Terre-eulerAsy'];
+    mars = fichiereulerasy['Mars-eulerAsy'];
+    jupiter = fichiereulerasy['Jupiter-eulerAsy'];
+    saturne = fichiereulerasy['Saturne-eulerAsy'];
+    uranus = fichiereulerasy['Uranus-eulerAsy'];
+    neptune = fichiereulerasy['Neptune-eulerAsy'];
 }
 
 function RK2(){
-    mercure = fichiermercure['Mercure-RK2'];
-    venus = fichiervenus['Venus-RK2'];
-    terre = fichierterre['Terre-RK2'];
-    mars = fichiermars['Mars-RK2'];
-    jupiter = fichierjupiter['Jupiter-RK2'];
-    saturne = fichiersaturne['Saturne-RK2'];
-    uranus = fichieruranus['Uranus-RK2'];
-    neptune = fichierneptune['Neptune-RK2'];
+    mercure = fichierrk['Mercure-RK2'];
+    venus = fichierrk['Venus-RK2'];
+    terre = fichierrk['Terre-RK2'];
+    mars = fichierrk['Mars-RK2'];
+    jupiter = fichierrk['Jupiter-RK2'];
+    saturne = fichierrk['Saturne-RK2'];
+    uranus = fichierrk['Uranus-RK2'];
+    neptune = fichierrk['Neptune-RK2'];
 }
 
 function setup(){
