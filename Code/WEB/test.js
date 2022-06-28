@@ -8,52 +8,50 @@ let btnstop = document.getElementById('btn2');
 let btndemo = document.getElementById('btn5');
 let v = document.getElementById("vitesse");
 let x ;
+var file
 
 let fichiermercure, fichiervenus, fichierterre, fichiermars, fichierjupiter, fichiersaturne, fichieruranus, fichierneptune
 let mercure, venus, terre, terreas, terrerk, mars, jupiter, saturne, uranus, neptune
+var fichierSelectionne
+
+let fichiereuler, fichiereulerasy, fichierrk
+let stringData=''
+
+function changeHandler(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+
+    // FileList object.
+    var files = evt.target.files;
+
+    file = files[0];
+
+    var fileReader = new FileReader();
+
+
+    fileReader.onload = function(progressEvent) {
+        stringData = fileReader.result;
+    
+        fichierSelectionne = JSON.parse(stringData)
+    }
+
+    // Read file asynchronously.
+    fileReader.readAsText(file, "UTF-8"); // fileReader.result -> String.
+    
+}
 
 
 //fonction de récuperation du fichir JSON
 async function demande(){
-
-    //ouverture du JSON
-    const reponsemercure = await fetch('../Data/Mercure.json');
-    fichiermercure = await reponsemercure.json();
-
-    const reponsevenus = await fetch('../Data/Venus.json');
-    fichiervenus = await reponsevenus.json();
-
-    const reponseterre = await fetch('../Data/Terre.json');
-    fichierterre = await reponseterre.json();
-
-    const reponsemars = await fetch('../Data/Mars.json');
-    fichiermars = await reponsemars.json();
-
-    const reponsejupiter = await fetch('../Data/Jupiter.json');
-    fichierjupiter = await reponsejupiter.json();
-
-    const reponsesaturne = await fetch('../Data/Saturne.json');
-    fichiersaturne = await reponsesaturne.json();
-
-    const reponseuranus = await fetch('../Data/Uranus.json');
-    fichieruranus = await reponseuranus.json();
-
-    const reponseneptune = await fetch('../Data/Neptune.json');
-    fichierneptune = await reponseneptune.json();
-
-    //récupération de la liste voulue
-    RK2();
-
-    //mise a l'échelle des coordonnées
-    p1=echelle(mercure)
-    p2=echelle(venus)
-    p3=echelle(terre)
-    p4=echelle(mars)
-    p5=echelle(jupiter)
-    p6=echelle(saturne)
-    p7=echelle(uranus)
-    p8=echelle(neptune)
     
+    const reponseeuler = await fetch('../Data/Euler.json')
+    fichiereuler=await reponseeuler.json();
+
+    const reponseeulerasy = await fetch('../Data/EulerAsy.json')
+    fichiereulerasy=await reponseeulerasy.json();
+
+    const reponserk = await fetch('../Data/RK2.json')
+    fichierrk=await reponserk.json();
 }
 
 
@@ -71,35 +69,36 @@ function echelle(planete){
 }
 
 function euler(){
-    mercure = fichiermercure['Mercure-euler'];
-    venus = fichiervenus['Venus-euler'];
-    terre = fichierterre['Terre-euler'];
-    mars = fichiermars['Mars-euler'];
-    jupiter = fichierjupiter['Jupiter-euler'];
-    saturne = fichiersaturne['Saturne-euler'];
-    uranus = fichieruranus['Uranus-euler'];
-    neptune = fichierneptune['Neptune-euler'];
+    mercure = fichiereuler['Mercure-Euler'];
+    venus = fichiereuler['Venus-Euler'];
+    terre = fichiereuler['Terre-Euler'];
+    mars = fichiereuler['Mars-Euler'];
+    jupiter = fichiereuler['Jupiter-Euler'];
+    saturne = fichiereuler['Saturne-Euler'];
+    uranus = fichiereuler['Uranus-Euler'];
+    neptune = fichiereuler['Neptune-Euler'];
 }
+
 function eulerAsy(){
-    mercure = fichiermercure['Mercure-eulerAsy'];
-    venus = fichiervenus['Venus-eulerAsy'];
-    terre = fichierterre['Terre-eulerAsy'];
-    mars = fichiermars['Mars-eulerAsy'];
-    jupiter = fichierjupiter['Jupiter-eulerAsy'];
-    saturne = fichiersaturne['Saturne-eulerAsy'];
-    uranus = fichieruranus['Uranus-eulerAsy'];
-    neptune = fichierneptune['Neptune-eulerAsy'];
+    mercure = fichiereulerasy['Mercure-EulerAsy'];
+    venus = fichiereulerasy['Venus-EulerAsy'];
+    terre = fichiereulerasy['Terre-EulerAsy'];
+    mars = fichiereulerasy['Mars-EulerAsy'];
+    jupiter = fichiereulerasy['Jupiter-EulerAsy'];
+    saturne = fichiereulerasy['Saturne-EulerAsy'];
+    uranus = fichiereulerasy['Uranus-EulerAsy'];
+    neptune = fichiereulerasy['Neptune-EulerAsy'];
 }
 
 function RK2(){
-    mercure = fichiermercure['Mercure-RK2'];
-    venus = fichiervenus['Venus-RK2'];
-    terre = fichierterre['Terre-RK2'];
-    mars = fichiermars['Mars-RK2'];
-    jupiter = fichierjupiter['Jupiter-RK2'];
-    saturne = fichiersaturne['Saturne-RK2'];
-    uranus = fichieruranus['Uranus-RK2'];
-    neptune = fichierneptune['Neptune-RK2'];
+    mercure = fichierrk['Mercure-RK2'];
+    venus = fichierrk['Venus-RK2'];
+    terre = fichierrk['Terre-RK2'];
+    mars = fichierrk['Mars-RK2'];
+    jupiter = fichierrk['Jupiter-RK2'];
+    saturne = fichierrk['Saturne-RK2'];
+    uranus = fichierrk['Uranus-RK2'];
+    neptune = fichierrk['Neptune-RK2'];
 }
 
 function setup(){
@@ -123,7 +122,28 @@ async function initialisation(){
     //creation du canvas
     createCanvas(windowWidth, windowHeight, WEBGL);
     start = false;
+    console.log(file.name)
     await demande();
+    if (file.name=="Euler.json")
+    {
+        euler();
+    }
+    if(file.name=="EulerAsy.json")
+    {
+        eulerAsy();
+    }
+    if(file.name=="RK2.json")
+    {
+        RK2();
+    }
+    p1=echelle(mercure)
+    p2=echelle(venus)
+    p3=echelle(terre)
+    p4=echelle(mars)
+    p5=echelle(jupiter)
+    p6=echelle(saturne)
+    p7=echelle(uranus)
+    p8=echelle(neptune)
     start = true;
 
     document.getElementById("vit").value=0;
@@ -136,7 +156,7 @@ function planete(data, i, couleur){
     stroke(couleur);
     noFill();
     beginShape();
-    for(let k=0; k<10000; k+=100)
+    for(let k=0; k<data.length-1; k+=500)
     {
         curveVertex(data[k][0], data[k][1], data[k][2]);
     }
@@ -144,7 +164,7 @@ function planete(data, i, couleur){
 
     //affichage de la planète en orbite
     stroke(couleur)
-    strokeWeight(7)
+    strokeWeight(10)
     point(data[i][0], data[i][1], data[i][2])
     strokeWeight(1);
 }
@@ -162,7 +182,7 @@ function draw(){
         //initialisation du fond 
         background(0);
         stroke('red');
-        strokeWeight(15);
+        strokeWeight(20);
         point(0,0,0);
         strokeWeight(1);
 

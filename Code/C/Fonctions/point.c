@@ -101,6 +101,23 @@ Planet MethodeRungeKutta(Planet planet, int nbPoint, int deltaTemps){
 }
 
 
+Planet ChooseMethode( char *choice, Planet planet, int nbPoint, int deltaTemps){
+
+    // printf("Debut chooseMethode\n");
+    if(!strcmp(choice,"Euler")) planet = MethodEuler(planet, NB_REPERE, PAS_MERCURE);
+    else if(!strcmp(choice,"EulerAsy")) planet = MethodeEulerAsymetrique(planet, NB_REPERE, PAS_MERCURE);
+    else if(!strcmp(choice,"RK2")) planet = MethodeRungeKutta(planet, NB_REPERE, PAS_MERCURE);
+    else{
+        printf("Nom de méthode incorrect !\nVeuillez renseigner l'une des méthodes suivantes:\n\t1- Euler\n\t2- EulerAsy\n\t3- RK2\n\n");
+        exit(EXIT_FAILURE);
+    }
+    // printf("Fin chooseMethode\n");
+    planet = resetZ(planet);
+
+    return planet;
+}
+
+
 Planet resetZ(Planet planet){
 
     for(int i=0; i<NB_REPERE; i++){

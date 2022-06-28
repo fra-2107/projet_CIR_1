@@ -69,6 +69,7 @@ FILE *readFile(char *filename);
 FILE *writeFile(char *filename);
 void SaveData(Planet planet, char *methode, FILE* fichier);
 FILE *addToFile(char *filename);
+void writeForMethode(Planet *planetList, char *methode, char *title);
 
 
 /* POINTS */
@@ -78,6 +79,9 @@ void affichageInfoPoint(Point point);
 void infoPoint(Point point, FILE *fichier);
 Planet Euler(Planet planet);
 Vector calculAcceleration(Planet planet, int indice);
+
+//METHODE DE RESOLUTION
 Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps);
 Planet MethodeEulerAsymetrique(Planet planet, int nbPoint, int deltaTemps);
 Planet MethodeRungeKutta(Planet planet, int nbPoint, int deltaTemps);
+Planet ChooseMethode( char *choice, Planet planet, int nbPoint, int deltaTemps);

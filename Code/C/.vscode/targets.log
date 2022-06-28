@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 27 22:43:47 2022
+# Make data base, printed on Tue Jun 28 17:11:25 2022
 
 # Variables
 
@@ -14,7 +14,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 OBJ = $(SRC:.c=.o) 
 # environment
 GDK_BACKEND = x11
- 
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 5)
@@ -26,9 +25,13 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2b8037ea-471f-4cd0-bdb1-ac94742ff7db.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-35c80bef-90b8-4d9c-82a9-8393ed9a88da.sock
+# environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 VSCODE_CWD = /home/kilian
+# environment
+WINDOWPATH = 2
 # default
 MAKE_COMMAND := make
 # environment
@@ -46,7 +49,7 @@ PWD = /home/kilian/Documents/GitHub/SIMULATION/Code/C
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-XDG_DATA_DIRS = /home/kilian/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/home/kilian/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
 OLDPWD = /home/kilian
 # automatic
@@ -60,7 +63,7 @@ VSCODE_CODE_CACHE_PATH = /home/kilian/.config/Code/CachedData/30d9c6cd9483b2cc58
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.9YV8N1
+XAUTHORITY = /run/user/1000/gdm/Xauthority
 # default
 .LOADED := 
 # default
@@ -84,7 +87,7 @@ SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # default
 .SHELLFLAGS := -c
 # environment
-WAYLAND_DISPLAY = wayland-0
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -94,17 +97,19 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
+PT8HOME = /opt/pt
+# environment
 ZSH = /home/kilian/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 3975
+VSCODE_PID = 3945
 # environment
-XDG_SESSION_TYPE = wayland
+XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/pavillon:@/tmp/.ICE-unix/2346,unix/pavillon:/tmp/.ICE-unix/2346
+SESSION_MANAGER = local/pavillon:@/tmp/.ICE-unix/2761,unix/pavillon:/tmp/.ICE-unix/2761
 # automatic
 *F = $(notdir $*)
 # environment
@@ -138,7 +143,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+PATH = /home/kilian/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
 # default
 MAKEFILES := 
 # automatic
@@ -148,13 +153,11 @@ HEADER = $(REP)trajectoireAstre.h
 # makefile (from 'Makefile', line 4)
 MAIN = $(REP)main.c
 # environment
-INVOCATION_ID = ff8f0623b5b0421ba8d62465e9cd0a0e
+INVOCATION_ID = 18587962a8074889959a088e130cd579
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
 USERNAME = kilian
-# environment
-GNOME_SETUP_DISPLAY = :1
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -178,19 +181,21 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 2364
+SYSTEMD_EXEC_PID = 2782
 # environment
-DISPLAY = :0
+DISPLAY = :1
 # environment
 USER = kilian
 # environment
 GTK_MODULES = gail:atk-bridge
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 2222
+MANAGERPID = 2452
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3975
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3945
 # environment
 PAGER = less
 # environment
@@ -198,7 +203,9 @@ _ = /usr/share/code/code
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:39334
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+JOURNAL_STREAM = 8:38475
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -211,6 +218,8 @@ QT_IM_MODULE = ibus
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-c48c5404-1.68.1-main.sock
+# environment
+IM_CONFIG_PHASE = 1
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -226,7 +235,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = ubuntu
 # variable set hash-table stats:
-# Load=107/1024=10%, Rehash=0, Collisions=11/166=7%
+# Load=112/1024=11%, Rehash=0, Collisions=14/180=8%
 
 # Pattern-specific Variable Values
 
@@ -253,16 +262,15 @@ cleanAll:
 
 Fonctions/file.o: Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonctions/point.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-27 20:43:05.994591239
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
 	$(CC) -c $(SRC) 
 
 # Not a target:
 Fonctions/vecteur.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-26 16:32:16.850876754
+#  Last modified 2022-06-28 10:00:54.643822032
 #  File has been updated.
 #  Successfully updated.
 
@@ -276,7 +284,8 @@ cleanData:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 20:46:59.580881762
+ 
+#  Last modified 2022-06-28 16:18:46.041321966
 #  File has been updated.
 #  Successfully updated.
 
@@ -290,7 +299,7 @@ clean:
 # Not a target:
 Fonctions/point.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 20:04:26.104377444
+#  Last modified 2022-06-28 16:53:59.519116618
 #  File has been updated.
 #  Successfully updated.
 
@@ -303,8 +312,7 @@ Fonctions/main.c:
 # Not a target:
 Fonctions/file.c:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-06-27 20:34:07.813153713
+#  Last modified 2022-06-28 16:53:59.519116618
 #  File has been updated.
 #  Successfully updated.
 
@@ -319,38 +327,40 @@ all: trajectoireAstre
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/9=0%
 
 # Not a target:
 Fonctions/planet.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-27 20:40:48.506628599
+#  Last modified 2022-06-28 16:53:59.519116618
 #  File has been updated.
 #  Successfully updated.
 
 Fonctions/planet.o: Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonctions/point.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-27 20:43:06.026592129
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
 	$(CC) -c $(SRC) 
 
 Fonctions/libAstre.a: Fonctions/vecteur.o Fonctions/file.o Fonctions/planet.o Fonctions/point.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-27 20:43:06.070593351
+#  Last modified 2022-06-28 16:51:41.557927972
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/9=0%
 #  recipe to execute (from 'Makefile', line 22):
 	mv *.o $(REP)
 	ar rv $(LIB) $(OBJ)
 
 # Not a target:
 Fonctions/main.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-27 20:43:06.094594017
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 main.o: Fonctions/main.c Fonctions/trajectoireAstre.h
 #  Implicit rule search has not been done.
@@ -361,17 +371,38 @@ main.o: Fonctions/main.c Fonctions/trajectoireAstre.h
 
 Fonctions/vecteur.o: Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonctions/point.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-27 20:43:05.966590461
+#  Implicit/static pattern stem: ''
+#  Last modified 2022-06-28 16:51:41.437926893
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := Fonctions/vecteur.o
+# automatic
+# * := 
+# automatic
+# < := Fonctions/vecteur.c
+# automatic
+# + := Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonctions/point.c
+# automatic
+# % := 
+# automatic
+# ^ := Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonctions/point.c
+# automatic
+# ? := Fonctions/file.c Fonctions/planet.c Fonctions/point.c
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
 #  recipe to execute (from 'Makefile', line 19):
 	$(CC) -c $(SRC) 
 
 trajectoireAstre: Fonctions/libAstre.a Fonctions/main.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-27 20:43:06.114594573
+#  Last modified 2022-06-28 16:51:41.605928404
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/9=0%
 #  recipe to execute (from 'Makefile', line 13):
 	$(CC) -o $@ $(MAIN:.c=.o) $(LIB) -lm
 
@@ -383,14 +414,19 @@ Fonctions/trajectoireAstre.h:
 
 Fonctions/point.o: Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonctions/point.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-27 20:43:06.066593239
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
 	$(CC) -c $(SRC) 
 
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=21/1024=2%, Rehash=0, Collisions=1/47=2%
+# Load=21/1024=2%, Rehash=0, Collisions=1/48=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -400,9 +436,9 @@ Fonctions/point.o: Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonct
 # strcache buffers: 1 (0) / strings = 29 / storage = 378 B / avg = 13 B
 # current buf: size = 8162 B / used = 378 B / count = 29 / avg = 13 B
 
-# strcache performance: lookups = 52 / hit rate = 44%
+# strcache performance: lookups = 53 / hit rate = 45%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=0/52=0%
-# Finished Make data base on Mon Jun 27 22:43:47 2022
+# Load=29/8192=0%, Rehash=0, Collisions=0/53=0%
+# Finished Make data base on Tue Jun 28 17:11:25 2022
 
  

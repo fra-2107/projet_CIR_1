@@ -2,6 +2,11 @@
 
 
 Planet *InitPlanet(char *filename){
+    /*
+        Initialisation des planètes:
+            - Récupération des informations de chaque planètes depuis un fichier
+            - 
+    */
 
     Planet *planetList = malloc(NB_ASTRE * sizeof(Planet));
 
@@ -9,40 +14,25 @@ Planet *InitPlanet(char *filename){
     planetList = recupInfo(fichier, filename, planetList);
     fclose(fichier);
 
-    for(int i=0; i<NB_ASTRE; i++){
+    char methodeList[3][10] = {"Euler", "EulerAsy", "RK2"};
 
-        char title[40]; 
-        sprintf(title, "../Data/%s.json", planetList[i].name);
+    for(int k=0; k<3; k++){
 
-        planetList[i].trajectoire = malloc(NB_REPERE * sizeof(Point));
-        planetList[i].trajectoire[0] = firstPoint(planetList[i]);
+        char path[30];
+        sprintf(path, "../Data/%s.json", methodeList[k]);
 
-    
-        FILE *fichier = writeFile(title);
-        fprintf(fichier, "{");
+        for(int i=0; i<NB_ASTRE; i++){
 
-        planetList[i] = MethodEuler(planetList[i], NB_REPERE , PAS_MERCURE);
-        planetList[i] = resetZ(planetList[i]); 
-        SaveData(planetList[i], "euler", fichier);
-        fprintf(fichier, ",\n");
-        fclose(fichier);
+            planetList[i].trajectoire = malloc(NB_REPERE * sizeof(Point));
+            planetList[i].trajectoire[0] = firstPoint(planetList[i]);
 
-        planetList[i] = MethodeEulerAsymetrique(planetList[i], NB_REPERE , PAS_MERCURE);
-        planetList[i] = resetZ(planetList[i]);    
-        fichier = addToFile(title);
-        SaveData(planetList[i], "eulerAsy", fichier);
-        fprintf(fichier, ",\n");
-        fclose(fichier);
+            planetList[i] = ChooseMethode(methodeList[k], planetList[i], NB_REPERE, PAS_MERCURE);   
+        }
 
-        planetList[i] = MethodeRungeKutta(planetList[i], NB_REPERE, PAS_MERCURE);
-        planetList[i] = resetZ(planetList[i]);
-        fichier = addToFile(title);
-        SaveData(planetList[i], "RK2", fichier);
+        writeForMethode(planetList, methodeList[k], path);
 
-        fprintf(fichier, "}\n");
-        fclose(fichier);
+        DeltaConservationEnergie(planetList, 0, NB_REPERE-1, methodeList[k]);
     }
-    printf("Planètes initialisées\n");
 
     return planetList;  
 }
@@ -129,7 +119,6 @@ void affichageInfoPlanets(Planet *planetList){
 
 void DeltaConservationEnergie(Planet *planetList, int tmp1, int tmp2, char *methode){
 
-    // printf("début deltaConserv\n");
 
     for(int i=1; i<NB_ASTRE; i++){
         if(!strcmp(methode,"Euler")) planetList[i] = MethodEuler(planetList[i], NB_REPERE, PAS_MERCURE);
@@ -140,7 +129,6 @@ void DeltaConservationEnergie(Planet *planetList, int tmp1, int tmp2, char *meth
             exit(EXIT_FAILURE);
         }
     }
-    // printf("passe\n");
     
     double E1 = EnergieTotale(planetList, tmp1);
     double E2 = EnergieTotale(planetList, tmp2);
@@ -178,6 +166,6 @@ double EnergieCinetiqueTotale(Planet *planetList, int temps){
     for(int i=0; i<NB_ASTRE; i++){
         Ec += planetList[i].masse  * (pow(normeVect(planetList[i].trajectoire[temps].vitesse), 2));
     }
-    Ec *= 5;
+    Ec *= 0.5;
     return Ec;
 }
