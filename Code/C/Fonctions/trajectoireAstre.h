@@ -78,7 +78,6 @@ double vitessePerihelie(Planet planet);
 void affichageInfoPoint(Point point);
 void infoPoint(Point point, FILE *fichier);
 Planet Euler(Planet planet);
-Vector calculAcceleration(Planet planet, int indice);
 
 //METHODE DE RESOLUTION
 Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps);
