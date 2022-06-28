@@ -8,12 +8,14 @@ let btnstop = document.getElementById('btn2');
 let btndemo = document.getElementById('btn5');
 let v = document.getElementById("vitesse");
 let x ;
+var file
 
 let fichiermercure, fichiervenus, fichierterre, fichiermars, fichierjupiter, fichiersaturne, fichieruranus, fichierneptune
 let mercure, venus, terre, terreas, terrerk, mars, jupiter, saturne, uranus, neptune
 var fichierSelectionne
 
 let fichiereuler, fichiereulerasy, fichierrk
+let stringData=''
 
 function changeHandler(evt) {
     evt.stopPropagation();
@@ -22,95 +24,34 @@ function changeHandler(evt) {
     // FileList object.
     var files = evt.target.files;
 
-    var file = files[0];
+    file = files[0];
 
     var fileReader = new FileReader();
 
-    fileReader.onloadstart = function(progressEvent) {
-        
-        appendLog("onloadstart!");
-        var msg = "File Name: " + file.name + "<br>" +
-            "File Size: " + file.size + "<br>" +
-            "File Type: " + file.type;
-
-        appendLog(msg);
-    }
 
     fileReader.onload = function(progressEvent) {
-        appendLog("onload!");
-        var stringData = fileReader.result;
-        appendLog(" ---------------- File Content ----------------: ");
-        appendLog(stringData);
-    }
-
-    fileReader.onloadend = function(progressEvent) {
-        appendLog("onloadend!");
-        // FileReader.EMPTY, FileReader.LOADING, FileReader.DONE
-        appendLog("readyState = " + fileReader.readyState);
-    }
-
-    fileReader.onerror = function(progressEvent) {
-        appendLog("onerror!");
-        appendLog("Has Error!");
+        stringData = fileReader.result;
+    
+        fichierSelectionne = JSON.parse(stringData)
     }
 
     // Read file asynchronously.
     fileReader.readAsText(file, "UTF-8"); // fileReader.result -> String.
-    fichierSelectionne = JSON.parse(fileReader)
-    console.log(fichierSelectionne)
+    
 }
 
-
-function appendLog(msg) {
-    console.log(msg);
-}
 
 //fonction de récuperation du fichir JSON
 async function demande(){
-
-    // const reponseeuler = await fetch('../Data/RK2.json')
-    // fichierrk=await reponseeuler.json();
-
-    // RK2();
-
-    //ouverture du JSON
-    // const reponsemercure = await fetch('../Data/Mercure.json');
-    // fichiermercure = await reponsemercure.json();
-
-    // const reponsevenus = await fetch('../Data/Venus.json');
-    // fichiervenus = await reponsevenus.json();
-
-    // const reponseterre = await fetch('../Data/Terre.json');
-    // fichierterre = await reponseterre.json();
-
-    // const reponsemars = await fetch('../Data/Mars.json');
-    // fichiermars = await reponsemars.json();
-
-    // const reponsejupiter = await fetch('../Data/Jupiter.json');
-    // fichierjupiter = await reponsejupiter.json();
-
-    // const reponsesaturne = await fetch('../Data/Saturne.json');
-    // fichiersaturne = await reponsesaturne.json();
-
-    // const reponseuranus = await fetch('../Data/Uranus.json');
-    // fichieruranus = await reponseuranus.json();
-
-    // const reponseneptune = await fetch('../Data/Neptune.json');
-    // fichierneptune = await reponseneptune.json();
-
-    // //récupération de la liste voulue
-    // eulerAsy();
-
-    //mise a l'échelle des coordonnées
-    p1=echelle(mercure)
-    p2=echelle(venus)
-    p3=echelle(terre)
-    p4=echelle(mars)
-    p5=echelle(jupiter)
-    p6=echelle(saturne)
-    p7=echelle(uranus)
-    p8=echelle(neptune)
     
+    const reponseeuler = await fetch('../Data/Euler.json')
+    fichiereuler=await reponseeuler.json();
+
+    const reponseeulerasy = await fetch('../Data/EulerAsy.json')
+    fichiereulerasy=await reponseeulerasy.json();
+
+    const reponserk = await fetch('../Data/RK2.json')
+    fichierrk=await reponserk.json();
 }
 
 
@@ -139,14 +80,14 @@ function euler(){
 }
 
 function eulerAsy(){
-    mercure = fichiereulerasy['Mercure-eulerAsy'];
-    venus = fichiereulerasy['Venus-eulerAsy'];
-    terre = fichiereulerasy['Terre-eulerAsy'];
-    mars = fichiereulerasy['Mars-eulerAsy'];
-    jupiter = fichiereulerasy['Jupiter-eulerAsy'];
-    saturne = fichiereulerasy['Saturne-eulerAsy'];
-    uranus = fichiereulerasy['Uranus-eulerAsy'];
-    neptune = fichiereulerasy['Neptune-eulerAsy'];
+    mercure = fichiereulerasy['Mercure-EulerAsy'];
+    venus = fichiereulerasy['Venus-EulerAsy'];
+    terre = fichiereulerasy['Terre-EulerAsy'];
+    mars = fichiereulerasy['Mars-EulerAsy'];
+    jupiter = fichiereulerasy['Jupiter-EulerAsy'];
+    saturne = fichiereulerasy['Saturne-EulerAsy'];
+    uranus = fichiereulerasy['Uranus-EulerAsy'];
+    neptune = fichiereulerasy['Neptune-EulerAsy'];
 }
 
 function RK2(){
@@ -181,7 +122,28 @@ async function initialisation(){
     //creation du canvas
     createCanvas(windowWidth, windowHeight, WEBGL);
     start = false;
+    console.log(file.name)
     await demande();
+    if (file.name=="Euler.json")
+    {
+        euler();
+    }
+    if(file.name=="EulerAsy.json")
+    {
+        eulerAsy();
+    }
+    if(file.name=="RK2.json")
+    {
+        RK2();
+    }
+    p1=echelle(mercure)
+    p2=echelle(venus)
+    p3=echelle(terre)
+    p4=echelle(mars)
+    p5=echelle(jupiter)
+    p6=echelle(saturne)
+    p7=echelle(uranus)
+    p8=echelle(neptune)
     start = true;
 
     document.getElementById("vit").value=0;
