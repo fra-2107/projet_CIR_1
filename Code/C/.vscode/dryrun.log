@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/kilian/Documents/GitHub/SIMULATION/Code/C'
 gcc -Wall -c Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonctions/point.c 
 gcc -Wall -c Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonctions/point.c 
@@ -6,6 +6,7 @@ gcc -Wall -c Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonctions/p
 gcc -Wall -c Fonctions/vecteur.c Fonctions/file.c Fonctions/planet.c Fonctions/point.c 
 mv *.o Fonctions/
 ar rv Fonctions/libAstre.a Fonctions/vecteur.o Fonctions/file.o Fonctions/planet.o Fonctions/point.o 
+gcc -Wall    -c -o Fonctions/main.o Fonctions/main.c
 gcc -Wall -o trajectoireAstre Fonctions/main.o Fonctions/libAstre.a -lm
 make: Leaving directory '/home/kilian/Documents/GitHub/SIMULATION/Code/C'
  

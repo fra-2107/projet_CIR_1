@@ -2,6 +2,9 @@
 
 
 FILE *readFile(char *filename){
+    /*
+        Ouvre et retourne un fichier en mode lecture
+    */
 
     FILE *fichier = NULL;
 
@@ -17,6 +20,12 @@ FILE *readFile(char *filename){
 
 
 FILE *writeFile(char *filename){
+    /*
+        Ouvre et retourne un fichier en mode écriture
+        Si le fichier existe déjà il sera écrasé 
+        Sinon il sera créé
+    */
+
     FILE *fichier = NULL;
 
     fichier = fopen(filename,"w+");
@@ -31,6 +40,11 @@ FILE *writeFile(char *filename){
 
 
 FILE *addToFile(char *filename){
+    /*
+        Ouvre et retourne un fichier en mode écriture
+        Ajoute des caractères dans le fichier sans modifier contenu initial
+    */
+
     FILE *fichier = NULL;
 
     fichier = fopen(filename,"a+");
@@ -45,31 +59,31 @@ FILE *addToFile(char *filename){
 
 
 void SaveData(Planet planet, char *methode, FILE* fichier){
+    /*
+        Ecrit dans le fichier les valeurs de la trajectoire 
+        point par point
+    */
    
     char guillemet = '"';
 
     fprintf(fichier, "%c%s-%s%c : [", guillemet, planet.name, methode, guillemet);
-    // printf("debut save %s\n",planet.name);
-    for(int i=0; i<NB_REPERE; i++){
-        // printf("i: %d\n", i );
-        infoPoint(planet.trajectoire[i], fichier);
-        
-    }
-    // printf("%s save\n",planet.name);
-    // fprintf(fichier, "}\n");
 
+    for(int i=0; i<NB_REPERE; i++) infoPoint(planet.trajectoire[i], fichier);
 }
 
+
 void writeForMethode(Planet *planetList, char *methode, char *filename){
+    /*
+        Ecrit un même fichier la trajectoire de plusieurs planètes 
+        avec la même méthode
+    */
 
     FILE *fichier = writeFile(filename);
 
     fprintf(fichier, "{");
 
     for(int i=0; i<NB_ASTRE; i++){
-        // printf("i: %d\n",i);
-        // planetList[i] = ChooseMethode( methode, planetList[i], NB_REPERE, PAS_MERCURE);
-        // printf("trajectoire etablie pour %s\n", planetList[i].name);
+
         if(i == NB_ASTRE-1){
             SaveData(planetList[i], methode, fichier);
             fprintf(fichier, "}\n");
@@ -77,7 +91,6 @@ void writeForMethode(Planet *planetList, char *methode, char *filename){
             SaveData(planetList[i], methode, fichier);
             fprintf(fichier, ",\n");
         } 
-        // printf("%s save\n", planetList[i].name);
     }
 
     fclose(fichier);
