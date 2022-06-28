@@ -148,7 +148,7 @@ void DeltaConservationEnergie(Planet *planetList, int tmp1, int tmp2, char *meth
     double delta = E1 - E2;
     float pourcentage = (delta * 100) / E1;
 
-    printf("L'énergie totale du système a diminué de %.2f%% entre le temps %d et %d avec la méthode %s\n", pourcentage, tmp1, tmp2, methode);
+    printf("L'énergie totale du système a diminué de %.4f%% entre le temps %d et %d avec la méthode %s\n", pourcentage, tmp1, tmp2, methode);
 }
 
 
