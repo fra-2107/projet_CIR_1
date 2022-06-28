@@ -42,7 +42,7 @@ async function demande(){
     fichierneptune = await reponseneptune.json();
 
     //récupération de la liste voulue
-    euler();
+    eulerAsy();
 
     //mise a l'échelle des coordonnées
     p1=echelle(mercure)

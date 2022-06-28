@@ -42,7 +42,7 @@ async function demande(){
     fichierneptune = await reponseneptune.json();
 
     //récupération de la liste voulue
-    RK2();
+    eulerAsy();
 
     //mise a l'échelle des coordonnées
     p1=echelle(mercure)
@@ -80,6 +80,7 @@ function euler(){
     uranus = fichieruranus['Uranus-euler'];
     neptune = fichierneptune['Neptune-euler'];
 }
+
 function eulerAsy(){
     mercure = fichiermercure['Mercure-eulerAsy'];
     venus = fichiervenus['Venus-eulerAsy'];
@@ -136,7 +137,7 @@ function planete(data, i, couleur){
     stroke(couleur);
     noFill();
     beginShape();
-    for(let k=0; k<10000; k+=100)
+    for(let k=0; k<data.length-1; k+=500)
     {
         curveVertex(data[k][0], data[k][1], data[k][2]);
     }
@@ -144,7 +145,7 @@ function planete(data, i, couleur){
 
     //affichage de la planète en orbite
     stroke(couleur)
-    strokeWeight(7)
+    strokeWeight(10)
     point(data[i][0], data[i][1], data[i][2])
     strokeWeight(1);
 }
@@ -162,7 +163,7 @@ function draw(){
         //initialisation du fond 
         background(0);
         stroke('red');
-        strokeWeight(15);
+        strokeWeight(20);
         point(0,0,0);
         strokeWeight(1);
 

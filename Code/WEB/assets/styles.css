@@ -37,6 +37,7 @@ body {
 	background-image: url(../assets/univers.png);
 	background-repeat: no-repeat;
 	color: white;
+	font-family: 'Fira Sans', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -58,7 +59,7 @@ table {
 .titre{
 	width: 400px;
 	padding: 50px;
-	font-family: 'Fira Sans', sans-serif;
+	/* font-family: 'Fira Sans', sans-serif; */
 	font-size: 10vh;
 	font-weight: bold;
 	letter-spacing: 1px;
@@ -68,7 +69,7 @@ table {
 h3{
 	padding-bottom: 10px;
 	padding-left: 20px;
-	font-family: 'Fira Sans', sans-serif;
+	/* font-family: 'Fira Sans', sans-serif; */
 	transform: rotate(-45deg);
 }
 .planet{
@@ -140,7 +141,7 @@ button:active {
 	left: 3%;
 }
 .projet{
-	font-family: 'Fira Sans', sans-serif;
+	/* font-family: 'Fira Sans', sans-serif; */
 	font-size: larger;
 	line-height: 200%;
 	width: 900px;
@@ -153,7 +154,7 @@ button:active {
 }
 
 .copyright{
-	font-family: 'Fira Sans', sans-serif;
+	/* font-family: 'Fira Sans', sans-serif; */
 	font-size: small;
 	padding: 10px;
 	position: absolute;
@@ -167,7 +168,7 @@ button:active {
 
 
 .vitesse{
-	font-family: 'Fira Sans', sans-serif;
+	/* font-family: 'Fira Sans', sans-serif; */
 	position: absolute;
 	display: flex;
 	top: 45%;
@@ -177,3 +178,108 @@ button:active {
 	min-width: 190px;
 }
 
+.pp{
+	position: absolute;
+	top: 5%;
+	left: 3%;
+}
+h2{
+	font-weight: bolder;
+	font-size: xx-large;
+
+	padding: 20px;
+}
+h2::after{
+	content: " :";
+}
+
+h4{
+	padding: 15px;
+	text-decoration: underline;
+}
+
+h5{
+	text-decoration:dashed;
+	padding-left: 50px;
+	padding: 10px;
+}
+.cara{
+	border:solid;
+	border-radius: 10px;
+	text-shadow: 5px 5px 10px #ff7b00;
+	position: absolute;
+	right: 55%;
+}
+
+.position{
+	position: absolute;
+	top: 40%;
+	right: 10%;
+	
+}
+
+#fleche_sun{
+	position: absolute;
+	left: 0;
+	top: -10%;
+}
+#fleche_merc{
+	position: absolute;
+	left: 9%;
+	top: -10%;
+}
+#fleche_venus{
+	position: absolute;
+	left: 15%;
+	top: -10%;
+}
+#fleche_terre{
+	position: absolute;
+	left: 22%;
+	top: -10%;
+}
+#fleche_mars{
+	position: absolute;
+	left: 29.5%;
+	top: -10%;
+}
+#fleche_jupiter{
+	position: absolute;
+	left: 38%;
+	top: -10%;
+}
+#fleche_saturne{
+	position: absolute;
+	left: 49%;
+	top: -10%;
+}
+#fleche_uranus{
+	position: absolute;
+	left: 63%;
+	top: -10%;
+}
+#fleche_neptune{
+	position: absolute;
+	left: 80%;
+	top: -10%;
+}
+
+a{
+	color: white;
+}
+
+.next{
+	position: absolute;
+	right: 2%;
+	top:50%
+}
+.prev{
+	position: absolute;
+	left: 2%;
+	top:50%
+}
+.home{
+	position: absolute;
+	bottom: 2%;
+	left: 2%;
+}
