@@ -75,6 +75,7 @@ Point firstPoint(Planet planet);
 Planet resetZ(Planet planet);
 //Calcul
 double vitessePerihelie(Planet planet);
+float realTime(double tmp);
 //Affichage
 void affichageInfoPoint(Point point);
 //METHODE DE RESOLUTION

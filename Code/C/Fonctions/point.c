@@ -38,9 +38,21 @@ Planet resetZ(Planet planet){
         planet.trajectoire[i].temps = i;
         planet.trajectoire[i].position.z = 0;
         planet.trajectoire[i].vitesse.z = 0;
+        planet.trajectoire[i].acceleration.z = 0;
     }
 
     return planet;
+}
+
+float realTime(double tmp){
+    /*
+        Renvoie le temps réel en jours en fonction de la 
+        valeur du deltaT
+    */
+
+    float day = (tmp * DELTA_T) / (24 * 3600);
+
+    return day;
 }
 
 
@@ -52,7 +64,8 @@ void affichageInfoPoint(Point point){
             - accélération
     */
 
-    printf("\nInformation du point au temps [%d]:\n",point.temps);
+    float day = realTime(point.temps);
+    printf("\nInformation du point[%d] au bout du %.2f jours:\n",point.temps, day);
     printf("position:\t[%e\t%e\t%e]\n",point.position.x, point.position.y, point.position.z);
     printf("vitesse:\t[%e\t%e\t%e]\n",point.vitesse.x, point.vitesse.y, point.vitesse.z);
     printf("accélération:\t[%e\t%e\t%e]\n\n",point.acceleration.x, point.acceleration.y, point.acceleration.z);

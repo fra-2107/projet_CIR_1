@@ -26,6 +26,9 @@ int main(){
         DeltaConservationEnergie(planetList, 0, nb_point_trajectoire-1, methodeList[k]);
     }    
 
+    // affichageInfoPoint(planetList[2].trajectoire[99]);
+    printf("3653: %f\n", realTime(100));
+
     return 0;
 }
 
