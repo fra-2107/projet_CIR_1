@@ -11,37 +11,30 @@ Planet *InitPlanet(char *filename){
 
     for(int i=0; i<NB_ASTRE; i++){
 
-        char title[40]; 
-        sprintf(title, "../Data/%s.json", planetList[i].name);
+        planetList[i].trajectoire = malloc(NB_REPERE * sizeof(Point));
+        planetList[i].trajectoire[0] = firstPoint(planetList[i]);
+
+        planetList[i] = ChooseMethode("Euler", planetList[i], NB_REPERE, PAS_MERCURE);   
+    }
+    writeForMethode(planetList, "Euler", "../Data/Euler.json");
+
+    for(int i=0; i<NB_ASTRE; i++){
 
         planetList[i].trajectoire = malloc(NB_REPERE * sizeof(Point));
         planetList[i].trajectoire[0] = firstPoint(planetList[i]);
 
-    
-        FILE *fichier = writeFile(title);
-        fprintf(fichier, "{");
-
-        planetList[i] = MethodEuler(planetList[i], NB_REPERE , PAS_MERCURE);
-        planetList[i] = resetZ(planetList[i]); 
-        SaveData(planetList[i], "euler", fichier);
-        fprintf(fichier, ",\n");
-        fclose(fichier);
-
-        planetList[i] = MethodeEulerAsymetrique(planetList[i], NB_REPERE , PAS_MERCURE);
-        planetList[i] = resetZ(planetList[i]);    
-        fichier = addToFile(title);
-        SaveData(planetList[i], "eulerAsy", fichier);
-        fprintf(fichier, ",\n");
-        fclose(fichier);
-
-        planetList[i] = MethodeRungeKutta(planetList[i], NB_REPERE, PAS_MERCURE);
-        planetList[i] = resetZ(planetList[i]);
-        fichier = addToFile(title);
-        SaveData(planetList[i], "RK2", fichier);
-
-        fprintf(fichier, "}\n");
-        fclose(fichier);
+        planetList[i] = ChooseMethode("EulerAsy", planetList[i], NB_REPERE, PAS_MERCURE);   
     }
+    writeForMethode(planetList, "EulerAsy", "../Data/EulerAsy.json");
+
+    for(int i=0; i<NB_ASTRE; i++){
+
+        planetList[i].trajectoire = malloc(NB_REPERE * sizeof(Point));
+        planetList[i].trajectoire[0] = firstPoint(planetList[i]);
+
+        planetList[i] = ChooseMethode("RK2", planetList[i], NB_REPERE, PAS_MERCURE);   
+    }
+    writeForMethode(planetList, "RK2", "../Data/RK2.json");
     printf("Planètes initialisées\n");
 
     return planetList;  
@@ -178,6 +171,6 @@ double EnergieCinetiqueTotale(Planet *planetList, int temps){
     for(int i=0; i<NB_ASTRE; i++){
         Ec += planetList[i].masse  * (pow(normeVect(planetList[i].trajectoire[temps].vitesse), 2));
     }
-    Ec *= 5;
+    Ec *= 0.5;
     return Ec;
 }

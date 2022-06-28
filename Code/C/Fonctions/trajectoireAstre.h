@@ -7,7 +7,7 @@
 #define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define NB_REPERE 3653
+#define NB_REPERE 100
 #define PAS_MERCURE 8640
 #define MASSE_SOLEIL 1.989100e+30
 
@@ -69,6 +69,7 @@ FILE *readFile(char *filename);
 FILE *writeFile(char *filename);
 void SaveData(Planet planet, char *methode, FILE* fichier);
 FILE *addToFile(char *filename);
+void writeForMethode(Planet *planetList, char *methode, char *title);
 
 
 /* POINTS */
@@ -78,6 +79,9 @@ void affichageInfoPoint(Point point);
 void infoPoint(Point point, FILE *fichier);
 Planet Euler(Planet planet);
 Vector calculAcceleration(Planet planet, int indice);
+
+//METHODE DE RESOLUTION
 Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps);
 Planet MethodeEulerAsymetrique(Planet planet, int nbPoint, int deltaTemps);
 Planet MethodeRungeKutta(Planet planet, int nbPoint, int deltaTemps);
+Planet ChooseMethode( char *choice, Planet planet, int nbPoint, int deltaTemps);
