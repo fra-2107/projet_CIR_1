@@ -95,21 +95,21 @@ async function initialisation(){
     await demande();
     start = true;
 
-    document.getElementById("vit").value=1;
+    document.getElementById("vit").value=0;
 }   
 
 //fonction qui affiche la trajectoire de la planète ainsi que la planète en orbite autour du soleil
 function planete(data, i, couleur){
     
     //affichage de la trace
-    // stroke(couleur);
-    // noFill();
-    // beginShape();
-    // for(let k=0; k<data.length-1; k+=250)
-    // {
-    //     curveVertex(data[k][0], data[k][1]);
-    // }
-    // endShape();
+    stroke(couleur);
+    noFill();
+    beginShape();
+    for(let k=0; k<data.length-1; k+=50000)
+    {
+        curveVertex(data[k][0], data[k][1], data[k][2]);
+    }
+    endShape();
 
     //affichage de la planète en orbite
     stroke(couleur)
@@ -129,7 +129,6 @@ function draw(){
         x=parseInt(x, 10);
 
         //initialisation du fond 
-        ambientLight(255);
         background(0);
         stroke('red');
         strokeWeight(20);
@@ -148,7 +147,7 @@ function draw(){
 
         //incrementation du i (pour l'affichage des palnetes en fonction du temps)
         i+=x;
-        if(i>=100000)
+        if(i>=1000000)
         {
             console.log("i="+i)
             console.log(typeof(i))
@@ -172,4 +171,11 @@ function arret(){
 function arret_orbite(){
     x=0;
     document.getElementById("vit").value = "0";
+    vit.className='off'
+}
+
+function play_orbite(){
+    x=1;
+    document.getElementById("vit").value = "1";
+    vit.className='vit'
 }

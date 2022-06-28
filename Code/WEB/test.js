@@ -1,5 +1,5 @@
 //déclarations des variables globales (utilisables dans plusieurs fonctions)
-let mercury, mercure, start, p1, p2, p3, p4, p5, p6, p7, p8, i;
+let start, p1, p2, p3, p4, p5, p6, p7, p8, i;
 let header = document.getElementById('titre');
 let system = document.getElementById('system');
 let projet = document.getElementById('projet');
@@ -8,44 +8,40 @@ let btn2 = document.getElementById('btn2');
 let v = document.getElementById("vitesse");
 let x ;
 
+let fichiermercure, fichiervenus, fichierterre, fichiermars, fichierjupiter, fichiersaturne, fichieruranus, fichierneptune
+let mercure, venus, terre, mars, jupiter, saturne, uranus, neptune
+
 
 //fonction de récuperation du fichir JSON
 async function demande(){
 
     //ouverture du JSON
     const reponsemercure = await fetch('../Data/Mercure-euler.json');
-    const fichiermercure = await reponsemercure.json();
+    fichiermercure = await reponsemercure.json();
 
     const reponsevenus = await fetch('../Data/Venus-euler.json');
-    const fichiervenus = await reponsevenus.json();
+    fichiervenus = await reponsevenus.json();
 
     const reponseterre = await fetch('../Data/Terre-euler.json');
-    const fichierterre = await reponseterre.json();
+    fichierterre = await reponseterre.json();
 
     const reponsemars = await fetch('../Data/Mars-euler.json');
-    const fichiermars = await reponsemars.json();
+    fichiermars = await reponsemars.json();
 
     const reponsejupiter = await fetch('../Data/Jupiter-euler.json');
-    const fichierjupiter = await reponsejupiter.json();
+    fichierjupiter = await reponsejupiter.json();
 
     const reponsesaturne = await fetch('../Data/Saturne-euler.json');
-    const fichiersaturne = await reponsesaturne.json();
+    fichiersaturne = await reponsesaturne.json();
 
     const reponseuranus = await fetch('../Data/Uranus-euler.json');
-    const fichieruranus = await reponseuranus.json();
+    fichieruranus = await reponseuranus.json();
 
     const reponseneptune = await fetch('../Data/Neptune-euler.json');
-    const fichierneptune = await reponseneptune.json();
+    fichierneptune = await reponseneptune.json();
 
     //récupération de la liste voulue
-    mercure = fichiermercure['Mercure-euler'];
-    venus = fichiervenus['Venus-euler'];
-    terre = fichierterre['Terre-euler'];
-    mars = fichiermars['Mars-euler'];
-    jupiter = fichierjupiter['Jupiter-euler'];
-    saturne = fichiersaturne['Saturne-euler'];
-    uranus = fichieruranus['Uranus-euler'];
-    neptune = fichierneptune['Neptune-euler'];
+    euler();
 
     //mise a l'échelle des coordonnées
     p2=echelle(mercure)
@@ -71,6 +67,17 @@ function echelle(planete){
     };
 
     return result
+}
+
+function euler(){
+    mercure = fichiermercure['Mercure-euler'];
+    venus = fichiervenus['Venus-euler'];
+    terre = fichierterre['Terre-euler'];
+    mars = fichiermars['Mars-euler'];
+    jupiter = fichierjupiter['Jupiter-euler'];
+    saturne = fichiersaturne['Saturne-euler'];
+    uranus = fichieruranus['Uranus-euler'];
+    neptune = fichierneptune['Neptune-euler'];
 }
 
 function setup(){
@@ -129,7 +136,6 @@ function draw(){
         x=parseInt(x, 10);
 
         //initialisation du fond 
-        ambientLight(255);
         background(0);
         stroke('red');
         strokeWeight(20);
