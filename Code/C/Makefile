@@ -1,10 +1,11 @@
 CC = gcc -Wall
 EXEC = trajectoireAstre
-MAIN = main.c
-SRC = vecteur.c file.c planet.c point.c
+REP = Fonctions/
+MAIN = $(REP)main.c
+SRC = $(REP)vecteur.c $(REP)file.c $(REP)planet.c $(REP)point.c
 OBJ = $(SRC:.c=.o) 
-LIB = libAstre.a
-HEADER = trajectoireAstre.h
+LIB = $(REP)libAstre.a
+HEADER = $(REP)trajectoireAstre.h
 
 all: $(EXEC)
 
@@ -18,10 +19,14 @@ $(OBJ): $(SRC)
 	$(CC) -c $(SRC) 
 
 $(LIB): $(OBJ)
+	mv *.o $(REP)
 	ar rv $(LIB) $(OBJ)
 
 clean:
-	rm $(OBJ)
+	rm $(REP)$(OBJ)
 
 cleanAll:
-	rm $(OBJ) main.o $(EXEC) $(LIB)
+	rm $(OBJ) $(REP)main.o $(EXEC) $(LIB)
+
+cleanData:
+	rm ../Data/*.json
