@@ -56,13 +56,17 @@ void affichageInfoPlanets(Planet *planetList);
 void InfoPlanet(Planet planet);
 void affichageTrajectoirePlanet(Planet planet);
 Planet resetZ(Planet planet);
-void verifConservationEnergie(Planet planet);
+
+//Conservation de l'énergie
+void DeltaConservationEnergie(Planet *planetList, int tmp1, int tmp2, char *methode);
+double EnergieTotale(Planet *planetList, int temps);
+double EnergiePotentielTotale(Planet *planetList, int temps);
+double EnergieCinetiqueTotale(Planet *planetList, int temps);
 
 
 /* FILES */
 FILE *readFile(char *filename);
 FILE *writeFile(char *filename);
-// void SaveData(Planet planet, char *methode, FILE* fichier);
 void SaveData(Planet planet, char *methode, FILE* fichier);
 FILE *addToFile(char *filename);
 

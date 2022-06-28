@@ -43,19 +43,24 @@ Vector calculAcceleration(Planet planet, int indice){
 
 Planet MethodEuler(Planet planet, int nbPoint, int deltaTemps){
 
+    // printf("debut methode EULER\n");
+
     for (int i = 1; i < nbPoint; i++){
 
         planet.trajectoire[i].acceleration = scalaireVect(- (G * MASSE_SOLEIL) / pow(normeVect(planet.trajectoire[i-1].position),3), planet.trajectoire[i-1].position);
+        // printf("acceleration ok\n");
 
         planet.trajectoire[i].position.x = planet.trajectoire[i-1].position.x + planet.trajectoire[i-1].vitesse.x * deltaTemps;
         planet.trajectoire[i].position.y = planet.trajectoire[i-1].position.y + planet.trajectoire[i-1].vitesse.y * deltaTemps;
+        // printf("position ok\n");
 
         planet.trajectoire[i].vitesse.x = planet.trajectoire[i-1].vitesse.x + planet.trajectoire[i].acceleration.x * deltaTemps;
         planet.trajectoire[i].vitesse.y = planet.trajectoire[i-1].vitesse.y + planet.trajectoire[i].acceleration.y * deltaTemps;
+        // printf("vitesse ok\n");
 
         planet.trajectoire[i].temps = i;
     }
-
+    // printf("fin methode EULER\n");
     return planet;
 }
 
