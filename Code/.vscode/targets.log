@@ -1,278 +1,282 @@
-make.exe all -f c:\Users\timch\OneDrive\Bureau\projet_CIR_1\Code\makefile --print-data-base --no-builtin-variables --no-builtin-rules --question
-# GNU Make 3.81
-# Copyright (C) 2006  Free Software Foundation, Inc.
-# Ceci est un logiciel libre ; voir le source pour les conditions de copie.
-# Il n'y a PAS de garantie ; tant pour une utilisation COMMERCIALE que pour
-# R�PONDRE � UN BESOIN PARTICULIER.
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
 
-# Ce logiciel est construit pour i386-pc-mingw32
-
-# Base de donn�es de Make, imprim�e le Tue Jun 28 16:17:57 2022
+# Make data base, printed on Tue Jun 28 16:55:34 2022
 
 # Variables
 
-# automatique
-<D = $(patsubst %/,%,$(dir $<))
-# automatique
-?F = $(notdir $?)
-# makefile
-MAKEFLAGS = Rrp
-# environnement
-VSCODE_LOG_NATIVE = false
-# automatique
-?D = $(patsubst %/,%,$(dir $?))
-# automatique
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+SSH_AGENT_LAUNCHER = gnome-keyring
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f4b59e03-da6b-4496-a232-9865df540a30.sock
+# environment
+VSCODE_CWD = /home/kilian
+# default
+MAKE_COMMAND := make
+# environment
+QT_ACCESSIBILITY = 1
+# automatic
 @D = $(patsubst %/,%,$(dir $@))
-# environnement
-HOMEDRIVE = C:
-# automatique
-@F = $(notdir $@)
-# automatique
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/kilian/Documents/GitHub/SIMULATION/Code
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+XDG_DATA_DIRS = /home/kilian/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+OLDPWD = /home/kilian
+# automatic
 ^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/kilian/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.9YV8N1
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
 # makefile
-CURDIR := c:/Users/timch/OneDrive/Bureau/projet_CIR_1/Code
-# d�faut
-SHELL := sh.exe
-# environnement
-WINDIR = C:\Windows
-# environnement
-VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"575d78304484aa5fa0cbb32d34fd883d.fr","_translationsConfigFile":"C:\\Users\\timch\\AppData\\Roaming\\Code\\clp\\575d78304484aa5fa0cbb32d34fd883d.fr\\tcf.json","_cacheRoot":"C:\\Users\\timch\\AppData\\Roaming\\Code\\clp\\575d78304484aa5fa0cbb32d34fd883d.fr","_resolvedLanguagePackCoreLocation":"C:\\Users\\timch\\AppData\\Roaming\\Code\\clp\\575d78304484aa5fa0cbb32d34fd883d.fr\\30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"C:\\Users\\timch\\AppData\\Roaming\\Code\\clp\\575d78304484aa5fa0cbb32d34fd883d.fr\\corrupted.info","_languagePackSupport":true}
-# environnement
-VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
-# environnement
-ONEDRIVE = C:\Users\timch\OneDrive
-# environnement
-PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/kilian/Documents/GitHub/SIMULATION/Code
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# default
+.SHELLFLAGS := -c
+# environment
+WAYLAND_DISPLAY = wayland-0
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = ubuntu
 # makefile
 MAKEFILE_LIST := 
-# environnement
-FPS_BROWSER_USER_PROFILE_STRING = Default
-# environnement
-TMP = C:\Users\timch\AppData\Local\Temp
-# environnement
+# automatic
+@F = $(notdir $@)
+# environment
+ZSH = /home/kilian/.oh-my-zsh
+# environment
 VSCODE_VERBOSE_LOGGING = true
-# environnement
-PROGRAMW6432 = C:\Program Files
-# environnement
-PROGRAMDATA = C:\ProgramData
-# environnement
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-111ef09f-0fe8-4a16-99d5-5f692cb6a43a-sock
-# environnement
-VSCODE_CWD = C:\Users\timch\AppData\Local\Programs\Microsoft VS Code
-# environnement
-PATH = C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Users\timch\AppData\Local\Microsoft\WindowsApps;C:\Users\timch\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\timch\AppData\Local\GitHubDesktop\bin;C:\Program Files (x86)\Nmap
-# environnement
-COMMONPROGRAMW6432 = C:\Program Files\Common Files
-# environnement
-ZES_ENABLE_SYSMAN = 1
-# environnement
-PROCESSOR_ARCHITECTURE = x86
-# environnement
-USERPROFILE = C:\Users\timch
-# environnement
-ALLUSERSPROFILE = C:\ProgramData
-# environnement
-VSCODE_LOG_STACK = false
-# environnement
-NUMBER_OF_PROCESSORS = 8
-# environnement
-ELECTRON_RUN_AS_NODE = 1
-# d�faut
-.FEATURES := target-specific order-only second-expansion else-if archives
-# automatique
-%F = $(notdir $%)
-# environnement
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_27584_IWIHHBGBIQDYEAJV
-# environnement
-VSCODE_PIPE_LOGGING = true
-# environnement
-COMPUTERNAME = LAPTOP-TIM
-# environnement
-PROGRAMFILES = C:\Program Files (x86)
-# environnement
-DRIVERDATA = C:\Windows\System32\Drivers\DriverData
-# environnement
-ORIGINAL_XDG_CURRENT_DESKTOP = undefined
-# environnement
-USERNAME = timch
-# environnement
-PUBLIC = C:\Users\Public
-# environnement
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
-# environnement
-VSCODE_CODE_CACHE_PATH = C:\Users\timch\AppData\Roaming\Code\CachedData\30d9c6cd9483b2cc586687151bcbcd635f373630
-# environnement
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# environnement
-COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
-# environnement
-LOGONSERVER = \\LAPTOP-TIM
-# environnement
-ONEDRIVECONSUMER = C:\Users\timch\OneDrive
-# environnement
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# environnement
-USERDOMAIN = LAPTOP-TIM
-# d�faut
-MAKE = $(MAKE_COMMAND)
-# d�faut
+# environment
+VSCODE_PID = 3975
+# environment
+XDG_SESSION_TYPE = wayland
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+SESSION_MANAGER = local/pavillon:@/tmp/.ICE-unix/2346,unix/pavillon:/tmp/.ICE-unix/2346
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"575d78304484aa5fa0cbb32d34fd883d.fr","_translationsConfigFile":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/tcf.json","_cacheRoot":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr","_resolvedLanguagePackCoreLocation":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/corrupted.info","_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# makefile
+SHELL = /bin/sh
+# default
 MAKECMDGOALS := all
-# environnement
-QT_DEVICE_PIXEL_RATIO = auto
-# d�faut
-MAKE_VERSION := 3.81
+# environment
+XMODIFIERS = @im=ibus
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+SHLVL = 0
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+INVOCATION_ID = ff8f0623b5b0421ba8d62465e9cd0a0e
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+USERNAME = kilian
+# environment
+GNOME_SETUP_DISPLAY = :1
+# automatic
+?F = $(notdir $?)
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+LS_COLORS = 
+# automatic
++F = $(notdir $+)
+# environment
+LESS = -R
+# environment
+DESKTOP_SESSION = ubuntu
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = kilian
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
-# environnement
-PROGRAMFILES(X86) = C:\Program Files (x86)
-# automatique
-%D = $(patsubst %/,%,$(dir $%))
-# environnement
-LOCALAPPDATA = C:\Users\timch\AppData\Local
-# environnement
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
-# d�faut
-MAKE_COMMAND := make.exe
-# environnement
-PROCESSOR_ARCHITEW6432 = AMD64
-# d�faut
-.VARIABLES := 
-# automatique
-*F = $(notdir $*)
-# environnement
-PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
-# environnement
-OS = Windows_NT
-# environnement
-VSCODE_IPC_HOOK = \\.\pipe\fa761aae3d3e41174bcc0d73faed46a4-1.68.1-main-sock
-# environnement
-HOMEPATH = \Users\timch
-# environnement
-COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
-# environnement
-PROMPT = $P$G
-# environnement
-MFLAGS = -Rrp
-# automatique
-*D = $(patsubst %/,%,$(dir $*))
-# environnement
-PT8HOME = C:\Program Files\Cisco Packet Tracer 8.1.1
-# environnement
-SYSTEMROOT = C:\Windows
-# automatique
-+D = $(patsubst %/,%,$(dir $+))
-# automatique
-+F = $(notdir $+)
-# environnement
-APPDATA = C:\Users\timch\AppData\Roaming
-# environnement
-TEMP = C:\Users\timch\AppData\Local\Temp
-# environnement
-COMSPEC = C:\Windows\system32\cmd.exe
-# d�faut
-MAKEFILES := 
-# automatique
+# environment
+SYSTEMD_EXEC_PID = 2364
+# environment
+DISPLAY = :0
+# environment
+USER = kilian
+# environment
+GTK_MODULES = gail:atk-bridge
+# default
+MAKE_VERSION := 4.3
+# environment
+MANAGERPID = 2222
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3975
+# environment
+PAGER = less
+# environment
+_ = /usr/share/code/code
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+JOURNAL_STREAM = 8:39334
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/kilian
+# environment
+QT_IM_MODULE = ibus
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c48c5404-1.68.1-main.sock
+# default
+.RECIPEPREFIX := 
+# automatic
 <F = $(notdir $<)
-# environnement
-LC_ALL = C
-# automatique
-^F = $(notdir $^)
-# d�faut
+# default
 SUFFIXES := 
-# environnement
-SYSTEMDRIVE = C:
-# environnement
-SESSIONNAME = Console
-# environnement
-PROCESSOR_REVISION = 8c01
-# environnement
-MAKELEVEL := 0
-# environnement
-LANG = C
-# environnement
-PROCESSOR_LEVEL = 6
-# environnement
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
-# environnement
-VSCODE_PID = 27584
-# environnement
-USERDOMAIN_ROAMINGPROFILE = LAPTOP-TIM
-# variables initialis�es dans les statistiques de table de hachage:
-# Charge=93/1024=9%, Refait le hachage=0, Collisions=8/108=7%
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+GDMSESSION = ubuntu
+# variable set hash-table stats:
+# Load=99/1024=10%, Rehash=0, Collisions=4/126=3%
 
-# Valeurs de variable avec mod�le sp�cifique
+# Pattern-specific Variable Values
 
-# pas de valeurs de variable avec mod�le sp�cifique
+# No pattern-specific variable values.
 
-# R�pertoires
+# Directories
 
-# C:\Windows\System32\WindowsPowerShell\v1.0\ (p�riph�rique C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1605758070): 30 fichiers, non impossibilit�s.
-# C:\Windows\System32\Wbem (p�riph�rique C:/Windows/System32/Wbem, mtime 1655759168): 171 fichiers, non impossibilit�s.
-# . (p�riph�rique c:/Users/timch/OneDrive/Bureau/projet_CIR_1/Code, mtime 1656414694): 6 fichiers, non impossibilit�s.
-# C:\Users\timch\AppData\Local\Programs\Microsoft VS Code\bin (p�riph�rique C:/Users/timch/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1655987248): 4 fichiers, non impossibilit�s.
-# C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (p�riph�rique C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1629826698): 10 fichiers, non impossibilit�s.
-# C:\Program Files (x86)\Nmap (p�riph�rique C:/Program Files (x86)/Nmap, mtime 1651666350): 37 fichiers, non impossibilit�s.
-# C:\MinGW\bin (p�riph�rique C:/MinGW/bin, mtime 1647438869): 145 fichiers, non impossibilit�s.
-# C:\Windows\System32\OpenSSH\ : statut indisponible.
-# C:\Users\timch\AppData\Local\GitHubDesktop\bin (p�riph�rique C:/Users/timch/AppData/Local/GitHubDesktop/bin, mtime 1647504382): 4 fichiers, non impossibilit�s.
-# C:\Users\timch\AppData\Local\Microsoft\WindowsApps (p�riph�rique C:/Users/timch/AppData/Local/Microsoft/WindowsApps, mtime 1656075216): 32 fichiers, non impossibilit�s.
-# C:\Windows (p�riph�rique C:/Windows, mtime 1655759167): 110 fichiers, non impossibilit�s.
-# C:\Program Files\Git\cmd (p�riph�rique C:/Program Files/Git/cmd, mtime 1632378091): 8 fichiers, non impossibilit�s.
-# C:\Windows\system32 (p�riph�rique C:/Windows/system32, mtime 1655801261): 2984 fichiers, non impossibilit�s.
-# C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (p�riph�rique C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1629826713): 5 fichiers, non impossibilit�s.
-# C:\Program Files (x86)\GnuWin32\bin (p�riph�rique C:/Program Files (x86)/GnuWin32/bin, mtime 1642070207): 103 fichiers, non impossibilit�s.
+# . (device 66309, inode 789288): 6 files, no impossibilities.
 
-# 3649 fichiers, non impossibilit�s dans 15 r�pertoires.
+# 6 files, no impossibilities in 1 directories.
 
-# R�gles Implicites
+# Implicit Rules
 
-# Pas de r�gles implicites.
+# No implicit rules.
 
-# Fichiers
+# Files
 
-# Pas une cible :
-all:
-#  Cible provenant de la ligne de commande.
-#  Recherche de r�gle implicite n'a pas �t� effectu�e.
-#  Heure de modification jamais v�rifi�e.
-#  Fichier n'a pas �t� mis � jour.
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
-# Pas une cible :
+# Not a target:
 .DEFAULT:
-#  Recherche de r�gle implicite n'a pas �t� effectu�e.
-#  Heure de modification jamais v�rifi�e.
-#  Fichier n'a pas �t� mis � jour.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Pas une cible :
-c:\Users\timch\OneDrive\Bureau\projet_CIR_1\Code\makefile:
-#  Recherche de r�gle implicite effectu�e.
-# Fichier inexistant.
-#  Fichier n'a pas �t� mis � jour.
-# variables initialis�es dans les statistiques de table de hachage:
-# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
 
-# Pas une cible :
-.SUFFIXES:
-#  Recherche de r�gle implicite n'a pas �t� effectu�e.
-#  Heure de modification jamais v�rifi�e.
-#  Fichier n'a pas �t� mis � jour.
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
-# statistiques des fichiers de la table de hachage:
-# Charge=4/1024=0%, Refait le hachage=0, Collisions=0/15=0%
-# Chemins de Recherche VPATH
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
-# Pas de chemins de recherche � vpath �.
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# VPATH Search Paths
 
-# Pas de chemin de recherche g�n�ral (variable � VPATH �).
+# No 'vpath' search paths.
 
-# # of strings in strcache: 1
-# # of strcache buffers: 1
-# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
-# strcache free: total = 4038 / max = 4038 / min = 4038 / avg = 4038
+# No general ('VPATH' variable) search path.
 
-# Fin de la base de donn�es de Make le Tue Jun 28 16:17:57 2022
+# strcache buffers: 1 (0) / strings = 14 / storage = 109 B / avg = 7 B
+# current buf: size = 8162 B / used = 109 B / count = 14 / avg = 7 B
+
+# strcache performance: lookups = 17 / hit rate = 17%
+# hash-table stats:
+# Load=14/8192=0%, Rehash=0, Collisions=0/17=0%
+# Finished Make data base on Tue Jun 28 16:55:34 2022
 
  
-make.exe: c:\Users\timch\OneDrive\Bureau\projet_CIR_1\Code\makefile: No such file or directory
-make.exe: *** Pas de r�gle pour fabriquer la cible � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\Code\makefile �. Arr�t.
+make: *** No rule to make target 'all'.  Stop.
 
