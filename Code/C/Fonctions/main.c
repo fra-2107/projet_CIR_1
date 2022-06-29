@@ -7,6 +7,7 @@ int main(){
 
     char methodeList[NB_METHODE][NB_CHAR_MAX] = {"Euler", "EulerAsy", "RK2"};
     int nb_point_trajectoire = NB_REPERE;
+    int deltaT = DELTA_T;
 
     for(int k=0; k<NB_METHODE; k++){
 
@@ -18,16 +19,13 @@ int main(){
             planetList[i].trajectoire = malloc(nb_point_trajectoire * sizeof(Point));
             planetList[i].trajectoire[0] = firstPoint(planetList[i]);
 
-            planetList[i] = CalculTrajectoire(methodeList[k], planetList[i], nb_point_trajectoire, DELTA_T);   
+            planetList[i] = CalculTrajectoire(methodeList[k], planetList[i], nb_point_trajectoire, deltaT);   
         }
 
         writeForMethode(planetList, methodeList[k], path);
 
         DeltaConservationEnergie(planetList, 0, nb_point_trajectoire-1, methodeList[k]);
     }    
-
-    // affichageInfoPoint(planetList[2].trajectoire[99]);
-    printf("3653: %f\n", realTime(100));
 
     return 0;
 }

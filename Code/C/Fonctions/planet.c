@@ -127,7 +127,7 @@ void DeltaConservationEnergie(Planet *planetList, int tmp1, int tmp2, char *meth
         else if(!strcmp(methode,"EulerAsy")) planetList[i] = MethodeEulerAsymetrique(planetList[i], NB_REPERE, DELTA_T);
         else if(!strcmp(methode,"RK2")) planetList[i] = MethodeRungeKutta(planetList[i], NB_REPERE, DELTA_T);
         else{
-            printf("Nom de méthode incorrect !\nVeuillez renseigner l'une des méthodes suivantes:\n\t1- Euler\n\t2- EulerAsy\n\t3- RK2\n\n");
+            printf("Nom de methode incorrect !\nVeuillez renseigner l'une des methodes suivantes:\n\t1- Euler\n\t2- EulerAsy\n\t3- RK2\n\n");
             exit(EXIT_FAILURE);
         }
     }
@@ -138,7 +138,7 @@ void DeltaConservationEnergie(Planet *planetList, int tmp1, int tmp2, char *meth
     double delta = E1 - E2;
     float pourcentage = (delta * 100) / E1;
 
-    printf("L'énergie totale du système a diminué de %.4f%% entre le temps %d et %d avec la méthode %s\n", pourcentage, tmp1, tmp2, methode);
+    printf("L'énergie totale du système a diminue de %.4f%% entre le jour %.1f et le jour %.1f avec la methode %s\n", pourcentage, realTime(tmp1), realTime(tmp2), methode);
 }
 
 
