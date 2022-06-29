@@ -29,4 +29,4 @@ cleanAll:
 	rm $(OBJ) $(REP)main.o $(EXEC) $(LIB)
 
 cleanData:
-	rm ../Data/*.json
+	rm Code/Data/*.json

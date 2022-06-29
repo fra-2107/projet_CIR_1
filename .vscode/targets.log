@@ -8,7 +8,7 @@ make.exe all -f c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile --print-dat
 # Ce logiciel est construit pour i386-pc-mingw32
  
 
-# Base de donn�es de Make, imprim�e le Wed Jun 29 11:24:26 2022
+# Base de donn�es de Make, imprim�e le Wed Jun 29 11:31:22 2022
 
 # Variables
 
@@ -58,10 +58,11 @@ TMP = C:\Users\timch\AppData\Local\Temp
 VSCODE_VERBOSE_LOGGING = true
 # environnement
 PROGRAMW6432 = C:\Program Files
-# environnement
+# environn 
+ement
 PROGRAMDATA = C:\ProgramData
 # environnement
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-b66b3ae0-4fe4-4bb2-b9d5-709329d5e9f3-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-69a53577-79c9-4263-a900-2ca30d8bac44-sock
 # environnement
 VSCODE_CWD = C:\Users\timch\AppData\Local\Programs\Microsoft VS Code
 # environnement
@@ -89,7 +90,7 @@ LIB = $(REP)libAstre.a
 # automatique
 %F = $(notdir $%)
 # environnement
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_23908_UREARUDORHQHJIAX
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_17964_SIPJPYLESEUGXKJB
 # environnement
 VSCODE_PIPE_LOGGING = true
 # environnement
@@ -109,7 +110,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environnement
 VSCODE_CODE_CACHE_PATH = C:\Users\timch\AppData\Roaming\Code\CachedData\30d9c6cd9483b2cc586687151bcbcd635f373630
 # environnement
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environnement
 COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
 # environnement
@@ -129,7 +130,7 @@ QT_DEVICE_PIXEL_RATIO = auto
 # makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 1)
 CC = gcc -Wall
 # makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 2)
-EXEC = trajectoireAstre
+EXEC = trajectoireAstre.exe
 # d�faut
 MAKE_VERSION := 3.81
 # makefile
@@ -211,11 +212,11 @@ PROCESSOR_LEVEL = 6
 # environnement
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environnement
-VSCODE_PID = 23908
+VSCODE_PID = 17964
 # environnement
 USERDOMAIN_ROAMINGPROFILE = LAPTOP-TIM
 # variables initialis�es dans les statistiques de table de hachage:
-# Charge=101/1024=10%, Refait le hachage=0, Collisions=12/158=8%
+# Charge=101/1024=10%, Refait le hachage=0, Collisions=12/150=8%
 
 # Valeurs de variable avec mod�le sp�cifique
 
@@ -225,7 +226,7 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-TIM
 
 # C:\Windows\System32\WindowsPowerShell\v1.0\ (p�riph�rique C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1605758070): 30 fichiers, non impossibilit�s.
 # C:\Windows\System32\Wbem (p�riph�rique C:/Windows/System32/Wbem, mtime 1655759168): 171 fichiers, non impossibilit�s.
-# . (p�riph�rique c:/Users/timch/OneDrive/Bureau/projet_CIR_1, mtime 1656494526): 9 fichiers, non impossibilit�s.
+# . (p�riph�rique c:/Users/timch/OneDrive/Bureau/projet_CIR_1, mtime 1656495062): 10 fichiers, non impossibilit�s.
 # C:\Users\timch\AppData\Local\Programs\Microsoft VS Code\bin (p�riph�rique C:/Users/timch/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1655987248): 4 fichiers, non impossibilit�s.
 # C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (p�riph�rique C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1629826698): 10 fichiers, non impossibilit�s.
 # C:\Program Files (x86)\Nmap (p�riph�rique C:/Program Files (x86)/Nmap, mtime 1651666350): 37 fichiers, non impossibilit�s.
@@ -239,7 +240,7 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-TIM
 # C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (p�riph�rique C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1629826713): 5 fichiers, non impossibilit�s.
 # C:\Program Files (x86)\GnuWin32\bin (p�riph�rique C:/Program Files (x86)/GnuWin32/bin, mtime 1642070207): 103 fichiers, non impossibilit�s.
 
-# 3652 fichiers, non impossibilit�s dans 15 r�pertoires.
+# 3653 fichiers, non impossibilit�s dans 15 r�pertoires.
 
 # R�gles Implicites
 
@@ -256,14 +257,25 @@ Code/C/Fonctions/vecteur.c:
 # variables initialis�es dans les statistiques de table de hachage:
 # Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
 
-all: trajectoireAstre
+trajectoireAstre.exe: Code/C/Fonctions/libAstre.a Code/C/Fonctions/main.o
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Derni�re modification 2022-06-29 11:24:33
+#  Fichier a �t� mis � jour.
+#  Mise � jour r�ussie
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 13):
+	$(CC) -o $@ $(MAIN:.c=.o) $(LIB) -lm
+	
+
+all: trajectoireAstre.exe
 #  Cible provenant de la ligne de commande.
 #  Recherche de r�gle implicite effectu�e.
 # Fichier inexistant.
 #  Fichier a �t� mis � jour.
-#  A besoin d'�tre mis � jour (l'option -q est activ�e).
+#  Mise � jour r�ussie
 # variables initialis�es dans les statistiques de table de hachage:
-# Charge=0/32=0%, Refait le hachage=0, Collisions=0/8=0%
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
 
 # Pas une cible :
 Code/C/Fonctions/point.c:
@@ -300,9 +312,12 @@ Code/C/Fonctions/file.c:
 
 # Pas une cible :
 Code/C/Fonctions/main.o:
-#  Recherche de r�gle implicite n'a pas �t� effectu�e.
-#  Heure de modification jamais v�rifi�e.
-#  Fichier n'a pas �t� mis � jour.
+#  Recherche de r�gle implicite effectu�e.
+#  Derni�re modification 2022-06-29 11:24:33
+#  Fichier a �t� mis � jour.
+#  Mise � jour r�ussie
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
 
 cleanData:
 #  Recherche de r�gle implicite n'a pas �t� effectu�e.
@@ -333,22 +348,11 @@ Code/C/Fonctions/main.c:
 # Pas une cible :
 c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile:
 #  Recherche de r�gle implicite effectu�e.
-#  Derni�re modification 2022-06-29 11:22:06
+#  Derni�re modification 2022-06-29 11:31:02
 #  Fichier a �t� mis � jour.
 #  Mise � jour r�ussie
 # variables initialis�es dans les statistiques de table de hachage:
 # Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
-
-trajectoireAstre: Code/C/Fonctions/libAstre.a Code/C/Fonctions/main.o
-#  Recherche de r�gle implicite n'a pas �t� effectu�e.
-# Fichier inexistant.
-#  Fichier a �t� mis � jour.
-#  A besoin d'�tre mis � jour (l'option -q est activ�e).
-# variables initialis�es dans les statistiques de table de hachage:
-# Charge=0/32=0%, Refait le hachage=0, Collisions=0/8=0%
-#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 13):
-	$(CC) -o $@ $(MAIN:.c=.o) $(LIB) -lm
-	
 
 clean:
 #  Recherche de r�gle implicite n'a pas �t� effectu�e.
@@ -360,42 +364,22 @@ clean:
 
 Code/C/Fonctions/vecteur.o: Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
 #  Recherche de r�gle implicite n'a pas �t� effectu�e.
-#  Pr�fixe de sch�ma implicite/statique : �  �
-# Fichier inexistant.
+#  Derni�re modification 2022-06-29 11:24:32
 #  Fichier a �t� mis � jour.
-#  A besoin d'�tre mis � jour (l'option -q est activ�e).
-# automatique
-# @ := Code/C/Fonctions/vec 
-teur.o
-# automatique
-# % := 
-# automatique
-# * := 
-# automatique
-# + := Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
-# automatique
-# | := 
-# automatique
-# < := Code/C/Fonctions/vecteur.c
-# automatique
-# ^ := Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
-# automatique
-# ? := Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
-# variables initialis� 
-es dans les statistiques de table de hachage:
-# Charge=8/32=25%, Refait le hachage=0, Collisions=3/16=19%
+#  Mise � jour r�ussie
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
 #  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 19):
 	$(CC) -c $(SRC) 
 	
 
 Code/C/Fonctions/libAstre.a: Code/C/Fonctions/vecteur.o Code/C/Fonctions/file.o Code/C/Fonctions/planet.o Code/C/Fonctions/point.o
 #  Recherche de r�gle implicite n'a pas �t� effectu�e.
-# Fichier inexistant.
+#  Derni�re modification 2022-06-29 11:24:32
 #  Fichier a �t� mis � jour.
-#  A besoin d'�tre mis � jour (l'option -q est acti 
-v�e).
+#  Mise � jour r�ussie
 # variables initialis�es dans les statistiques de table de hachage:
-# Charge=0/32=0%, Refait le hachage=0, Collisions=0/8=0%
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
 #  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 22):
 	mv *.o $(REP)
 	ar rv $(LIB) $(OBJ)
@@ -403,16 +387,18 @@ v�e).
 
 Code/C/Fonctions/point.o: Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
 #  Recherche de r�gle implicite n'a pas �t� effectu�e.
-#  Heure de modification jamais v�rifi�e.
-#  Fichier n'a pas �t� mis � jour.
+#  Derni�re modification 2022-06-29 11:24:32
+#  Fichier a �t� mis � jour.
+#  Mise � jour r�ussie
 #  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 19):
 	$(CC) -c $(SRC) 
 	
 
 Code/C/Fonctions/planet.o: Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
 #  Recherche de r�gle implicite n'a pas �t� effectu�e.
-#  Heure de modification jamais v�rifi�e.
-#  Fichier n'a pas �t� mis � jour.
+#  Derni�re modification 2022-06-29 11:24:32
+#  Fichier a �t� mis � jour.
+#  Mise � jour r�ussie
 #  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 19):
 	$(CC) -c $(SRC) 
 	
@@ -427,8 +413,9 @@ main.o: Code/C/Fonctions/main.c Code/C/Fonctions/trajectoireAstre.h
 
 Code/C/Fonctions/file.o: Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
 #  Recherche de r�gle implicite n'a pas �t� effectu�e.
-#  Heure de modification jamais v�rifi�e.
-#  Fichier n'a pas �t� mis � jour.
+#  Derni�re modification 2022-06-29 11:24:32
+#  Fichier a �t� mis � jour.
+#  Mise � jour r�ussie
 #  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 19):
 	$(CC) -c $(SRC) 
 	
@@ -441,9 +428,8 @@ cleanAll:
 	rm $(OBJ) $(REP)main.o $(EXEC) $(LIB)
 	
 
-# statistiques des fichiers de la table de hach 
-age:
-# Charge=21/1024=2%, Refait le hachage=0, Collisions=0/59=0%
+# statistiques des fichiers de la table de hachage:
+# Charge=21/1024=2%, Refait le hachage=0, Collisions=0/58=0%
 # Chemins de Recherche VPATH
 
 # Pas de chemins de recherche � vpath �.
@@ -455,6 +441,6 @@ age:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4043 / max = 4043 / min = 4043 / avg = 4043
 
-# Fin de la base de donn�es de Make le Wed Jun 29 11:24:26 2022
+# Fin de la base de donn�es de Make le Wed Jun 29 11:31:22 2022
 
  
