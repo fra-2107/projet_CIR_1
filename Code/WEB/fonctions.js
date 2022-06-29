@@ -6,6 +6,7 @@ let projet = document.getElementById('projet');
 let btnstart = document.getElementById('btn1');
 let btnstop = document.getElementById('btn2');
 let v = document.getElementById("vitesse");
+let select_fichier=document.getElementById("file");
 var file, fichierSelectionne;
 
 //fonction de recuperation du fichier soumis par l'utilisateur 
@@ -77,6 +78,7 @@ function arret(){
     system.className='system';
     projet.className='projet';
     btnstart.className="bouton";
+    select_fichier.className='file';
     btnstop.className='off';    
     v.className='off';
 }

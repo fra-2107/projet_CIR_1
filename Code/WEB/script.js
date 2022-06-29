@@ -2,6 +2,7 @@
 function setup(){
     btnstop.className='off';
     v.className='off';
+    select_fichier.className='file';
     document.getElementById("vit").value = 20;
     i=0;
 }
@@ -14,6 +15,7 @@ async function initialisation(){
     system.className='off';
     projet.className='off';
     btnstart.className='off';
+    select_fichier.className='off';
 
     //creation du canvas
     createCanvas(windowWidth, windowHeight, WEBGL);
@@ -53,8 +55,8 @@ function draw(){
         strokeWeight(1);
 
         //affichage des planètes 
-        planete(p1, i, '#00FF00', 1010, 20);
-        planete(p2, i, '#B2A6A4', 2600, 100);
+        planete(p1, i, '#AAA8A7', 1010, 20);
+        planete(p2, i, '#B7832F', 2600, 100);
         planete(p3, i, '#0000FF', 4500, 250);
         planete(p4, i, '#E84F1A', 9000, 800);
         planete(p5, i, '#EEAE5D', 60000, 5000);
