@@ -34,7 +34,7 @@ Planet resetZ(Planet planet){
         Permet de corriger certains bugs en assignant la valeur 0 à la coordonnée en Z
     */
 
-    for(int i=0; i<NB_REPERE; i++){
+    for(int i=0; i<NB_REPERE+1; i++){
         planet.trajectoire[i].temps = i;
         planet.trajectoire[i].position.z = 0;
         planet.trajectoire[i].vitesse.z = 0;
@@ -147,9 +147,9 @@ Planet CalculTrajectoire( char *choice, Planet planet, int nbPoint, int deltaTem
         Calcul la trajectoire d'une planète en fonction de la méthode choisie
     */
 
-    if(!strcmp(choice,"Euler")) planet = MethodEuler(planet, NB_REPERE, DELTA_T);
-    else if(!strcmp(choice,"EulerAsy")) planet = MethodeEulerAsymetrique(planet, NB_REPERE, DELTA_T);
-    else if(!strcmp(choice,"RK2")) planet = MethodeRungeKutta(planet, NB_REPERE, DELTA_T);
+    if(!strcmp(choice,"Euler")) planet = MethodEuler(planet, nbPoint, deltaTemps);
+    else if(!strcmp(choice,"EulerAsy")) planet = MethodeEulerAsymetrique(planet, nbPoint, deltaTemps);
+    else if(!strcmp(choice,"RK2")) planet = MethodeRungeKutta(planet, nbPoint, deltaTemps);
     else{
         printf("Nom de méthode incorrect !\nVeuillez renseigner l'une des méthodes suivantes:\n\t1- Euler\n\t2- EulerAsy\n\t3- RK2\n\n");
         exit(EXIT_FAILURE);

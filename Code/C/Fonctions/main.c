@@ -6,7 +6,7 @@ int main(){
     Planet *planetList = InitPlanet("Data/infoAstre.json");
 
     char methodeList[NB_METHODE][NB_CHAR_MAX] = {"Euler", "EulerAsy", "RK2"};
-    int nb_point_trajectoire = NB_REPERE;
+    // int nb_point_trajectoire = NB_REPERE;
 
     for(int k=0; k<NB_METHODE; k++){
 
@@ -15,19 +15,19 @@ int main(){
 
         for(int i=0; i<NB_ASTRE; i++){
 
-            planetList[i].trajectoire = malloc(nb_point_trajectoire * sizeof(Point));
+            planetList[i].trajectoire = malloc(NB_REPERE * sizeof(Point));
             planetList[i].trajectoire[0] = firstPoint(planetList[i]);
 
-            planetList[i] = CalculTrajectoire(methodeList[k], planetList[i], nb_point_trajectoire, DELTA_T);   
+            planetList[i] = CalculTrajectoire(methodeList[k], planetList[i], NB_REPERE, DELTA_T);   
         }
 
         writeForMethode(planetList, methodeList[k], path);
 
-        DeltaConservationEnergie(planetList, 0, nb_point_trajectoire-1, methodeList[k]);
+        DeltaConservationEnergie(planetList, 0, NB_REPERE-1, methodeList[k]);
     }    
 
     // affichageInfoPoint(planetList[2].trajectoire[99]);
-    printf("3653: %f\n", realTime(100));
+    // printf("%d: %f\n", NB_REPERE-1, realTime(NB_REPERE-1));
 
     return 0;
 }
