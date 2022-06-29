@@ -7,7 +7,7 @@
 #define NB_ASTRE 8
 #define TAILLE_MAX 100
 #define G 6.67408e-11
-#define NB_REPERE 100+1 //3653
+#define NB_REPERE 600000+1 //3653
 #define DELTA_T 8640
 #define MASSE_SOLEIL 1.989100e+30
 #define NB_METHODE 3
