@@ -3,9 +3,8 @@
 
 Planet *InitPlanet(char *filename){
     /*
-        Initialisation des planètes:
-            - Récupération des informations de chaque planètes depuis un fichier
-            - 
+        Initialisation des planètes en récupérant les informations
+        de chaque planètes depuis un fichier
     */
 
     Planet *planetList = malloc(NB_ASTRE * sizeof(Planet));
@@ -14,31 +13,15 @@ Planet *InitPlanet(char *filename){
     planetList = recupInfo(fichier, filename, planetList);
     fclose(fichier);
 
-    char methodeList[3][10] = {"Euler", "EulerAsy", "RK2"};
-
-    for(int k=0; k<3; k++){
-
-        char path[30];
-        sprintf(path, "../Data/%s.json", methodeList[k]);
-
-        for(int i=0; i<NB_ASTRE; i++){
-
-            planetList[i].trajectoire = malloc(NB_REPERE * sizeof(Point));
-            planetList[i].trajectoire[0] = firstPoint(planetList[i]);
-
-            planetList[i] = ChooseMethode(methodeList[k], planetList[i], NB_REPERE, PAS_MERCURE);   
-        }
-
-        writeForMethode(planetList, methodeList[k], path);
-
-        DeltaConservationEnergie(planetList, 0, NB_REPERE-1, methodeList[k]);
-    }
-
     return planetList;  
 }
 
 
 Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
+    /*
+        Récupère les informartions de chaque planètes champ par champ
+        afin de les stocker dans la structure Planet
+    */
 
     //Pour gérer différents champs dans le fichier on utilise un caractère pour les séparer
     char *separateur = ":";
@@ -74,9 +57,6 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
                     case 5:
                         planet.excentricite = atof(champ);
                         break;
-                    case 6:
-                        planet.periodicite = atof(champ);
-                        break;
                     default:
                         break;
             }
@@ -94,8 +74,15 @@ Planet *recupInfo(FILE *fichier, char *filename, Planet *planetList){
 
 
 void affichageTrajectoirePlanet(Planet planet){
+    /*
+        Affiche la trajectoire d'une planète en affichant les informations de 
+        points:
+            - position
+            - vitesse
+    */
 
     printf("%s\n", planet.name);
+
     for(int i=0; i<NB_REPERE; i++){
         printf("[%d]:\nposition: [%e, %e, %e]\nvitesse: [%e, %e, %e]\n\n", i, planet.trajectoire[i].position.x, planet.trajectoire[i].position.y, planet.trajectoire[i].position.z, planet.trajectoire[i].vitesse.x, planet.trajectoire[i].vitesse.y, planet.trajectoire[i].vitesse.z);
     }
@@ -103,27 +90,42 @@ void affichageTrajectoirePlanet(Planet planet){
 
 
 void InfoPlanet(Planet planet){
+    /*
+        Affiche les informations d'une planète:
+            - nom           - demi grand axe
+            - masse         - excentricité
+            - périhélie
+    */
+
     printf("NAME\t\t     MASSE\t\t   PERIHELIE\t\t1/2 GRAND AXE\t\tEXCENTRICITE\n");
     printf("%s\t\t%e kg\t\t%e m\t\t%e m\t\t%e\n",planet.name, planet.masse, planet.perihelie, planet.demi_grand_axe, planet.excentricite);
 }
 
 
 void affichageInfoPlanets(Planet *planetList){
+    /*
+        Afficher les informations de chaque planètes
+    */
+
     printf("\n\t\t\t\tInformation sur les astres\n\n");
     printf("NAME\t\t     MASSE\t\t   PERIHELIE\t\t1/2 GRAND AXE\t\tEXCENTRICITE\t       PERIODICITE\n");
     for(int i=0; i<NB_ASTRE; i++){
-        printf("%s\t\t%e kg\t\t%e m\t\t%e m\t\t%e\t\t%.2f j\n",planetList[i].name, planetList[i].masse, planetList[i].perihelie, planetList[i].demi_grand_axe, planetList[i].excentricite, planetList[i].periodicite);
+        printf("%s\t\t%e kg\t\t%e m\t\t%e m\t\t%e\n",planetList[i].name, planetList[i].masse, planetList[i].perihelie, planetList[i].demi_grand_axe, planetList[i].excentricite);
     }
 }
 
 
 void DeltaConservationEnergie(Planet *planetList, int tmp1, int tmp2, char *methode){
+    /*
+        Renvoie la différence de conservation d'énergie du sytème entre deux temps
+    */
 
-
+    //On met à jour la trajectoire de chaque planète en fonction de la méthode choisie
     for(int i=1; i<NB_ASTRE; i++){
-        if(!strcmp(methode,"Euler")) planetList[i] = MethodEuler(planetList[i], NB_REPERE, PAS_MERCURE);
-        else if(!strcmp(methode,"EulerAsy")) planetList[i] = MethodeEulerAsymetrique(planetList[i], NB_REPERE, PAS_MERCURE);
-        else if(!strcmp(methode,"RK2")) planetList[i] = MethodeRungeKutta(planetList[i], NB_REPERE, PAS_MERCURE);
+
+        if(!strcmp(methode,"Euler")) planetList[i] = MethodEuler(planetList[i], NB_REPERE, DELTA_T);
+        else if(!strcmp(methode,"EulerAsy")) planetList[i] = MethodeEulerAsymetrique(planetList[i], NB_REPERE, DELTA_T);
+        else if(!strcmp(methode,"RK2")) planetList[i] = MethodeRungeKutta(planetList[i], NB_REPERE, DELTA_T);
         else{
             printf("Nom de méthode incorrect !\nVeuillez renseigner l'une des méthodes suivantes:\n\t1- Euler\n\t2- EulerAsy\n\t3- RK2\n\n");
             exit(EXIT_FAILURE);
@@ -141,6 +143,9 @@ void DeltaConservationEnergie(Planet *planetList, int tmp1, int tmp2, char *meth
 
 
 double EnergieTotale(Planet *planetList, int temps){
+    /*
+        Renvoie l'énergie totale obtenue avec la somme de l'énergie potentiel et de l'énergie cinétique
+    */
 
     double E = EnergiePotentielTotale(planetList, temps) + EnergieCinetiqueTotale(planetList,temps);
 
@@ -149,17 +154,25 @@ double EnergieTotale(Planet *planetList, int temps){
 
 
 double EnergiePotentielTotale(Planet *planetList, int temps){
+    /*
+        Renvoie l'énergie potentiel totale du système à un temps choisis
+    */
+
     double Ep = 0;
 
     for(int i=0; i<NB_ASTRE; i++){
         Ep += ((G * MASSE_SOLEIL * planetList[i].masse) / pow((normeVect(planetList[i].trajectoire[temps].position)), 2));
     }
     Ep *= 0.5;
+
     return Ep;
 }
 
 
 double EnergieCinetiqueTotale(Planet *planetList, int temps){
+    /*
+        Renvoie l'énergie cinétique totale du système à un temps choisis
+    */
 
     double Ec = 0;
 
@@ -167,5 +180,6 @@ double EnergieCinetiqueTotale(Planet *planetList, int temps){
         Ec += planetList[i].masse  * (pow(normeVect(planetList[i].trajectoire[temps].vitesse), 2));
     }
     Ec *= 0.5;
+
     return Ec;
 }

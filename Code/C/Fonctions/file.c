@@ -57,6 +57,15 @@ FILE *addToFile(char *filename){
     return fichier;
 }
 
+void WriteInfoPoint(Point point, FILE *fichier){
+    /*
+        Ecrit les informations d'un point dans le fichier
+    */
+
+    if(point.temps == NB_REPERE-1) fprintf(fichier, "[[%e, %e, %e],[%e, %e, %e], %d]]\n", point.position.x, point.position.y, point.position.z, point.vitesse.x, point.vitesse.y, point.vitesse.z, point.temps);
+    else fprintf(fichier, "[[%e, %e, %e],[%e, %e, %e], %d],\n", point.position.x, point.position.y, point.position.z, point.vitesse.x, point.vitesse.y, point.vitesse.z, point.temps);
+}
+
 
 void SaveData(Planet planet, char *methode, FILE* fichier){
     /*
@@ -68,7 +77,7 @@ void SaveData(Planet planet, char *methode, FILE* fichier){
 
     fprintf(fichier, "%c%s-%s%c : [", guillemet, planet.name, methode, guillemet);
 
-    for(int i=0; i<NB_REPERE; i++) infoPoint(planet.trajectoire[i], fichier);
+    for(int i=0; i<NB_REPERE; i++) WriteInfoPoint(planet.trajectoire[i], fichier);
 }
 
 
