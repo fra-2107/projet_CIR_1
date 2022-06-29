@@ -1,5 +1,5 @@
 CC = gcc -Wall
-EXEC = trajectoireAstre
+EXEC = trajectoireAstre.exe
 REP = Code/C/Fonctions/
 MAIN = $(REP)main.c
 SRC = $(REP)vecteur.c $(REP)file.c $(REP)planet.c $(REP)point.c
