@@ -1,282 +1,460 @@
-make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
+make.exe all -f c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# Ceci est un logiciel libre ; voir le source pour les conditions de copie.
+# Il n'y a PAS de garantie ; tant pour une utilisation COMMERCIALE que pour
+# R�PONDRE � UN BESOIN PARTICULIER.
 
-# GNU Make 4.3
-# Built for x86_64-pc-linux-gnu
-# Copyright (C) 1988-2020 Free Software Foundation, Inc.
-# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-# This is free software: you are free to change and redistribute it.
-# There is NO WARRANTY, to the extent permitted by law.
+# Ce logiciel est construit pour i386-pc-mingw32
+ 
 
-# Make data base, printed on Sun Jun 26 13:03:12 2022
+# Base de donn�es de Make, imprim�e le Wed Jun 29 11:24:26 2022
 
 # Variables
 
-# environment
-GDK_BACKEND = x11
-# environment
-LC_ALL = C
-# environment
-GNOME_SHELL_SESSION_MODE = ubuntu
-# environment
-SSH_AGENT_LAUNCHER = gnome-keyring
-# environment
-GJS_DEBUG_OUTPUT = stderr
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-4495abd0-2b6e-4a7e-957b-bb5c90b07843.sock
-# environment
-VSCODE_CWD = /home/kilian
-# default
-MAKE_COMMAND := make
-# environment
-QT_ACCESSIBILITY = 1
-# automatic
-@D = $(patsubst %/,%,$(dir $@))
-# environment
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# default
-.VARIABLES := 
-# environment
-PWD = /home/kilian/Documents/GitHub/PROJET
-# automatic
-%D = $(patsubst %/,%,$(dir $%))
-# environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-XDG_DATA_DIRS = /home/kilian/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
-# environment
-OLDPWD = /home/kilian
-# automatic
-^D = $(patsubst %/,%,$(dir $^))
-# environment
-VSCODE_LOG_STACK = false
-# automatic
-%F = $(notdir $%)
-# environment
-VSCODE_CODE_CACHE_PATH = /home/kilian/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
-# environment
-LANG = C
-# environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.MZMHO1
-# default
-.LOADED := 
-# default
-.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
-# makefile
-MAKEFLAGS = pqrR
-# makefile
-CURDIR := /home/kilian/Documents/GitHub/PROJET
-# environment
-VSCODE_PIPE_LOGGING = true
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# automatic
-*D = $(patsubst %/,%,$(dir $*))
-# environment
-MFLAGS = -pqrR
-# environment
-SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
-# default
-.SHELLFLAGS := -c
-# environment
-WAYLAND_DISPLAY = wayland-0
-# automatic
-+D = $(patsubst %/,%,$(dir $+))
-# environment
-XDG_SESSION_DESKTOP = ubuntu
-# makefile
-MAKEFILE_LIST := 
-# automatic
-@F = $(notdir $@)
-# environment
-ZSH = /home/kilian/.oh-my-zsh
-# environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
-VSCODE_PID = 5102
-# environment
-XDG_SESSION_TYPE = wayland
-# automatic
-?D = $(patsubst %/,%,$(dir $?))
-# environment
-SESSION_MANAGER = local/pavillon:@/tmp/.ICE-unix/2466,unix/pavillon:/tmp/.ICE-unix/2466
-# automatic
-*F = $(notdir $*)
-# environment
-CHROME_DESKTOP = code-url-handler.desktop
-# environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
-# automatic
+# automatique
 <D = $(patsubst %/,%,$(dir $<))
-# environment
-VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"575d78304484aa5fa0cbb32d34fd883d.fr","_translationsConfigFile":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/tcf.json","_cacheRoot":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr","_resolvedLanguagePackCoreLocation":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/kilian/.config/Code/clp/575d78304484aa5fa0cbb32d34fd883d.fr/corrupted.info","_languagePackSupport":true}
-# default
-MAKE_HOST := x86_64-pc-linux-gnu
-# environment
-GNOME_DESKTOP_SESSION_ID = this-is-deprecated
-# makefile
-SHELL = /bin/sh
-# default
-MAKECMDGOALS := all
-# environment
-XMODIFIERS = @im=ibus
-# environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
-# environment
-SHLVL = 0
-# environment
-MAKELEVEL := 0
-# default
-MAKE = $(MAKE_COMMAND)
-# environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
-# default
-MAKEFILES := 
-# automatic
-^F = $(notdir $^)
-# environment
-INVOCATION_ID = cbe062a0d11d4897bbe93afd221c0463
-# environment
-VSCODE_LOG_NATIVE = false
-# environment
-USERNAME = kilian
-# environment
-GNOME_SETUP_DISPLAY = :1
-# automatic
+# automatique
 ?F = $(notdir $?)
-# environment
-XDG_CURRENT_DESKTOP = Unity
-# environment
-LS_COLORS = 
-# automatic
-+F = $(notdir $+)
-# environment
-LESS = -R
-# environment
-DESKTOP_SESSION = ubuntu
-# environment
-ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
-# 'override' directive
-GNUMAKEFLAGS := 
-# environment
-LOGNAME = kilian
-# environment
-GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 6)
+OBJ = $(SRC:.c=.o) 
+# makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 5)
+SRC = $(REP)vecteur.c $(REP)file.c $(REP)planet.c $(REP)point.c
 # makefile
-.DEFAULT_GOAL := 
-# environment
-SYSTEMD_EXEC_PID = 2506
-# environment
-DISPLAY = :0
-# environment
-USER = kilian
-# environment
-GTK_MODULES = gail:atk-bridge
-# default
-MAKE_VERSION := 4.3
-# environment
-MANAGERPID = 2366
-# environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 5102
-# environment
-PAGER = less
-# environment
-_ = /usr/share/code/code
-# environment
-XDG_RUNTIME_DIR = /run/user/1000
-# environment
-JOURNAL_STREAM = 8:34722
-# environment
-XDG_SESSION_CLASS = user
-# environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
-# environment
-HOME = /home/kilian
-# environment
-QT_IM_MODULE = ibus
-# environment
+MAKEFLAGS = Rrqp
+# environnement
+VSCODE_LOG_NATIVE = false
+# automatique
+?D = $(patsubst %/,%,$(dir $?))
+# automatique
+@D = $(patsubst %/,%,$(dir $@))
+# environnement
+HOMEDRIVE = C:
+# automatique
+@F = $(notdir $@)
+# automatique
+^D = $(patsubst %/,%,$(dir $^))
+# makefile
+CURDIR := c:/Users/timch/OneDrive/Bureau/projet_CIR_1
+# d�faut
+SHELL := sh.exe
+# environnement
+WINDIR = C:\Windows
+# environnement
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"575d78304484aa5fa0cbb32d34fd883d.fr","_translationsConfigFile":"C:\\Users\\timch\\AppData\\Roaming\\Code\\clp\\575d78304484aa5fa0cbb32d34fd883d.fr\\tcf.json","_cacheRoot":"C:\\Users\\timch\\AppData\\Roaming\\Code\\clp\\575d78304484aa5fa0cbb32d34fd883d.fr","_resolvedLanguagePackCoreLocation":"C:\\Users\\timch\\AppData\\Roaming\\Code\\clp\\575d78304484aa5fa0cbb32d34fd883d.fr\\30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"C:\\Users\\timch\\AppData\\Roaming\\Code\\clp\\575d78304484aa5fa0cbb32d34fd883d.fr\\corrupted.info","_languagePackSupport":true}
+# environnement
+VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
+# environnement
+ONEDRIVE = C:\Users\timch\OneDrive
+# environnement
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 1)
+MAKEFILE_LIST :=  c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile
+# environnement
+FPS_BROWSER_USER_PROFILE_STRING = Default
+# environnement
+TMP = C:\Users\timch\AppData\Local\Temp
+# environnement
+VSCODE_VERBOSE_LOGGING = true
+# environnement
+PROGRAMW6432 = C:\Program Files
+# environnement
+PROGRAMDATA = C:\ProgramData
+# environnement
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-b66b3ae0-4fe4-4bb2-b9d5-709329d5e9f3-sock
+# environnement
+VSCODE_CWD = C:\Users\timch\AppData\Local\Programs\Microsoft VS Code
+# environnement
+PATH = C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\MinGW\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Users\timch\AppData\Local\Microsoft\WindowsApps;C:\Users\timch\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\timch\AppData\Local\GitHubDesktop\bin;C:\Program Files (x86)\Nmap
+# environnement
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# environnement
+ZES_ENABLE_SYSMAN = 1
+# environnement
+PROCESSOR_ARCHITECTURE = x86
+# environnement
+USERPROFILE = C:\Users\timch
+# environnement
+ALLUSERSPROFILE = C:\ProgramData
+# environnement
+VSCODE_LOG_STACK = false
+# environnement
+NUMBER_OF_PROCESSORS = 8
+# environnement
 ELECTRON_RUN_AS_NODE = 1
-# environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c48c5404-1.68.1-main.sock
-# default
-.RECIPEPREFIX := 
-# automatic
+# makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 7)
+LIB = $(REP)libAstre.a
+# d�faut
+.FEATURES := target-specific order-only second-expansion else-if archives
+# automatique
+%F = $(notdir $%)
+# environnement
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_23908_UREARUDORHQHJIAX
+# environnement
+VSCODE_PIPE_LOGGING = true
+# environnement
+COMPUTERNAME = LAPTOP-TIM
+# environnement
+PROGRAMFILES = C:\Program Files (x86)
+# environnement
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environnement
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environnement
+USERNAME = timch
+# environnement
+PUBLIC = C:\Users\Public
+# environnement
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environnement
+VSCODE_CODE_CACHE_PATH = C:\Users\timch\AppData\Roaming\Code\CachedData\30d9c6cd9483b2cc586687151bcbcd635f373630
+# environnement
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environnement
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# environnement
+LOGONSERVER = \\LAPTOP-TIM
+# environnement
+ONEDRIVECONSUMER = C:\Users\timch\OneDrive
+# environnement
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environnement
+USERDOMAIN = LAPTOP-TIM
+# d�faut
+MAKE = $(MAKE_COMMAND)
+# d�faut
+MAKECMDGOALS := all
+# environnement
+QT_DEVICE_PIXEL_RATIO = auto
+# makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 1)
+CC = gcc -Wall
+# makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 2)
+EXEC = trajectoireAstre
+# d�faut
+MAKE_VERSION := 3.81
+# makefile
+.DEFAULT_GOAL := all
+# environnement
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# automatique
+%D = $(patsubst %/,%,$(dir $%))
+# environnement
+LOCALAPPDATA = C:\Users\timch\AppData\Local
+# environnement
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+# d�faut
+MAKE_COMMAND := make.exe
+# environnement
+PROCESSOR_ARCHITEW6432 = AMD64
+# d�faut
+.VARIABLES := 
+# automatique
+*F = $(notdir $*)
+# environnement
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+# environnement
+OS = Windows_NT
+# environnement
+VSCODE_IPC_HOOK = \\.\pipe\fa761aae3d3e41174bcc0d73faed46a4-1.68.1-main-sock
+# makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 3)
+REP = Code/C/Fonctions/
+# environnement
+HOMEPATH = \Users\timch
+# environnement
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environnement
+PROMPT = $P$G
+# environnement
+MFLAGS = -Rrqp
+# automatique
+*D = $(patsubst %/,%,$(dir $*))
+# environnement
+PT8HOME = C:\Program Files\Cisco Packet Tracer 8.1.1
+# makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 4)
+MAIN = $(REP)main.c
+# environnement
+SYSTEMROOT = C:\Windows
+# automatique
++D = $(patsubst %/,%,$(dir $+))
+# automatique
++F = $(notdir $+)
+# environnement
+APPDATA = C:\Users\timch\AppData\Roaming
+# environnement
+TEMP = C:\Users\timch\AppData\Local\Temp
+# environnement
+COMSPEC = C:\Windows\system32\cmd.exe
+# d�faut
+MAKEFILES := 
+# automatique
 <F = $(notdir $<)
-# default
+# environnement
+LC_ALL = C
+# makefile (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 8)
+HEADER = $(REP)trajectoireAstre.h
+# automatique
+^F = $(notdir $^)
+# d�faut
 SUFFIXES := 
-# default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
-# environment
-XDG_MENU_PREFIX = gnome-
-# environment
-GDMSESSION = ubuntu
-# variable set hash-table stats:
-# Load=99/1024=10%, Rehash=0, Collisions=4/126=3%
+# environnement
+SYSTEMDRIVE = C:
+# environnement
+SESSIONNAME = Console
+# environnement
+PROCESSOR_REVISION = 8c01
+# environnement
+MAKELEVEL := 0
+# environnement
+LANG = C
+# environnement
+PROCESSOR_LEVEL = 6
+# environnement
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+# environnement
+VSCODE_PID = 23908
+# environnement
+USERDOMAIN_ROAMINGPROFILE = LAPTOP-TIM
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=101/1024=10%, Refait le hachage=0, Collisions=12/158=8%
 
-# Pattern-specific Variable Values
+# Valeurs de variable avec mod�le sp�cifique
 
-# No pattern-specific variable values.
+# pas de valeurs de variable avec mod�le sp�cifique
 
-# Directories
+# R�pertoires
 
-# . (device 66309, inode 525452): 8 files, no impossibilities.
+# C:\Windows\System32\WindowsPowerShell\v1.0\ (p�riph�rique C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1605758070): 30 fichiers, non impossibilit�s.
+# C:\Windows\System32\Wbem (p�riph�rique C:/Windows/System32/Wbem, mtime 1655759168): 171 fichiers, non impossibilit�s.
+# . (p�riph�rique c:/Users/timch/OneDrive/Bureau/projet_CIR_1, mtime 1656494526): 9 fichiers, non impossibilit�s.
+# C:\Users\timch\AppData\Local\Programs\Microsoft VS Code\bin (p�riph�rique C:/Users/timch/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1655987248): 4 fichiers, non impossibilit�s.
+# C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (p�riph�rique C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1629826698): 10 fichiers, non impossibilit�s.
+# C:\Program Files (x86)\Nmap (p�riph�rique C:/Program Files (x86)/Nmap, mtime 1651666350): 37 fichiers, non impossibilit�s.
+# C:\MinGW\bin (p�riph�rique C:/MinGW/bin, mtime 1647438869): 145 fichiers, non impossibilit�s.
+# C:\Windows\System32\OpenSSH\ : statut indisponible.
+# C:\Users\timch\AppData\Local\GitHubDesktop\bin (p�riph�rique C:/Users/timch/AppData/Local/GitHubDesktop/bin, mtime 1647504382): 4 fichiers, non impossibilit�s.
+# C:\Users\timch\AppData\Local\Microsoft\WindowsApps (p�riph�rique C:/Users/timch/AppData/Local/Microsoft/WindowsApps, mtime 1656075216): 32 fichiers, non impossibilit�s.
+# C:\Windows (p�riph�rique C:/Windows, mtime 1655759167): 110 fichiers, non impossibilit�s.
+# C:\Program Files\Git\cmd (p�riph�rique C:/Program Files/Git/cmd, mtime 1632378091): 8 fichiers, non impossibilit�s.
+# C:\Windows\system32 (p�riph�rique C:/Windows/system32, mtime 1655801261): 2984 fichiers, non impossibilit�s.
+# C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (p�riph�rique C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1629826713): 5 fichiers, non impossibilit�s.
+# C:\Program Files (x86)\GnuWin32\bin (p�riph�rique C:/Program Files (x86)/GnuWin32/bin, mtime 1642070207): 103 fichiers, non impossibilit�s.
 
-# 8 files, no impossibilities in 1 directories.
+# 3652 fichiers, non impossibilit�s dans 15 r�pertoires.
 
-# Implicit Rules
+# R�gles Implicites
 
-# No implicit rules.
+# Pas de r�gles implicites.
 
-# Files
+# Fichiers
 
-# Not a target:
-Makefile:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+# Pas une cible :
+Code/C/Fonctions/vecteur.c:
+#  Recherche de r�gle implicite effectu�e.
+#  Derni�re modification 2022-06-28 21:20:10
+#  Fichier a �t� mis � jour.
+#  Mise � jour r�ussie
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
 
-# Not a target:
+all: trajectoireAstre
+#  Cible provenant de la ligne de commande.
+#  Recherche de r�gle implicite effectu�e.
+# Fichier inexistant.
+#  Fichier a �t� mis � jour.
+#  A besoin d'�tre mis � jour (l'option -q est activ�e).
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/8=0%
+
+# Pas une cible :
+Code/C/Fonctions/point.c:
+#  Recherche de r�gle implicite effectu�e.
+#  Derni�re modification 2022-06-29 02:16:45
+#  Fichier a �t� mis � jour.
+#  Mise � jour r�ussie
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
+
+# Pas une cible :
+Code/C/Fonctions/planet.c:
+#  Recherche de r�gle implicite effectu�e.
+#  Derni�re modification 2022-06-29 10:25:01
+#  Fichier a �t� mis � jour.
+#  Mise � jour r�ussie
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
+
+# Pas une cible :
 .DEFAULT:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
 
-# Not a target:
-all:
-#  Command line target.
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
+# Pas une cible :
+Code/C/Fonctions/file.c:
+#  Recherche de r�gle implicite effectu�e.
+#  Derni�re modification 2022-06-29 02:16:45
+#  Fichier a �t� mis � jour.
+#  Mise � jour r�ussie
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
 
-# Not a target:
-makefile:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+# Pas une cible :
+Code/C/Fonctions/main.o:
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
 
-# Not a target:
-GNUmakefile:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+cleanData:
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 32):
+	rm ../Data/*.json
+	
 
-# files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
-# VPATH Search Paths
+# Pas une cible :
+Code/C/Fonctions/trajectoireAstre.h:
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
 
-# No 'vpath' search paths.
+# Pas une cible :
+.SUFFIXES:
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
 
-# No general ('VPATH' variable) search path.
+# Pas une cible :
+Code/C/Fonctions/main.c:
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 134 B / avg = 8 B
-# current buf: size = 8162 B / used = 134 B / count = 16 / avg = 8 B
+# Pas une cible :
+c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile:
+#  Recherche de r�gle implicite effectu�e.
+#  Derni�re modification 2022-06-29 11:22:06
+#  Fichier a �t� mis � jour.
+#  Mise � jour r�ussie
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/0=0%
 
-# strcache performance: lookups = 19 / hit rate = 15%
-# hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=0/19=0%
-# Finished Make data base on Sun Jun 26 13:03:12 2022
+trajectoireAstre: Code/C/Fonctions/libAstre.a Code/C/Fonctions/main.o
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+# Fichier inexistant.
+#  Fichier a �t� mis � jour.
+#  A besoin d'�tre mis � jour (l'option -q est activ�e).
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/8=0%
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 13):
+	$(CC) -o $@ $(MAIN:.c=.o) $(LIB) -lm
+	
+
+clean:
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 26):
+	rm $(REP)$(OBJ)
+	
+
+Code/C/Fonctions/vecteur.o: Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Pr�fixe de sch�ma implicite/statique : �  �
+# Fichier inexistant.
+#  Fichier a �t� mis � jour.
+#  A besoin d'�tre mis � jour (l'option -q est activ�e).
+# automatique
+# @ := Code/C/Fonctions/vec 
+teur.o
+# automatique
+# % := 
+# automatique
+# * := 
+# automatique
+# + := Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
+# automatique
+# | := 
+# automatique
+# < := Code/C/Fonctions/vecteur.c
+# automatique
+# ^ := Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
+# automatique
+# ? := Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
+# variables initialis� 
+es dans les statistiques de table de hachage:
+# Charge=8/32=25%, Refait le hachage=0, Collisions=3/16=19%
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 19):
+	$(CC) -c $(SRC) 
+	
+
+Code/C/Fonctions/libAstre.a: Code/C/Fonctions/vecteur.o Code/C/Fonctions/file.o Code/C/Fonctions/planet.o Code/C/Fonctions/point.o
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+# Fichier inexistant.
+#  Fichier a �t� mis � jour.
+#  A besoin d'�tre mis � jour (l'option -q est acti 
+v�e).
+# variables initialis�es dans les statistiques de table de hachage:
+# Charge=0/32=0%, Refait le hachage=0, Collisions=0/8=0%
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 22):
+	mv *.o $(REP)
+	ar rv $(LIB) $(OBJ)
+	
+
+Code/C/Fonctions/point.o: Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 19):
+	$(CC) -c $(SRC) 
+	
+
+Code/C/Fonctions/planet.o: Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 19):
+	$(CC) -c $(SRC) 
+	
+
+main.o: Code/C/Fonctions/main.c Code/C/Fonctions/trajectoireAstre.h
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 16):
+	$(CC) -c $(MAIN) 
+	
+
+Code/C/Fonctions/file.o: Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 19):
+	$(CC) -c $(SRC) 
+	
+
+cleanAll:
+#  Recherche de r�gle implicite n'a pas �t� effectu�e.
+#  Heure de modification jamais v�rifi�e.
+#  Fichier n'a pas �t� mis � jour.
+#  commandes � ex�cuter (de � c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile �, ligne 29):
+	rm $(OBJ) $(REP)main.o $(EXEC) $(LIB)
+	
+
+# statistiques des fichiers de la table de hach 
+age:
+# Charge=21/1024=2%, Refait le hachage=0, Collisions=0/59=0%
+# Chemins de Recherche VPATH
+
+# Pas de chemins de recherche � vpath �.
+
+# Pas de chemin de recherche g�n�ral (variable � VPATH �).
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4043 / max = 4043 / min = 4043 / avg = 4043
+
+# Fin de la base de donn�es de Make le Wed Jun 29 11:24:26 2022
 
  

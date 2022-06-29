@@ -122,21 +122,21 @@ async function demande(){
     {
         if (file.name=="Euler.json")
         {
-            const reponseeuler = await fetch('../Data/Euler.json');
+            const reponseeuler = await fetch('../../Code/Data/Euler.json');
             fichiereuler=await reponseeuler.json();
 
             euler();
         }
         if(file.name=="EulerAsy.json")
         {
-            const reponseeulerasy = await fetch('../Data/EulerAsy.json');
+            const reponseeulerasy = await fetch('../../Code/Data/EulerAsy.json');
             fichiereulerasy=await reponseeulerasy.json();
 
             eulerAsy();
         }
         if(file.name=="RK2.json")
         {
-            const reponserk = await fetch('../Data/RK2.json');
+            const reponserk = await fetch('../../Code/Data/RK2.json');
             fichierrk=await reponserk.json();
 
             RK2();

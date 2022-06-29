@@ -1,6 +1,12 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/kilian/Documents/GitHub/PROJET'
-make: Leaving directory '/home/kilian/Documents/GitHub/PROJET'
+make.exe -f c:\Users\timch\OneDrive\Bureau\projet_CIR_1\makefile --dry-run --always-make --keep-going --print-directory
+make.exe: entrant dans le r�pertoire � c:/Users/timch/OneDrive/Bureau/projet_CIR_1 �
+gcc -Wall -c Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c 
+gcc -Wall -c Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c 
+gcc -Wall -c Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c 
+gcc -Wall -c Code/C/Fonctions/vecteur.c Code/C/Fonctions/file.c Code/C/Fonctions/planet.c Code/C/Fonctions/point.c 
+mv *.o Code/C/Fonctions/
+ar rv Code/C/Fonctions/libAstre.a Code/C/Fonctions/vecteur.o Code/C/Fonctions/file.o Code/C/Fonctions/planet.o Code/C/Fonctions/point.o 
+gcc -Wall    -c -o Code/C/Fonctions/main.o Code/C/Fonctions/main.c
+gcc -Wall -o trajectoireAstre Code/C/Fonctions/main.o Code/C/Fonctions/libAstre.a -lm
+make.exe: quittant le r�pertoire � c:/Users/timch/OneDrive/Bureau/projet_CIR_1 �
  
-make: *** No targets specified and no makefile found.  Stop.
-
