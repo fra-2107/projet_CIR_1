@@ -3,7 +3,7 @@
 int main(){
 
     // vectorTest();
-    Planet *planetList = InitPlanet("Data/infoAstre.json");
+    Planet *planetList = InitPlanet("Code/C/Data/infoAstre.json");
 
     char methodeList[NB_METHODE][NB_CHAR_MAX] = {"Euler", "EulerAsy", "RK2"};
     int nb_point_trajectoire = NB_REPERE;
@@ -12,7 +12,7 @@ int main(){
     for(int k=0; k<NB_METHODE; k++){
 
         char path[TAILLE_MAX];
-        sprintf(path, "../Data/%s.json", methodeList[k]);
+        sprintf(path, "Code/Data/%s.json", methodeList[k]);
 
         for(int i=0; i<NB_ASTRE; i++){
 
