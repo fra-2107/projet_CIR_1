@@ -1,7 +1,7 @@
 OBJECTIF: réaliser une simulation des trajectoires des planètes de notre système solaire
 	  avec des méthodes de calcul différentes (Euler, Euler Asymétrique et Runge Kutta d'ordre 2)
 
-###C:
+### C:
 	compilation : 
 		- make cleanAll : supprime les fichiers .o, l'executable et la librarie
 		- make cleanData : supprime les fichier .json
